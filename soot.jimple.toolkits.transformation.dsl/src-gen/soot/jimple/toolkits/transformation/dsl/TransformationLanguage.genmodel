@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/soot.jimple.toolkits.transformation.dsl/src-gen"
+    editDirectory="/soot.jimple.toolkits.transformation.dsl.edit/src" editorDirectory="/soot.jimple.toolkits.transformation.dsl.editor/src"
+    modelPluginID="soot.jimple.toolkits.transformation.dsl" forceOverwrite="true"
+    modelName="TransformationLanguage" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="soot.jimple.toolkits.transformation.dsl.edit"
+    editorPluginID="soot.jimple.toolkits.transformation.dsl.editor" runtimeVersion="2.8">
+  <genPackages prefix="TransformationLanguage" basePackage="soot.jimple.toolkits.transformation.dsl"
+      disposableProviderFactory="true" ecorePackage="TransformationLanguage.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TransformationLanguage.ecore#//Visibility">
+      <genEnumLiterals ecoreEnumLiteral="TransformationLanguage.ecore#//Visibility/package"/>
+      <genEnumLiterals ecoreEnumLiteral="TransformationLanguage.ecore#//Visibility/public"/>
+      <genEnumLiterals ecoreEnumLiteral="TransformationLanguage.ecore#//Visibility/protected"/>
+      <genEnumLiterals ecoreEnumLiteral="TransformationLanguage.ecore#//Visibility/private"/>
+    </genEnums>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Transformation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Transformation/pattern"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Transformation/replacement"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Pattern"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//SequencePattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//SequencePattern/sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//MethodPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//MethodPattern/method"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//TypePattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//TypePattern/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Replacement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Replacement/sequence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Replacement/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Replacement/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/interface"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/superClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/interfaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Type/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Type/methods"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Field/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Field/static"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Field/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Field/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Method/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Method/static"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Method/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Method/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Method/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Method/body"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Body/declarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Body/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//StatementSequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//StatementSequence/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Declaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Declaration/locals"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//LabelOrStatement"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Statement"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Label/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//BreakpointStmt"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//DefinitionStmt"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//AssignStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//AssignStmt/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//AssignStmt/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//IdentityStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//IdentityStmt/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//IdentityStmt/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//GotoStmt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//GotoStmt/target"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//IfStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//IfStmt/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//IfStmt/then"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//InvokeStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InvokeStmt/invokeExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//TableSwitchStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//TableSwitchStmt/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//TableSwitchStmt/cases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//TableSwitchStmt/default"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//LookupSwitchStmt"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//MonitorStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//MonitorStmt/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//EnterMonitorStmt"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ExitMonitorStmt"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//NopStmt"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//RetStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//RetStmt/target"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ReturnVoidStmt"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ReturnStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//ReturnStmt/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Case">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Case/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Case/target"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ThrowStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//ThrowStmt/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Value"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//NonExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Expr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//AnyNewExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//AnyNewExpr/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//BinOpExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//BinOpExpr/leftOp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//BinOpExpr/rightOp"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//AddExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//AndExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//CmpExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//CmpgExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//CmplExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ConditionalExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//DivExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//MulExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//OrExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//RemExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ShlExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ShrExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//SubExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//UshrExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//XorExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//EqExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//GeExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//GtExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//LeExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//LtExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//NeExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//CastExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//CastExpr/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//CastExpr/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//InstanceOfExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InstanceOfExpr/operand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//InstanceOfExpr/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//SootMethodRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootMethodRef/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootMethodRef/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootMethodRef/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootMethodRef/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//InvokeExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InvokeExpr/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InvokeExpr/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//InstanceInvokeExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InstanceInvokeExpr/base"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//StaticInvokeExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//InterfaceInvokeExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//SpecialInvokeExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//VirtualInvokeExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//LocalOrWildcard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//LocalOrWildcard/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Wildcard"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//NewArrayExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//NewArrayExpr/size"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//NewExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//NewMultiArrayExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//NewMultiArrayExpr/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//NewMultiArrayExpr/emptySize"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Dimension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Dimension/size"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//UnopExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//UnopExpr/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//LengthExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//NegExpr"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Local"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Ref"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//IdentityRef"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ParameterRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//ParameterRef/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//ParameterRef/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ThisRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//ThisRef/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//CaughtExceptionRef"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ConcreteRef"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ArrayRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//ArrayRef/base"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//ArrayRef/index"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//FieldRef"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//StaticFieldRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//StaticFieldRef/fieldRef"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//SootFieldRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootFieldRef/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootFieldRef/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootFieldRef/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//InstanceFieldRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InstanceFieldRef/base"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InstanceFieldRef/fieldRef"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Constant"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//ClassConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//ClassConstant/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//NullConstant"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//NumericConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//NumericConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//IntConstant"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//LongConstant"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//DoubleConstant"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//FloatConstant"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//StringConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//StringConstant/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

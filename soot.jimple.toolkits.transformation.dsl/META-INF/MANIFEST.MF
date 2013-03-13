@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: soot.jimple.toolkits.transformation
+Bundle-Vendor: Universität Bremen
+Bundle-Version: 0.0.1
+Bundle-SymbolicName: soot.jimple.toolkits.transformation.dsl;singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: soot.jimple.toolkits.transformation.dsl,
+ soot.jimple.toolkits.transformation.dsl.formatting,
+ soot.jimple.toolkits.transformation.dsl.generator,
+ soot.jimple.toolkits.transformation.dsl.scoping,
+ soot.jimple.toolkits.transformation.dsl.validation,
+ soot.jimple.toolkits.transformation.dsl.services,
+ soot.jimple.toolkits.transformation.dsl.transformationLanguage,
+ soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl,
+ soot.jimple.toolkits.transformation.dsl.transformationLanguage.util,
+ soot.jimple.toolkits.transformation.dsl.serializer,
+ soot.jimple.toolkits.transformation.dsl.parser.antlr,
+ soot.jimple.toolkits.transformation.dsl.parser.antlr.internal
+

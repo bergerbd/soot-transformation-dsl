@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage" 
+       class = "soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage"
+       genModel = "soot/jimple/toolkits/transformation/dsl/TransformationLanguage.genmodel" /> 
+	
+  </extension>
+
+
+
+
+</plugin>

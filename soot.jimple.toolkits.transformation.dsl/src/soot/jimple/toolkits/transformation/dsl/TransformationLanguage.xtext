@@ -1,0 +1,313 @@
+grammar soot.jimple.toolkits.transformation.dsl.TransformationLanguage with org.eclipse.xtext.common.Terminals
+
+generate transformationLanguage "http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage"
+
+Transformation:
+	'«transformation»'
+	  '«replace»'
+	    pattern=Pattern
+	  '«end»'
+	  '«by»'
+	    replacement=Replacement
+	  '«end»'
+	'«end»';
+	
+Pattern : SequencePattern | MethodPattern | TypePattern;
+
+SequencePattern :
+	sequence = StatementSequence;
+
+MethodPattern :
+	method = Method;
+	
+TypePattern :
+	 type = Type;
+	
+Replacement :
+	sequence = StatementSequence | method = Method | type = Type;
+		
+// Jimple part
+Type :
+	visibility = Visibility ?
+	(class ?= 'class' | interface ?= 'interface')
+	name = QualifiedName
+	('extends' superClass=QualifiedName)?
+	('implements' interfaces += QualifiedName (',' interfaces += QualifiedName)*)?
+	
+	'{'
+	    (fields += Field)*
+	    (methods += Method)*
+	'}'
+;
+
+Field :
+	visibility = Visibility?
+	static ?= 'static'
+	type = QualifiedName
+	name = ID
+	';';
+
+Method :
+	visibility = Visibility?
+	(static ?= 'static')?
+	type = ID
+	name = MethodName
+	'('(parameters += QualifiedName (',' parameters += QualifiedName)*)?')'
+	body = Body;
+
+enum Visibility :
+	package | public | protected | private;
+		
+Body : {Body}
+	'{'
+	declarations += Declaration*
+	statements += LabelOrStatement*
+	'}';
+	
+StatementSequence :
+	statements += LabelOrStatement+;
+
+Declaration :
+	type = QualifiedName locals += ID  (',' locals += ID)*';'; // 
+
+LabelOrStatement :
+	Label | (Statement ';');
+	
+Statement :
+	BreakpointStmt | DefinitionStmt | GotoStmt | IfStmt | InvokeStmt | LookupSwitchStmt | MonitorStmt | NopStmt | RetStmt | ReturnVoidStmt | ReturnStmt | TableSwitchStmt;
+	
+Label:
+	name=LABELNAME ':';
+	
+BreakpointStmt :
+	{BreakpointStmt} 'breakpoint';
+	
+DefinitionStmt :
+	AssignStmt | IdentityStmt;
+	
+AssignStmt :
+	lhs=Ref '=' rhs=Value;
+	
+IdentityStmt :
+	lhs=Local ':=' rhs=IdentityRef;
+
+GotoStmt :
+	'goto' target=LABELNAME;
+
+IfStmt :
+	'if' condition=ConditionalExpr then=GotoStmt;
+	
+InvokeStmt :
+	invokeExpr = InvokeExpr;
+
+	
+TableSwitchStmt :
+	'tableswitch' '(' key = Local ')' '{'
+	   (cases+=Case ';')*
+	   'default' ':' default=GotoStmt ';'
+	'}';
+	
+LookupSwitchStmt :
+	{LookupSwitchStmt} 'lookupswitch';
+	
+MonitorStmt : EnterMonitorStmt | ExitMonitorStmt;
+
+EnterMonitorStmt :
+	'entermonitor' operand=Value;
+
+ExitMonitorStmt :
+	'exitmonitor' operand=Value;
+
+NopStmt : {NopStmt} 'nop';
+
+RetStmt :
+	'ret' target=Local;
+	
+ReturnVoidStmt :
+	{ReturnVoidStmt} 'return';
+
+ReturnStmt : 
+	'return' operand=Value;
+
+
+
+Case :
+	'case' value=INT ':' target=GotoStmt; 
+
+ThrowStmt :
+	'throw' operand=Value;
+
+// Values
+
+
+Value :
+	NonExpr | Expr ;
+
+NonExpr : Constant | Ref;
+
+Expr :
+	AnyNewExpr | BinOpExpr | CastExpr | InstanceOfExpr | InvokeExpr | UnopExpr;
+
+AnyNewExpr :
+	NewArrayExpr | NewExpr | NewMultiArrayExpr;
+	
+BinOpExpr :
+	AddExpr | AndExpr | CmpExpr | CmpgExpr | CmplExpr | ConditionalExpr | DivExpr | MulExpr | OrExpr | RemExpr | ShlExpr | ShrExpr | SubExpr | UshrExpr | XorExpr;
+
+AddExpr         : leftOp=NonExpr '+'    rightOp=NonExpr;
+AndExpr         : leftOp=NonExpr '&'    rightOp=NonExpr;
+CmpExpr         : leftOp=NonExpr 'cmp'  rightOp=NonExpr;
+CmpgExpr        : leftOp=NonExpr 'cmpg' rightOp=NonExpr;
+CmplExpr        : leftOp=NonExpr 'cmpl' rightOp=NonExpr;
+ConditionalExpr : EqExpr | GeExpr | GtExpr | LeExpr | LtExpr | NeExpr;
+DivExpr         : leftOp=NonExpr '/'    rightOp=NonExpr;
+MulExpr         : leftOp=NonExpr '*'    rightOp=NonExpr;
+OrExpr          : leftOp=NonExpr '|'    rightOp=NonExpr;
+RemExpr         : leftOp=NonExpr '%'    rightOp=NonExpr;
+ShlExpr         : leftOp=NonExpr '<<'   rightOp=NonExpr;
+ShrExpr         : leftOp=NonExpr '>>'   rightOp=NonExpr;
+SubExpr         : leftOp=NonExpr '-'    rightOp=NonExpr;
+UshrExpr        : leftOp=NonExpr '>>>'  rightOp=NonExpr;	
+XorExpr         : leftOp=NonExpr '^'    rightOp=NonExpr;
+EqExpr          : leftOp=NonExpr '=='   rightOp=NonExpr;
+GeExpr          : leftOp=NonExpr '>='   rightOp=NonExpr;
+GtExpr          : leftOp=NonExpr '>'    rightOp=NonExpr;
+LeExpr          : leftOp=NonExpr '<='   rightOp=NonExpr;
+LtExpr          : leftOp=NonExpr '<'    rightOp=NonExpr;
+NeExpr          : leftOp=NonExpr '!='   rightOp=NonExpr;
+
+CastExpr :
+	'('  type = QualifiedName ')' operand = Value;
+
+InstanceOfExpr :
+	operand=Ref 'instanceof' type = QualifiedName;	
+	
+
+SootMethodRef : 
+	'<' class = QualifiedName ':' type = QualifiedName name = MethodName '(' (parameters += QualifiedName (',' parameters += QualifiedName)*)?')''>';
+
+InvokeExpr :
+	InstanceInvokeExpr | StaticInvokeExpr;
+
+InstanceInvokeExpr :
+	InterfaceInvokeExpr | SpecialInvokeExpr | VirtualInvokeExpr;
+	
+StaticInvokeExpr : {StaticInvokeExpr} 'staticinvoke'
+		method=SootMethodRef '(' (parameters += NonExpr (',' parameters += NonExpr)*)? ')';
+
+InterfaceInvokeExpr : 'interfaceinvoke'
+	base = LocalOrWildcard '.'
+	method=SootMethodRef '(' (parameters += NonExpr (',' parameters += NonExpr)*)? ')';
+	
+SpecialInvokeExpr : 'specialinvoke'
+	base = LocalOrWildcard '.'
+	method=SootMethodRef '(' (parameters += NonExpr (',' parameters += NonExpr)*)? ')';
+
+VirtualInvokeExpr : 'virtualinvoke'
+	base = LocalOrWildcard '.'
+	method=SootMethodRef '(' (parameters += NonExpr (',' parameters += NonExpr)*)? ')';
+
+LocalOrWildcard :
+	Local | Wildcard;
+
+Wildcard :
+	'«' name = ID '»';
+
+NewArrayExpr :
+    'newarray' '(' type = QualifiedName ')' size=Dimension;
+
+NewExpr :
+	'new' type = QualifiedName;
+
+NewMultiArrayExpr :
+	'newmultiarray' '(' type = QualifiedName ')' size+=Dimension* emptySize+="[]"*;
+        
+Dimension :
+	'[' size=INT ']';
+
+UnopExpr :
+	LengthExpr | NegExpr;
+
+LengthExpr :
+	'lengthof' operand=Value;	
+
+NegExpr :
+	'neg' operand=Value;
+
+Local :
+	name = ID;
+	
+Ref :
+	ConcreteRef | IdentityRef | LocalOrWildcard;
+
+IdentityRef :
+	ParameterRef | ThisRef | CaughtExceptionRef;
+
+ParameterRef :
+	'@' name=ID ':' type=QualifiedName; 
+
+ThisRef :
+	'@' 'this' ':' type=QualifiedName;
+	
+CaughtExceptionRef :
+	{CaughtExceptionRef} '@' 'caughtexception';
+		
+ConcreteRef :
+	ArrayRef | FieldRef;
+
+ArrayRef :
+	base=LocalOrWildcard '[' index=NonExpr ']';
+	
+FieldRef :
+	StaticFieldRef | InstanceFieldRef;
+
+StaticFieldRef :
+	fieldRef=SootFieldRef;
+	
+SootFieldRef :
+	'<'class=QualifiedName ':' Type=QualifiedName name=ID'>';
+	
+InstanceFieldRef :
+	base=LocalOrWildcard '.' fieldRef=FieldRef;
+
+Constant :
+	ClassConstant | NullConstant | NumericConstant | StringConstant;
+
+ClassConstant :
+	'class' name = QualifiedName; 
+
+NullConstant :
+	{NullConstant} 'null';
+	
+NumericConstant :
+	IntConstant | LongConstant | DoubleConstant | FloatConstant;
+	
+IntConstant :
+	value = INT;
+
+LongConstant :
+	value = INT 'L';
+	
+DoubleConstant :
+	value = INT 'D';
+
+FloatConstant :
+	value = INT 'F';
+	
+StringConstant :
+	value = STRING;
+
+FieldName :
+	ID;
+		
+MethodName :
+	'<'? ID '>'?;
+
+QualifiedName :
+	ID ('.' ID)*;
+
+terminal LABELNAME :
+	'label'('0'..'9')+;
+	
+terminal ID :
+	'$'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'$'|'0'..'9')*;
