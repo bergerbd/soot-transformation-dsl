@@ -1,0 +1,18 @@
+/**
+ */
+package soot.jimple.toolkits.transformation.dsl.transformationLanguage;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Breakpoint Stmt</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage#getBreakpointStmt()
+ * @model
+ * @generated
+ */
+public interface BreakpointStmt extends Statement
+{
+} // BreakpointStmt

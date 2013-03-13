@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="tlf"
+            id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage"
+            name="TransformationLanguage Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.validate">
+         <activeWhen>
+            <reference
+                    definitionId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="soot.jimple.toolkits.transformation.dsl.TransformationLanguage" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage"
+            name="TransformationLanguage">
+            <keywordReference id="soot.jimple.toolkits.transformation.dsl.ui.keyword_TransformationLanguage"/>
+        </page>
+        <page
+            category="soot.jimple.toolkits.transformation.dsl.TransformationLanguage"
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="soot.jimple.toolkits.transformation.dsl.ui.keyword_TransformationLanguage"/>
+        </page>
+        <page
+            category="soot.jimple.toolkits.transformation.dsl.TransformationLanguage"
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.templates"
+            name="Templates">
+            <keywordReference id="soot.jimple.toolkits.transformation.dsl.ui.keyword_TransformationLanguage"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage"
+            name="TransformationLanguage">
+            <keywordReference id="soot.jimple.toolkits.transformation.dsl.ui.keyword_TransformationLanguage"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="soot.jimple.toolkits.transformation.dsl.ui.keyword_TransformationLanguage"
+            label="TransformationLanguage"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="tlf">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="tlf">
+        </resourceServiceProvider>
+    </extension>
+
+
+    <!-- marker definitions for soot.jimple.toolkits.transformation.dsl.TransformationLanguage -->
+    <extension
+            id="transformationlanguage.check.fast"
+            name="TransformationLanguage Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.fast"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="transformationlanguage.check.normal"
+            name="TransformationLanguage Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.normal"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="transformationlanguage.check.expensive"
+            name="TransformationLanguage Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.expensive"/>
+        <persistent value="true"/>
+    </extension>
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+      </participant>
+   </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="soot.jimple.toolkits.transformation.dsl.TransformationLanguage"
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="soot.jimple.toolkits.transformation.dsl.ui.keyword_TransformationLanguage"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="soot.jimple.toolkits.transformation.dsl.TransformationLanguage"
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="soot.jimple.toolkits.transformation.dsl.ui.keyword_TransformationLanguage"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+    <!-- quickfix marker resolution generator for soot.jimple.toolkits.transformation.dsl.TransformationLanguage -->
+    <extension
+            point="org.eclipse.ui.ide.markerResolution">
+        <markerResolutionGenerator
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="soot.jimple.toolkits.transformation.dsl.ui.transformationlanguage.check.fast">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="soot.jimple.toolkits.transformation.dsl.ui.transformationlanguage.check.normal">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="soot.jimple.toolkits.transformation.dsl.ui.transformationlanguage.check.expensive">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+    </extension>
+   	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="soot.jimple.toolkits.transformation.dsl.TransformationLanguage"
+	        class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="soot.jimple.toolkits.transformation.dsl.ui.keyword_TransformationLanguage"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.compare.contentViewers"
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="tlf">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.compare.contentMergeViewers"
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="tlf" label="TransformationLanguage Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="soot.jimple.toolkits.transformation.dsl.TransformationLanguage.editors.documentProviders"
+            class="soot.jimple.toolkits.transformation.dsl.ui.TransformationLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="tlf">
+    </provider>
+  </extension>
+
+</plugin>
