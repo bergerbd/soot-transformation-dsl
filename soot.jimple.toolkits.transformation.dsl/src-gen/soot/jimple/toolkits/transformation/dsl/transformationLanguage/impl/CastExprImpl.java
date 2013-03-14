@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.CastExpr;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Value;
 
@@ -31,24 +32,14 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Value;
 public class CastExprImpl extends ExprImpl implements CastExpr
 {
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected String type = TYPE_EDEFAULT;
+  protected QualifiedName type;
 
   /**
    * The cached value of the '{@link #getOperand() <em>Operand</em>}' containment reference.
@@ -86,7 +77,7 @@ public class CastExprImpl extends ExprImpl implements CastExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
+  public QualifiedName getType()
   {
     return type;
   }
@@ -96,12 +87,37 @@ public class CastExprImpl extends ExprImpl implements CastExpr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(String newType)
+  public NotificationChain basicSetType(QualifiedName newType, NotificationChain msgs)
   {
-    String oldType = type;
+    QualifiedName oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.CAST_EXPR__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.CAST_EXPR__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(QualifiedName newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.CAST_EXPR__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.CAST_EXPR__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.CAST_EXPR__TYPE, newType, newType));
   }
 
   /**
@@ -162,6 +178,8 @@ public class CastExprImpl extends ExprImpl implements CastExpr
   {
     switch (featureID)
     {
+      case TransformationLanguagePackage.CAST_EXPR__TYPE:
+        return basicSetType(null, msgs);
       case TransformationLanguagePackage.CAST_EXPR__OPERAND:
         return basicSetOperand(null, msgs);
     }
@@ -197,7 +215,7 @@ public class CastExprImpl extends ExprImpl implements CastExpr
     switch (featureID)
     {
       case TransformationLanguagePackage.CAST_EXPR__TYPE:
-        setType((String)newValue);
+        setType((QualifiedName)newValue);
         return;
       case TransformationLanguagePackage.CAST_EXPR__OPERAND:
         setOperand((Value)newValue);
@@ -217,7 +235,7 @@ public class CastExprImpl extends ExprImpl implements CastExpr
     switch (featureID)
     {
       case TransformationLanguagePackage.CAST_EXPR__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((QualifiedName)null);
         return;
       case TransformationLanguagePackage.CAST_EXPR__OPERAND:
         setOperand((Value)null);
@@ -237,28 +255,11 @@ public class CastExprImpl extends ExprImpl implements CastExpr
     switch (featureID)
     {
       case TransformationLanguagePackage.CAST_EXPR__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+        return type != null;
       case TransformationLanguagePackage.CAST_EXPR__OPERAND:
         return operand != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
-    result.append(type);
-    result.append(')');
-    return result.toString();
   }
 
 } //CastExprImpl

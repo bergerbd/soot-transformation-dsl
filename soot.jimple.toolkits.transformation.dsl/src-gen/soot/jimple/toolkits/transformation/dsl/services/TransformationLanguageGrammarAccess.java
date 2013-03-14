@@ -3099,23 +3099,71 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cClassKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameQualifiedNameOrWildcardParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//ClassConstant:
-		//	"class" name=QualifiedName;
+		//	"class" name=QualifiedNameOrWildcard;
 		public ParserRule getRule() { return rule; }
 
-		//"class" name=QualifiedName
+		//"class" name=QualifiedNameOrWildcard
 		public Group getGroup() { return cGroup; }
 
 		//"class"
 		public Keyword getClassKeyword_0() { return cClassKeyword_0; }
 
-		//name=QualifiedName
+		//name=QualifiedNameOrWildcard
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
+		//QualifiedNameOrWildcard
+		public RuleCall getNameQualifiedNameOrWildcardParserRuleCall_1_0() { return cNameQualifiedNameOrWildcardParserRuleCall_1_0; }
+	}
+
+	public class QualifiedNameOrWildcardElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameOrWildcard");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cQualifiedNameWildcardParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//QualifiedNameOrWildcard:
+		//	QualifiedName | QualifiedNameWildcard;
+		public ParserRule getRule() { return rule; }
+
+		//QualifiedName | QualifiedNameWildcard
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
+
+		//QualifiedNameWildcard
+		public RuleCall getQualifiedNameWildcardParserRuleCall_1() { return cQualifiedNameWildcardParserRuleCall_1; }
+	}
+
+	public class QualifiedNameWildcardElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWildcard");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftPointingDoubleAngleQuotationMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cRightPointingDoubleAngleQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//QualifiedNameWildcard:
+		//	"«" name=ID "»";
+		public ParserRule getRule() { return rule; }
+
+		//"«" name=ID "»"
+		public Group getGroup() { return cGroup; }
+
+		//"«"
+		public Keyword getLeftPointingDoubleAngleQuotationMarkKeyword_0() { return cLeftPointingDoubleAngleQuotationMarkKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"»"
+		public Keyword getRightPointingDoubleAngleQuotationMarkKeyword_2() { return cRightPointingDoubleAngleQuotationMarkKeyword_2; }
 	}
 
 	public class NullConstantElements extends AbstractParserRuleElementFinder {
@@ -3308,13 +3356,29 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedName");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameQNameParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//QualifiedName:
+		//	name=QName;
+		public ParserRule getRule() { return rule; }
+
+		//name=QName
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
+		//QName
+		public RuleCall getNameQNameParserRuleCall_0() { return cNameQNameParserRuleCall_0; }
+	}
+
+	public class QNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
-		//QualifiedName:
+		//QName:
 		//	ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -3471,6 +3535,8 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	private InstanceFieldRefElements pInstanceFieldRef;
 	private ConstantElements pConstant;
 	private ClassConstantElements pClassConstant;
+	private QualifiedNameOrWildcardElements pQualifiedNameOrWildcard;
+	private QualifiedNameWildcardElements pQualifiedNameWildcard;
 	private NullConstantElements pNullConstant;
 	private NumericConstantElements pNumericConstant;
 	private IntConstantElements pIntConstant;
@@ -3481,6 +3547,7 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	private FieldNameElements pFieldName;
 	private MethodNameElements pMethodName;
 	private QualifiedNameElements pQualifiedName;
+	private QNameElements pQName;
 	private TerminalRule tLABELNAME;
 	private TerminalRule tID;
 	
@@ -4445,13 +4512,33 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//ClassConstant:
-	//	"class" name=QualifiedName;
+	//	"class" name=QualifiedNameOrWildcard;
 	public ClassConstantElements getClassConstantAccess() {
 		return (pClassConstant != null) ? pClassConstant : (pClassConstant = new ClassConstantElements());
 	}
 	
 	public ParserRule getClassConstantRule() {
 		return getClassConstantAccess().getRule();
+	}
+
+	//QualifiedNameOrWildcard:
+	//	QualifiedName | QualifiedNameWildcard;
+	public QualifiedNameOrWildcardElements getQualifiedNameOrWildcardAccess() {
+		return (pQualifiedNameOrWildcard != null) ? pQualifiedNameOrWildcard : (pQualifiedNameOrWildcard = new QualifiedNameOrWildcardElements());
+	}
+	
+	public ParserRule getQualifiedNameOrWildcardRule() {
+		return getQualifiedNameOrWildcardAccess().getRule();
+	}
+
+	//QualifiedNameWildcard:
+	//	"«" name=ID "»";
+	public QualifiedNameWildcardElements getQualifiedNameWildcardAccess() {
+		return (pQualifiedNameWildcard != null) ? pQualifiedNameWildcard : (pQualifiedNameWildcard = new QualifiedNameWildcardElements());
+	}
+	
+	public ParserRule getQualifiedNameWildcardRule() {
+		return getQualifiedNameWildcardAccess().getRule();
 	}
 
 	//NullConstant:
@@ -4545,13 +4632,23 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//QualifiedName:
-	//	ID ("." ID)*;
+	//	name=QName;
 	public QualifiedNameElements getQualifiedNameAccess() {
 		return (pQualifiedName != null) ? pQualifiedName : (pQualifiedName = new QualifiedNameElements());
 	}
 	
 	public ParserRule getQualifiedNameRule() {
 		return getQualifiedNameAccess().getRule();
+	}
+
+	//QName:
+	//	ID ("." ID)*;
+	public QNameElements getQNameAccess() {
+		return (pQName != null) ? pQName : (pQName = new QNameElements());
+	}
+	
+	public ParserRule getQNameRule() {
+		return getQNameAccess().getRule();
 	}
 
 	//terminal LABELNAME:

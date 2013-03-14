@@ -59,6 +59,7 @@ public class TransformationLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConcreteRefAccess().getAlternatives(), "rule__ConcreteRef__Alternatives");
 					put(grammarAccess.getFieldRefAccess().getAlternatives(), "rule__FieldRef__Alternatives");
 					put(grammarAccess.getConstantAccess().getAlternatives(), "rule__Constant__Alternatives");
+					put(grammarAccess.getQualifiedNameOrWildcardAccess().getAlternatives(), "rule__QualifiedNameOrWildcard__Alternatives");
 					put(grammarAccess.getNumericConstantAccess().getAlternatives(), "rule__NumericConstant__Alternatives");
 					put(grammarAccess.getVisibilityAccess().getAlternatives(), "rule__Visibility__Alternatives");
 					put(grammarAccess.getTransformationAccess().getGroup(), "rule__Transformation__Group__0");
@@ -142,13 +143,14 @@ public class TransformationLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSootFieldRefAccess().getGroup(), "rule__SootFieldRef__Group__0");
 					put(grammarAccess.getInstanceFieldRefAccess().getGroup(), "rule__InstanceFieldRef__Group__0");
 					put(grammarAccess.getClassConstantAccess().getGroup(), "rule__ClassConstant__Group__0");
+					put(grammarAccess.getQualifiedNameWildcardAccess().getGroup(), "rule__QualifiedNameWildcard__Group__0");
 					put(grammarAccess.getNullConstantAccess().getGroup(), "rule__NullConstant__Group__0");
 					put(grammarAccess.getLongConstantAccess().getGroup(), "rule__LongConstant__Group__0");
 					put(grammarAccess.getDoubleConstantAccess().getGroup(), "rule__DoubleConstant__Group__0");
 					put(grammarAccess.getFloatConstantAccess().getGroup(), "rule__FloatConstant__Group__0");
 					put(grammarAccess.getMethodNameAccess().getGroup(), "rule__MethodName__Group__0");
-					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
-					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
+					put(grammarAccess.getQNameAccess().getGroup(), "rule__QName__Group__0");
+					put(grammarAccess.getQNameAccess().getGroup_1(), "rule__QName__Group_1__0");
 					put(grammarAccess.getTransformationAccess().getPatternAssignment_2(), "rule__Transformation__PatternAssignment_2");
 					put(grammarAccess.getTransformationAccess().getReplacementAssignment_5(), "rule__Transformation__ReplacementAssignment_5");
 					put(grammarAccess.getSequencePatternAccess().getSequenceAssignment(), "rule__SequencePattern__SequenceAssignment");
@@ -289,11 +291,13 @@ public class TransformationLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstanceFieldRefAccess().getBaseAssignment_0(), "rule__InstanceFieldRef__BaseAssignment_0");
 					put(grammarAccess.getInstanceFieldRefAccess().getFieldRefAssignment_2(), "rule__InstanceFieldRef__FieldRefAssignment_2");
 					put(grammarAccess.getClassConstantAccess().getNameAssignment_1(), "rule__ClassConstant__NameAssignment_1");
+					put(grammarAccess.getQualifiedNameWildcardAccess().getNameAssignment_1(), "rule__QualifiedNameWildcard__NameAssignment_1");
 					put(grammarAccess.getIntConstantAccess().getValueAssignment(), "rule__IntConstant__ValueAssignment");
 					put(grammarAccess.getLongConstantAccess().getValueAssignment_0(), "rule__LongConstant__ValueAssignment_0");
 					put(grammarAccess.getDoubleConstantAccess().getValueAssignment_0(), "rule__DoubleConstant__ValueAssignment_0");
 					put(grammarAccess.getFloatConstantAccess().getValueAssignment_0(), "rule__FloatConstant__ValueAssignment_0");
 					put(grammarAccess.getStringConstantAccess().getValueAssignment(), "rule__StringConstant__ValueAssignment");
+					put(grammarAccess.getQualifiedNameAccess().getNameAssignment(), "rule__QualifiedName__NameAssignment");
 				}
 			};
 		}

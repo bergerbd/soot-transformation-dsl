@@ -65,6 +65,8 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.NopStmt;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.NullConstant;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.OrExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.ParameterRef;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameWildcard;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.RemExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Replacement;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.RetStmt;
@@ -547,6 +549,20 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 					return; 
 				}
 				else break;
+			case TransformationLanguagePackage.QUALIFIED_NAME:
+				if(context == grammarAccess.getQualifiedNameRule() ||
+				   context == grammarAccess.getQualifiedNameOrWildcardRule()) {
+					sequence_QualifiedName(context, (QualifiedName) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.QUALIFIED_NAME_WILDCARD:
+				if(context == grammarAccess.getQualifiedNameOrWildcardRule() ||
+				   context == grammarAccess.getQualifiedNameWildcardRule()) {
+					sequence_QualifiedNameWildcard(context, (QualifiedNameWildcard) semanticObject); 
+					return; 
+				}
+				else break;
 			case TransformationLanguagePackage.REM_EXPR:
 				if(context == grammarAccess.getBinOpExprRule() ||
 				   context == grammarAccess.getExprRule() ||
@@ -905,7 +921,7 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     name=QualifiedName
+	 *     name=QualifiedNameOrWildcard
 	 */
 	protected void sequence_ClassConstant(EObject context, ClassConstant semanticObject) {
 		if(errorAcceptor != null) {
@@ -914,7 +930,7 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getClassConstantAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getClassConstantAccess().getNameQualifiedNameOrWildcardParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -1576,6 +1592,38 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getParameterRefAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getParameterRefAccess().getTypeQualifiedNameParserRuleCall_3_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_QualifiedNameWildcard(EObject context, QualifiedNameWildcard semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_OR_WILDCARD__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_OR_WILDCARD__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getQualifiedNameWildcardAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=QName
+	 */
+	protected void sequence_QualifiedName(EObject context, QualifiedName semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_OR_WILDCARD__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_OR_WILDCARD__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getQualifiedNameAccess().getNameQNameParserRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

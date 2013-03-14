@@ -281,7 +281,7 @@ public interface TransformationLanguagePackage extends EPackage
   int TYPE__INTERFACE = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -290,7 +290,7 @@ public interface TransformationLanguagePackage extends EPackage
   int TYPE__NAME = 3;
 
   /**
-   * The feature id for the '<em><b>Super Class</b></em>' attribute.
+   * The feature id for the '<em><b>Super Class</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -299,7 +299,7 @@ public interface TransformationLanguagePackage extends EPackage
   int TYPE__SUPER_CLASS = 4;
 
   /**
-   * The feature id for the '<em><b>Interfaces</b></em>' attribute list.
+   * The feature id for the '<em><b>Interfaces</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -363,7 +363,7 @@ public interface TransformationLanguagePackage extends EPackage
   int FIELD__STATIC = 1;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -436,7 +436,7 @@ public interface TransformationLanguagePackage extends EPackage
   int METHOD__NAME = 3;
 
   /**
-   * The feature id for the '<em><b>Parameters</b></em>' attribute list.
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -538,7 +538,7 @@ public interface TransformationLanguagePackage extends EPackage
   int DECLARATION = 11;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1211,7 +1211,7 @@ public interface TransformationLanguagePackage extends EPackage
   int ANY_NEW_EXPR = 36;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2053,7 +2053,7 @@ public interface TransformationLanguagePackage extends EPackage
   int CAST_EXPR = 59;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2099,7 +2099,7 @@ public interface TransformationLanguagePackage extends EPackage
   int INSTANCE_OF_EXPR__OPERAND = EXPR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2127,7 +2127,7 @@ public interface TransformationLanguagePackage extends EPackage
   int SOOT_METHOD_REF = 61;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' attribute.
+   * The feature id for the '<em><b>Class</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2136,7 +2136,7 @@ public interface TransformationLanguagePackage extends EPackage
   int SOOT_METHOD_REF__CLASS = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2154,7 +2154,7 @@ public interface TransformationLanguagePackage extends EPackage
   int SOOT_METHOD_REF__NAME = 2;
 
   /**
-   * The feature id for the '<em><b>Parameters</b></em>' attribute list.
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2515,7 +2515,7 @@ public interface TransformationLanguagePackage extends EPackage
   int NEW_ARRAY_EXPR = 70;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2552,7 +2552,7 @@ public interface TransformationLanguagePackage extends EPackage
   int NEW_EXPR = 71;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2580,7 +2580,7 @@ public interface TransformationLanguagePackage extends EPackage
   int NEW_MULTI_ARRAY_EXPR = 72;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2794,7 +2794,7 @@ public interface TransformationLanguagePackage extends EPackage
   int PARAMETER_REF__NAME = IDENTITY_REF_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2822,7 +2822,7 @@ public interface TransformationLanguagePackage extends EPackage
   int THIS_REF = 81;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2972,7 +2972,7 @@ public interface TransformationLanguagePackage extends EPackage
   int SOOT_FIELD_REF = 87;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' attribute.
+   * The feature id for the '<em><b>Class</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2981,7 +2981,7 @@ public interface TransformationLanguagePackage extends EPackage
   int SOOT_FIELD_REF__CLASS = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3074,7 +3074,7 @@ public interface TransformationLanguagePackage extends EPackage
   int CLASS_CONSTANT = 90;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3092,6 +3092,62 @@ public interface TransformationLanguagePackage extends EPackage
   int CLASS_CONSTANT_FEATURE_COUNT = CONSTANT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameOrWildcardImpl <em>Qualified Name Or Wildcard</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameOrWildcardImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getQualifiedNameOrWildcard()
+   * @generated
+   */
+  int QUALIFIED_NAME_OR_WILDCARD = 91;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_NAME_OR_WILDCARD__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Qualified Name Or Wildcard</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_NAME_OR_WILDCARD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameWildcardImpl <em>Qualified Name Wildcard</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameWildcardImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getQualifiedNameWildcard()
+   * @generated
+   */
+  int QUALIFIED_NAME_WILDCARD = 92;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_NAME_WILDCARD__NAME = QUALIFIED_NAME_OR_WILDCARD__NAME;
+
+  /**
+   * The number of structural features of the '<em>Qualified Name Wildcard</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_NAME_WILDCARD_FEATURE_COUNT = QUALIFIED_NAME_OR_WILDCARD_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.NullConstantImpl <em>Null Constant</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3099,7 +3155,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getNullConstant()
    * @generated
    */
-  int NULL_CONSTANT = 91;
+  int NULL_CONSTANT = 93;
 
   /**
    * The number of structural features of the '<em>Null Constant</em>' class.
@@ -3118,7 +3174,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getNumericConstant()
    * @generated
    */
-  int NUMERIC_CONSTANT = 92;
+  int NUMERIC_CONSTANT = 94;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3146,7 +3202,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getIntConstant()
    * @generated
    */
-  int INT_CONSTANT = 93;
+  int INT_CONSTANT = 95;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3174,7 +3230,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getLongConstant()
    * @generated
    */
-  int LONG_CONSTANT = 94;
+  int LONG_CONSTANT = 96;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3202,7 +3258,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getDoubleConstant()
    * @generated
    */
-  int DOUBLE_CONSTANT = 95;
+  int DOUBLE_CONSTANT = 97;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3230,7 +3286,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getFloatConstant()
    * @generated
    */
-  int FLOAT_CONSTANT = 96;
+  int FLOAT_CONSTANT = 98;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3258,7 +3314,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getStringConstant()
    * @generated
    */
-  int STRING_CONSTANT = 97;
+  int STRING_CONSTANT = 99;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3279,6 +3335,34 @@ public interface TransformationLanguagePackage extends EPackage
   int STRING_CONSTANT_FEATURE_COUNT = CONSTANT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getQualifiedName()
+   * @generated
+   */
+  int QUALIFIED_NAME = 100;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_NAME__NAME = QUALIFIED_NAME_OR_WILDCARD__NAME;
+
+  /**
+   * The number of structural features of the '<em>Qualified Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_NAME_FEATURE_COUNT = QUALIFIED_NAME_OR_WILDCARD_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility <em>Visibility</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3286,7 +3370,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getVisibility()
    * @generated
    */
-  int VISIBILITY = 98;
+  int VISIBILITY = 101;
 
 
   /**
@@ -3481,37 +3565,37 @@ public interface TransformationLanguagePackage extends EPackage
   EAttribute getType_Interface();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
+   * @return the meta object for the containment reference '<em>Name</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getName()
    * @see #getType()
    * @generated
    */
-  EAttribute getType_Name();
+  EReference getType_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getSuperClass <em>Super Class</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getSuperClass <em>Super Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Super Class</em>'.
+   * @return the meta object for the containment reference '<em>Super Class</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getSuperClass()
    * @see #getType()
    * @generated
    */
-  EAttribute getType_SuperClass();
+  EReference getType_SuperClass();
 
   /**
-   * Returns the meta object for the attribute list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getInterfaces <em>Interfaces</em>}'.
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getInterfaces <em>Interfaces</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Interfaces</em>'.
+   * @return the meta object for the containment reference list '<em>Interfaces</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getInterfaces()
    * @see #getType()
    * @generated
    */
-  EAttribute getType_Interfaces();
+  EReference getType_Interfaces();
 
   /**
    * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getFields <em>Fields</em>}'.
@@ -3568,15 +3652,15 @@ public interface TransformationLanguagePackage extends EPackage
   EAttribute getField_Static();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Field#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Field#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Field#getType()
    * @see #getField()
    * @generated
    */
-  EAttribute getField_Type();
+  EReference getField_Type();
 
   /**
    * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Field#getName <em>Name</em>}'.
@@ -3644,15 +3728,15 @@ public interface TransformationLanguagePackage extends EPackage
   EAttribute getMethod_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Method#getParameters <em>Parameters</em>}'.
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Method#getParameters <em>Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Parameters</em>'.
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Method#getParameters()
    * @see #getMethod()
    * @generated
    */
-  EAttribute getMethod_Parameters();
+  EReference getMethod_Parameters();
 
   /**
    * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Method#getBody <em>Body</em>}'.
@@ -3729,15 +3813,15 @@ public interface TransformationLanguagePackage extends EPackage
   EClass getDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Declaration#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Declaration#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Declaration#getType()
    * @see #getDeclaration()
    * @generated
    */
-  EAttribute getDeclaration_Type();
+  EReference getDeclaration_Type();
 
   /**
    * Returns the meta object for the attribute list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Declaration#getLocals <em>Locals</em>}'.
@@ -4199,15 +4283,15 @@ public interface TransformationLanguagePackage extends EPackage
   EClass getAnyNewExpr();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.AnyNewExpr#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.AnyNewExpr#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.AnyNewExpr#getType()
    * @see #getAnyNewExpr()
    * @generated
    */
-  EAttribute getAnyNewExpr_Type();
+  EReference getAnyNewExpr_Type();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.BinOpExpr <em>Bin Op Expr</em>}'.
@@ -4462,15 +4546,15 @@ public interface TransformationLanguagePackage extends EPackage
   EClass getCastExpr();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.CastExpr#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.CastExpr#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.CastExpr#getType()
    * @see #getCastExpr()
    * @generated
    */
-  EAttribute getCastExpr_Type();
+  EReference getCastExpr_Type();
 
   /**
    * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.CastExpr#getOperand <em>Operand</em>}'.
@@ -4505,15 +4589,15 @@ public interface TransformationLanguagePackage extends EPackage
   EReference getInstanceOfExpr_Operand();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.InstanceOfExpr#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.InstanceOfExpr#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.InstanceOfExpr#getType()
    * @see #getInstanceOfExpr()
    * @generated
    */
-  EAttribute getInstanceOfExpr_Type();
+  EReference getInstanceOfExpr_Type();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef <em>Soot Method Ref</em>}'.
@@ -4526,26 +4610,26 @@ public interface TransformationLanguagePackage extends EPackage
   EClass getSootMethodRef();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getClass_ <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Class</em>'.
+   * @return the meta object for the containment reference '<em>Class</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getClass_()
    * @see #getSootMethodRef()
    * @generated
    */
-  EAttribute getSootMethodRef_Class();
+  EReference getSootMethodRef_Class();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getType()
    * @see #getSootMethodRef()
    * @generated
    */
-  EAttribute getSootMethodRef_Type();
+  EReference getSootMethodRef_Type();
 
   /**
    * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getName <em>Name</em>}'.
@@ -4559,15 +4643,15 @@ public interface TransformationLanguagePackage extends EPackage
   EAttribute getSootMethodRef_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getParameters <em>Parameters</em>}'.
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getParameters <em>Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Parameters</em>'.
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getParameters()
    * @see #getSootMethodRef()
    * @generated
    */
-  EAttribute getSootMethodRef_Parameters();
+  EReference getSootMethodRef_Parameters();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.InvokeExpr <em>Invoke Expr</em>}'.
@@ -4870,15 +4954,15 @@ public interface TransformationLanguagePackage extends EPackage
   EAttribute getParameterRef_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.ParameterRef#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.ParameterRef#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.ParameterRef#getType()
    * @see #getParameterRef()
    * @generated
    */
-  EAttribute getParameterRef_Type();
+  EReference getParameterRef_Type();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.ThisRef <em>This Ref</em>}'.
@@ -4891,15 +4975,15 @@ public interface TransformationLanguagePackage extends EPackage
   EClass getThisRef();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.ThisRef#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.ThisRef#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.ThisRef#getType()
    * @see #getThisRef()
    * @generated
    */
-  EAttribute getThisRef_Type();
+  EReference getThisRef_Type();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.CaughtExceptionRef <em>Caught Exception Ref</em>}'.
@@ -4995,26 +5079,26 @@ public interface TransformationLanguagePackage extends EPackage
   EClass getSootFieldRef();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootFieldRef#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootFieldRef#getClass_ <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Class</em>'.
+   * @return the meta object for the containment reference '<em>Class</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootFieldRef#getClass_()
    * @see #getSootFieldRef()
    * @generated
    */
-  EAttribute getSootFieldRef_Class();
+  EReference getSootFieldRef_Class();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootFieldRef#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootFieldRef#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootFieldRef#getType()
    * @see #getSootFieldRef()
    * @generated
    */
-  EAttribute getSootFieldRef_Type();
+  EReference getSootFieldRef_Type();
 
   /**
    * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootFieldRef#getName <em>Name</em>}'.
@@ -5080,15 +5164,46 @@ public interface TransformationLanguagePackage extends EPackage
   EClass getClassConstant();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.ClassConstant#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.ClassConstant#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
+   * @return the meta object for the containment reference '<em>Name</em>'.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.ClassConstant#getName()
    * @see #getClassConstant()
    * @generated
    */
-  EAttribute getClassConstant_Name();
+  EReference getClassConstant_Name();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameOrWildcard <em>Qualified Name Or Wildcard</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Qualified Name Or Wildcard</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameOrWildcard
+   * @generated
+   */
+  EClass getQualifiedNameOrWildcard();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameOrWildcard#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameOrWildcard#getName()
+   * @see #getQualifiedNameOrWildcard()
+   * @generated
+   */
+  EAttribute getQualifiedNameOrWildcard_Name();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameWildcard <em>Qualified Name Wildcard</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Qualified Name Wildcard</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameWildcard
+   * @generated
+   */
+  EClass getQualifiedNameWildcard();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.NullConstant <em>Null Constant</em>}'.
@@ -5181,6 +5296,16 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    */
   EAttribute getStringConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName <em>Qualified Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Qualified Name</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName
+   * @generated
+   */
+  EClass getQualifiedName();
 
   /**
    * Returns the meta object for enum '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility <em>Visibility</em>}'.
@@ -5374,28 +5499,28 @@ public interface TransformationLanguagePackage extends EPackage
     EAttribute TYPE__INTERFACE = eINSTANCE.getType_Interface();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPE__NAME = eINSTANCE.getType_Name();
+    EReference TYPE__NAME = eINSTANCE.getType_Name();
 
     /**
-     * The meta object literal for the '<em><b>Super Class</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Super Class</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPE__SUPER_CLASS = eINSTANCE.getType_SuperClass();
+    EReference TYPE__SUPER_CLASS = eINSTANCE.getType_SuperClass();
 
     /**
-     * The meta object literal for the '<em><b>Interfaces</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Interfaces</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPE__INTERFACES = eINSTANCE.getType_Interfaces();
+    EReference TYPE__INTERFACES = eINSTANCE.getType_Interfaces();
 
     /**
      * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
@@ -5440,12 +5565,12 @@ public interface TransformationLanguagePackage extends EPackage
     EAttribute FIELD__STATIC = eINSTANCE.getField_Static();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FIELD__TYPE = eINSTANCE.getField_Type();
+    EReference FIELD__TYPE = eINSTANCE.getField_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -5498,12 +5623,12 @@ public interface TransformationLanguagePackage extends EPackage
     EAttribute METHOD__NAME = eINSTANCE.getMethod_Name();
 
     /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute METHOD__PARAMETERS = eINSTANCE.getMethod_Parameters();
+    EReference METHOD__PARAMETERS = eINSTANCE.getMethod_Parameters();
 
     /**
      * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
@@ -5568,12 +5693,12 @@ public interface TransformationLanguagePackage extends EPackage
     EClass DECLARATION = eINSTANCE.getDeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DECLARATION__TYPE = eINSTANCE.getDeclaration_Type();
+    EReference DECLARATION__TYPE = eINSTANCE.getDeclaration_Type();
 
     /**
      * The meta object literal for the '<em><b>Locals</b></em>' attribute list feature.
@@ -5978,12 +6103,12 @@ public interface TransformationLanguagePackage extends EPackage
     EClass ANY_NEW_EXPR = eINSTANCE.getAnyNewExpr();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANY_NEW_EXPR__TYPE = eINSTANCE.getAnyNewExpr_Type();
+    EReference ANY_NEW_EXPR__TYPE = eINSTANCE.getAnyNewExpr_Type();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.BinOpExprImpl <em>Bin Op Expr</em>}' class.
@@ -6232,12 +6357,12 @@ public interface TransformationLanguagePackage extends EPackage
     EClass CAST_EXPR = eINSTANCE.getCastExpr();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CAST_EXPR__TYPE = eINSTANCE.getCastExpr_Type();
+    EReference CAST_EXPR__TYPE = eINSTANCE.getCastExpr_Type();
 
     /**
      * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
@@ -6266,12 +6391,12 @@ public interface TransformationLanguagePackage extends EPackage
     EReference INSTANCE_OF_EXPR__OPERAND = eINSTANCE.getInstanceOfExpr_Operand();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INSTANCE_OF_EXPR__TYPE = eINSTANCE.getInstanceOfExpr_Type();
+    EReference INSTANCE_OF_EXPR__TYPE = eINSTANCE.getInstanceOfExpr_Type();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.SootMethodRefImpl <em>Soot Method Ref</em>}' class.
@@ -6284,20 +6409,20 @@ public interface TransformationLanguagePackage extends EPackage
     EClass SOOT_METHOD_REF = eINSTANCE.getSootMethodRef();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SOOT_METHOD_REF__CLASS = eINSTANCE.getSootMethodRef_Class();
+    EReference SOOT_METHOD_REF__CLASS = eINSTANCE.getSootMethodRef_Class();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SOOT_METHOD_REF__TYPE = eINSTANCE.getSootMethodRef_Type();
+    EReference SOOT_METHOD_REF__TYPE = eINSTANCE.getSootMethodRef_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -6308,12 +6433,12 @@ public interface TransformationLanguagePackage extends EPackage
     EAttribute SOOT_METHOD_REF__NAME = eINSTANCE.getSootMethodRef_Name();
 
     /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SOOT_METHOD_REF__PARAMETERS = eINSTANCE.getSootMethodRef_Parameters();
+    EReference SOOT_METHOD_REF__PARAMETERS = eINSTANCE.getSootMethodRef_Parameters();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.InvokeExprImpl <em>Invoke Expr</em>}' class.
@@ -6586,12 +6711,12 @@ public interface TransformationLanguagePackage extends EPackage
     EAttribute PARAMETER_REF__NAME = eINSTANCE.getParameterRef_Name();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PARAMETER_REF__TYPE = eINSTANCE.getParameterRef_Type();
+    EReference PARAMETER_REF__TYPE = eINSTANCE.getParameterRef_Type();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.ThisRefImpl <em>This Ref</em>}' class.
@@ -6604,12 +6729,12 @@ public interface TransformationLanguagePackage extends EPackage
     EClass THIS_REF = eINSTANCE.getThisRef();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute THIS_REF__TYPE = eINSTANCE.getThisRef_Type();
+    EReference THIS_REF__TYPE = eINSTANCE.getThisRef_Type();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.CaughtExceptionRefImpl <em>Caught Exception Ref</em>}' class.
@@ -6696,20 +6821,20 @@ public interface TransformationLanguagePackage extends EPackage
     EClass SOOT_FIELD_REF = eINSTANCE.getSootFieldRef();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SOOT_FIELD_REF__CLASS = eINSTANCE.getSootFieldRef_Class();
+    EReference SOOT_FIELD_REF__CLASS = eINSTANCE.getSootFieldRef_Class();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SOOT_FIELD_REF__TYPE = eINSTANCE.getSootFieldRef_Type();
+    EReference SOOT_FIELD_REF__TYPE = eINSTANCE.getSootFieldRef_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -6766,12 +6891,40 @@ public interface TransformationLanguagePackage extends EPackage
     EClass CLASS_CONSTANT = eINSTANCE.getClassConstant();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASS_CONSTANT__NAME = eINSTANCE.getClassConstant_Name();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameOrWildcardImpl <em>Qualified Name Or Wildcard</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameOrWildcardImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getQualifiedNameOrWildcard()
+     * @generated
+     */
+    EClass QUALIFIED_NAME_OR_WILDCARD = eINSTANCE.getQualifiedNameOrWildcard();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_CONSTANT__NAME = eINSTANCE.getClassConstant_Name();
+    EAttribute QUALIFIED_NAME_OR_WILDCARD__NAME = eINSTANCE.getQualifiedNameOrWildcard_Name();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameWildcardImpl <em>Qualified Name Wildcard</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameWildcardImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getQualifiedNameWildcard()
+     * @generated
+     */
+    EClass QUALIFIED_NAME_WILDCARD = eINSTANCE.getQualifiedNameWildcard();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.NullConstantImpl <em>Null Constant</em>}' class.
@@ -6858,6 +7011,16 @@ public interface TransformationLanguagePackage extends EPackage
      * @generated
      */
     EAttribute STRING_CONSTANT__VALUE = eINSTANCE.getStringConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getQualifiedName()
+     * @generated
+     */
+    EClass QUALIFIED_NAME = eINSTANCE.getQualifiedName();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility <em>Visibility</em>}' enum.

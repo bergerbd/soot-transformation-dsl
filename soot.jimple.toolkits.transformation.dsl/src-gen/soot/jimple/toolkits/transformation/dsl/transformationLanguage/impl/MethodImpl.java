@@ -15,10 +15,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Body;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Method;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility;
 
@@ -123,14 +125,14 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute list.
+   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getParameters()
    * @generated
    * @ordered
    */
-  protected EList<String> parameters;
+  protected EList<QualifiedName> parameters;
 
   /**
    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
@@ -260,11 +262,11 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getParameters()
+  public EList<QualifiedName> getParameters()
   {
     if (parameters == null)
     {
-      parameters = new EDataTypeEList<String>(String.class, this, TransformationLanguagePackage.METHOD__PARAMETERS);
+      parameters = new EObjectContainmentEList<QualifiedName>(QualifiedName.class, this, TransformationLanguagePackage.METHOD__PARAMETERS);
     }
     return parameters;
   }
@@ -327,6 +329,8 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
   {
     switch (featureID)
     {
+      case TransformationLanguagePackage.METHOD__PARAMETERS:
+        return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
       case TransformationLanguagePackage.METHOD__BODY:
         return basicSetBody(null, msgs);
     }
@@ -384,7 +388,7 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
         return;
       case TransformationLanguagePackage.METHOD__PARAMETERS:
         getParameters().clear();
-        getParameters().addAll((Collection<? extends String>)newValue);
+        getParameters().addAll((Collection<? extends QualifiedName>)newValue);
         return;
       case TransformationLanguagePackage.METHOD__BODY:
         setBody((Body)newValue);
@@ -470,8 +474,6 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
     result.append(type);
     result.append(", name: ");
     result.append(name);
-    result.append(", parameters: ");
-    result.append(parameters);
     result.append(')');
     return result.toString();
   }

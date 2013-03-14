@@ -156,6 +156,8 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
       case TransformationLanguagePackage.INSTANCE_FIELD_REF: return createInstanceFieldRef();
       case TransformationLanguagePackage.CONSTANT: return createConstant();
       case TransformationLanguagePackage.CLASS_CONSTANT: return createClassConstant();
+      case TransformationLanguagePackage.QUALIFIED_NAME_OR_WILDCARD: return createQualifiedNameOrWildcard();
+      case TransformationLanguagePackage.QUALIFIED_NAME_WILDCARD: return createQualifiedNameWildcard();
       case TransformationLanguagePackage.NULL_CONSTANT: return createNullConstant();
       case TransformationLanguagePackage.NUMERIC_CONSTANT: return createNumericConstant();
       case TransformationLanguagePackage.INT_CONSTANT: return createIntConstant();
@@ -163,6 +165,7 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
       case TransformationLanguagePackage.DOUBLE_CONSTANT: return createDoubleConstant();
       case TransformationLanguagePackage.FLOAT_CONSTANT: return createFloatConstant();
       case TransformationLanguagePackage.STRING_CONSTANT: return createStringConstant();
+      case TransformationLanguagePackage.QUALIFIED_NAME: return createQualifiedName();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -1208,6 +1211,28 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
+  public QualifiedNameOrWildcard createQualifiedNameOrWildcard()
+  {
+    QualifiedNameOrWildcardImpl qualifiedNameOrWildcard = new QualifiedNameOrWildcardImpl();
+    return qualifiedNameOrWildcard;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QualifiedNameWildcard createQualifiedNameWildcard()
+  {
+    QualifiedNameWildcardImpl qualifiedNameWildcard = new QualifiedNameWildcardImpl();
+    return qualifiedNameWildcard;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public NullConstant createNullConstant()
   {
     NullConstantImpl nullConstant = new NullConstantImpl();
@@ -1278,6 +1303,17 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
   {
     StringConstantImpl stringConstant = new StringConstantImpl();
     return stringConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QualifiedName createQualifiedName()
+  {
+    QualifiedNameImpl qualifiedName = new QualifiedNameImpl();
+    return qualifiedName;
   }
 
   /**

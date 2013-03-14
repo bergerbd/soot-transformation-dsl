@@ -78,6 +78,9 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.NumericCon
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.OrExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.ParameterRef;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Pattern;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameOrWildcard;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameWildcard;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Ref;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.RemExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Replacement;
@@ -762,6 +765,20 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass qualifiedNameOrWildcardEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass qualifiedNameWildcardEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass nullConstantEClass = null;
 
   /**
@@ -805,6 +822,13 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * @generated
    */
   private EClass stringConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass qualifiedNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1061,9 +1085,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getType_Name()
+  public EReference getType_Name()
   {
-    return (EAttribute)typeEClass.getEStructuralFeatures().get(3);
+    return (EReference)typeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1071,9 +1095,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getType_SuperClass()
+  public EReference getType_SuperClass()
   {
-    return (EAttribute)typeEClass.getEStructuralFeatures().get(4);
+    return (EReference)typeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1081,9 +1105,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getType_Interfaces()
+  public EReference getType_Interfaces()
   {
-    return (EAttribute)typeEClass.getEStructuralFeatures().get(5);
+    return (EReference)typeEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1141,9 +1165,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getField_Type()
+  public EReference getField_Type()
   {
-    return (EAttribute)fieldEClass.getEStructuralFeatures().get(2);
+    return (EReference)fieldEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1211,9 +1235,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMethod_Parameters()
+  public EReference getMethod_Parameters()
   {
-    return (EAttribute)methodEClass.getEStructuralFeatures().get(4);
+    return (EReference)methodEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1291,9 +1315,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDeclaration_Type()
+  public EReference getDeclaration_Type()
   {
-    return (EAttribute)declarationEClass.getEStructuralFeatures().get(0);
+    return (EReference)declarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1741,9 +1765,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAnyNewExpr_Type()
+  public EReference getAnyNewExpr_Type()
   {
-    return (EAttribute)anyNewExprEClass.getEStructuralFeatures().get(0);
+    return (EReference)anyNewExprEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2001,9 +2025,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCastExpr_Type()
+  public EReference getCastExpr_Type()
   {
-    return (EAttribute)castExprEClass.getEStructuralFeatures().get(0);
+    return (EReference)castExprEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2041,9 +2065,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInstanceOfExpr_Type()
+  public EReference getInstanceOfExpr_Type()
   {
-    return (EAttribute)instanceOfExprEClass.getEStructuralFeatures().get(1);
+    return (EReference)instanceOfExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2061,9 +2085,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSootMethodRef_Class()
+  public EReference getSootMethodRef_Class()
   {
-    return (EAttribute)sootMethodRefEClass.getEStructuralFeatures().get(0);
+    return (EReference)sootMethodRefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2071,9 +2095,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSootMethodRef_Type()
+  public EReference getSootMethodRef_Type()
   {
-    return (EAttribute)sootMethodRefEClass.getEStructuralFeatures().get(1);
+    return (EReference)sootMethodRefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2091,9 +2115,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSootMethodRef_Parameters()
+  public EReference getSootMethodRef_Parameters()
   {
-    return (EAttribute)sootMethodRefEClass.getEStructuralFeatures().get(3);
+    return (EReference)sootMethodRefEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2391,9 +2415,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameterRef_Type()
+  public EReference getParameterRef_Type()
   {
-    return (EAttribute)parameterRefEClass.getEStructuralFeatures().get(1);
+    return (EReference)parameterRefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2411,9 +2435,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getThisRef_Type()
+  public EReference getThisRef_Type()
   {
-    return (EAttribute)thisRefEClass.getEStructuralFeatures().get(0);
+    return (EReference)thisRefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2511,9 +2535,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSootFieldRef_Class()
+  public EReference getSootFieldRef_Class()
   {
-    return (EAttribute)sootFieldRefEClass.getEStructuralFeatures().get(0);
+    return (EReference)sootFieldRefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2521,9 +2545,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSootFieldRef_Type()
+  public EReference getSootFieldRef_Type()
   {
-    return (EAttribute)sootFieldRefEClass.getEStructuralFeatures().get(1);
+    return (EReference)sootFieldRefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2591,9 +2615,39 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getClassConstant_Name()
+  public EReference getClassConstant_Name()
   {
-    return (EAttribute)classConstantEClass.getEStructuralFeatures().get(0);
+    return (EReference)classConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQualifiedNameOrWildcard()
+  {
+    return qualifiedNameOrWildcardEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQualifiedNameOrWildcard_Name()
+  {
+    return (EAttribute)qualifiedNameOrWildcardEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQualifiedNameWildcard()
+  {
+    return qualifiedNameWildcardEClass;
   }
 
   /**
@@ -2691,6 +2745,16 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getQualifiedName()
+  {
+    return qualifiedNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getVisibility()
   {
     return visibilityEEnum;
@@ -2750,16 +2814,16 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     createEAttribute(typeEClass, TYPE__VISIBILITY);
     createEAttribute(typeEClass, TYPE__CLASS);
     createEAttribute(typeEClass, TYPE__INTERFACE);
-    createEAttribute(typeEClass, TYPE__NAME);
-    createEAttribute(typeEClass, TYPE__SUPER_CLASS);
-    createEAttribute(typeEClass, TYPE__INTERFACES);
+    createEReference(typeEClass, TYPE__NAME);
+    createEReference(typeEClass, TYPE__SUPER_CLASS);
+    createEReference(typeEClass, TYPE__INTERFACES);
     createEReference(typeEClass, TYPE__FIELDS);
     createEReference(typeEClass, TYPE__METHODS);
 
     fieldEClass = createEClass(FIELD);
     createEAttribute(fieldEClass, FIELD__VISIBILITY);
     createEAttribute(fieldEClass, FIELD__STATIC);
-    createEAttribute(fieldEClass, FIELD__TYPE);
+    createEReference(fieldEClass, FIELD__TYPE);
     createEAttribute(fieldEClass, FIELD__NAME);
 
     methodEClass = createEClass(METHOD);
@@ -2767,7 +2831,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     createEAttribute(methodEClass, METHOD__STATIC);
     createEAttribute(methodEClass, METHOD__TYPE);
     createEAttribute(methodEClass, METHOD__NAME);
-    createEAttribute(methodEClass, METHOD__PARAMETERS);
+    createEReference(methodEClass, METHOD__PARAMETERS);
     createEReference(methodEClass, METHOD__BODY);
 
     bodyEClass = createEClass(BODY);
@@ -2778,7 +2842,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     createEReference(statementSequenceEClass, STATEMENT_SEQUENCE__STATEMENTS);
 
     declarationEClass = createEClass(DECLARATION);
-    createEAttribute(declarationEClass, DECLARATION__TYPE);
+    createEReference(declarationEClass, DECLARATION__TYPE);
     createEAttribute(declarationEClass, DECLARATION__LOCALS);
 
     labelOrStatementEClass = createEClass(LABEL_OR_STATEMENT);
@@ -2848,7 +2912,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     exprEClass = createEClass(EXPR);
 
     anyNewExprEClass = createEClass(ANY_NEW_EXPR);
-    createEAttribute(anyNewExprEClass, ANY_NEW_EXPR__TYPE);
+    createEReference(anyNewExprEClass, ANY_NEW_EXPR__TYPE);
 
     binOpExprEClass = createEClass(BIN_OP_EXPR);
     createEReference(binOpExprEClass, BIN_OP_EXPR__LEFT_OP);
@@ -2897,18 +2961,18 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     neExprEClass = createEClass(NE_EXPR);
 
     castExprEClass = createEClass(CAST_EXPR);
-    createEAttribute(castExprEClass, CAST_EXPR__TYPE);
+    createEReference(castExprEClass, CAST_EXPR__TYPE);
     createEReference(castExprEClass, CAST_EXPR__OPERAND);
 
     instanceOfExprEClass = createEClass(INSTANCE_OF_EXPR);
     createEReference(instanceOfExprEClass, INSTANCE_OF_EXPR__OPERAND);
-    createEAttribute(instanceOfExprEClass, INSTANCE_OF_EXPR__TYPE);
+    createEReference(instanceOfExprEClass, INSTANCE_OF_EXPR__TYPE);
 
     sootMethodRefEClass = createEClass(SOOT_METHOD_REF);
-    createEAttribute(sootMethodRefEClass, SOOT_METHOD_REF__CLASS);
-    createEAttribute(sootMethodRefEClass, SOOT_METHOD_REF__TYPE);
+    createEReference(sootMethodRefEClass, SOOT_METHOD_REF__CLASS);
+    createEReference(sootMethodRefEClass, SOOT_METHOD_REF__TYPE);
     createEAttribute(sootMethodRefEClass, SOOT_METHOD_REF__NAME);
-    createEAttribute(sootMethodRefEClass, SOOT_METHOD_REF__PARAMETERS);
+    createEReference(sootMethodRefEClass, SOOT_METHOD_REF__PARAMETERS);
 
     invokeExprEClass = createEClass(INVOKE_EXPR);
     createEReference(invokeExprEClass, INVOKE_EXPR__METHOD);
@@ -2957,10 +3021,10 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
 
     parameterRefEClass = createEClass(PARAMETER_REF);
     createEAttribute(parameterRefEClass, PARAMETER_REF__NAME);
-    createEAttribute(parameterRefEClass, PARAMETER_REF__TYPE);
+    createEReference(parameterRefEClass, PARAMETER_REF__TYPE);
 
     thisRefEClass = createEClass(THIS_REF);
-    createEAttribute(thisRefEClass, THIS_REF__TYPE);
+    createEReference(thisRefEClass, THIS_REF__TYPE);
 
     caughtExceptionRefEClass = createEClass(CAUGHT_EXCEPTION_REF);
 
@@ -2976,8 +3040,8 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     createEReference(staticFieldRefEClass, STATIC_FIELD_REF__FIELD_REF);
 
     sootFieldRefEClass = createEClass(SOOT_FIELD_REF);
-    createEAttribute(sootFieldRefEClass, SOOT_FIELD_REF__CLASS);
-    createEAttribute(sootFieldRefEClass, SOOT_FIELD_REF__TYPE);
+    createEReference(sootFieldRefEClass, SOOT_FIELD_REF__CLASS);
+    createEReference(sootFieldRefEClass, SOOT_FIELD_REF__TYPE);
     createEAttribute(sootFieldRefEClass, SOOT_FIELD_REF__NAME);
 
     instanceFieldRefEClass = createEClass(INSTANCE_FIELD_REF);
@@ -2987,7 +3051,12 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     constantEClass = createEClass(CONSTANT);
 
     classConstantEClass = createEClass(CLASS_CONSTANT);
-    createEAttribute(classConstantEClass, CLASS_CONSTANT__NAME);
+    createEReference(classConstantEClass, CLASS_CONSTANT__NAME);
+
+    qualifiedNameOrWildcardEClass = createEClass(QUALIFIED_NAME_OR_WILDCARD);
+    createEAttribute(qualifiedNameOrWildcardEClass, QUALIFIED_NAME_OR_WILDCARD__NAME);
+
+    qualifiedNameWildcardEClass = createEClass(QUALIFIED_NAME_WILDCARD);
 
     nullConstantEClass = createEClass(NULL_CONSTANT);
 
@@ -3004,6 +3073,8 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
 
     stringConstantEClass = createEClass(STRING_CONSTANT);
     createEAttribute(stringConstantEClass, STRING_CONSTANT__VALUE);
+
+    qualifiedNameEClass = createEClass(QUALIFIED_NAME);
 
     // Create enums
     visibilityEEnum = createEEnum(VISIBILITY);
@@ -3113,6 +3184,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     instanceFieldRefEClass.getESuperTypes().add(this.getFieldRef());
     constantEClass.getESuperTypes().add(this.getNonExpr());
     classConstantEClass.getESuperTypes().add(this.getConstant());
+    qualifiedNameWildcardEClass.getESuperTypes().add(this.getQualifiedNameOrWildcard());
     nullConstantEClass.getESuperTypes().add(this.getConstant());
     numericConstantEClass.getESuperTypes().add(this.getConstant());
     intConstantEClass.getESuperTypes().add(this.getNumericConstant());
@@ -3120,6 +3192,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     doubleConstantEClass.getESuperTypes().add(this.getNumericConstant());
     floatConstantEClass.getESuperTypes().add(this.getNumericConstant());
     stringConstantEClass.getESuperTypes().add(this.getConstant());
+    qualifiedNameEClass.getESuperTypes().add(this.getQualifiedNameOrWildcard());
 
     // Initialize classes and features; add operations and parameters
     initEClass(transformationEClass, Transformation.class, "Transformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3146,16 +3219,16 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEAttribute(getType_Visibility(), this.getVisibility(), "visibility", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getType_Class(), ecorePackage.getEBoolean(), "class", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getType_Interface(), ecorePackage.getEBoolean(), "interface", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getType_SuperClass(), ecorePackage.getEString(), "superClass", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getType_Interfaces(), ecorePackage.getEString(), "interfaces", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getType_Name(), this.getQualifiedName(), null, "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getType_SuperClass(), this.getQualifiedName(), null, "superClass", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getType_Interfaces(), this.getQualifiedName(), null, "interfaces", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getType_Fields(), this.getField(), null, "fields", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getType_Methods(), this.getMethod(), null, "methods", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getField_Visibility(), this.getVisibility(), "visibility", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getField_Static(), ecorePackage.getEBoolean(), "static", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getField_Type(), ecorePackage.getEString(), "type", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getField_Type(), this.getQualifiedName(), null, "type", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getField_Name(), ecorePackage.getEString(), "name", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3163,7 +3236,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEAttribute(getMethod_Static(), ecorePackage.getEBoolean(), "static", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMethod_Type(), ecorePackage.getEString(), "type", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMethod_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMethod_Parameters(), this.getQualifiedName(), null, "parameters", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMethod_Body(), this.getBody(), null, "body", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3174,7 +3247,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEReference(getStatementSequence_Statements(), this.getLabelOrStatement(), null, "statements", null, 0, -1, StatementSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDeclaration_Type(), ecorePackage.getEString(), "type", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclaration_Type(), this.getQualifiedName(), null, "type", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDeclaration_Locals(), ecorePackage.getEString(), "locals", null, 0, -1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(labelOrStatementEClass, LabelOrStatement.class, "LabelOrStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3244,7 +3317,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(anyNewExprEClass, AnyNewExpr.class, "AnyNewExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAnyNewExpr_Type(), ecorePackage.getEString(), "type", null, 0, 1, AnyNewExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAnyNewExpr_Type(), this.getQualifiedName(), null, "type", null, 0, 1, AnyNewExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(binOpExprEClass, BinOpExpr.class, "BinOpExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBinOpExpr_LeftOp(), this.getNonExpr(), null, "leftOp", null, 0, 1, BinOpExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3293,18 +3366,18 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEClass(neExprEClass, NeExpr.class, "NeExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(castExprEClass, CastExpr.class, "CastExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCastExpr_Type(), ecorePackage.getEString(), "type", null, 0, 1, CastExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCastExpr_Type(), this.getQualifiedName(), null, "type", null, 0, 1, CastExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCastExpr_Operand(), this.getValue(), null, "operand", null, 0, 1, CastExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instanceOfExprEClass, InstanceOfExpr.class, "InstanceOfExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInstanceOfExpr_Operand(), this.getRef(), null, "operand", null, 0, 1, InstanceOfExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInstanceOfExpr_Type(), ecorePackage.getEString(), "type", null, 0, 1, InstanceOfExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstanceOfExpr_Type(), this.getQualifiedName(), null, "type", null, 0, 1, InstanceOfExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sootMethodRefEClass, SootMethodRef.class, "SootMethodRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSootMethodRef_Class(), ecorePackage.getEString(), "class", null, 0, 1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSootMethodRef_Type(), ecorePackage.getEString(), "type", null, 0, 1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSootMethodRef_Class(), this.getQualifiedName(), null, "class", null, 0, 1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSootMethodRef_Type(), this.getQualifiedName(), null, "type", null, 0, 1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSootMethodRef_Name(), ecorePackage.getEString(), "name", null, 0, 1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSootMethodRef_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSootMethodRef_Parameters(), this.getQualifiedName(), null, "parameters", null, 0, -1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(invokeExprEClass, InvokeExpr.class, "InvokeExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInvokeExpr_Method(), this.getSootMethodRef(), null, "method", null, 0, 1, InvokeExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3353,10 +3426,10 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
 
     initEClass(parameterRefEClass, ParameterRef.class, "ParameterRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameterRef_Name(), ecorePackage.getEString(), "name", null, 0, 1, ParameterRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParameterRef_Type(), ecorePackage.getEString(), "type", null, 0, 1, ParameterRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParameterRef_Type(), this.getQualifiedName(), null, "type", null, 0, 1, ParameterRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(thisRefEClass, ThisRef.class, "ThisRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getThisRef_Type(), ecorePackage.getEString(), "type", null, 0, 1, ThisRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getThisRef_Type(), this.getQualifiedName(), null, "type", null, 0, 1, ThisRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(caughtExceptionRefEClass, CaughtExceptionRef.class, "CaughtExceptionRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3372,8 +3445,8 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEReference(getStaticFieldRef_FieldRef(), this.getSootFieldRef(), null, "fieldRef", null, 0, 1, StaticFieldRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sootFieldRefEClass, SootFieldRef.class, "SootFieldRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSootFieldRef_Class(), ecorePackage.getEString(), "class", null, 0, 1, SootFieldRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSootFieldRef_Type(), ecorePackage.getEString(), "Type", null, 0, 1, SootFieldRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSootFieldRef_Class(), this.getQualifiedName(), null, "class", null, 0, 1, SootFieldRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSootFieldRef_Type(), this.getQualifiedName(), null, "Type", null, 0, 1, SootFieldRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSootFieldRef_Name(), ecorePackage.getEString(), "name", null, 0, 1, SootFieldRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instanceFieldRefEClass, InstanceFieldRef.class, "InstanceFieldRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3383,7 +3456,12 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(classConstantEClass, ClassConstant.class, "ClassConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClassConstant_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClassConstant_Name(), this.getQualifiedNameOrWildcard(), null, "name", null, 0, 1, ClassConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(qualifiedNameOrWildcardEClass, QualifiedNameOrWildcard.class, "QualifiedNameOrWildcard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQualifiedNameOrWildcard_Name(), ecorePackage.getEString(), "name", null, 0, 1, QualifiedNameOrWildcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(qualifiedNameWildcardEClass, QualifiedNameWildcard.class, "QualifiedNameWildcard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(nullConstantEClass, NullConstant.class, "NullConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3400,6 +3478,8 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
 
     initEClass(stringConstantEClass, StringConstant.class, "StringConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStringConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(qualifiedNameEClass, QualifiedName.class, "QualifiedName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Initialize enums and add enum literals
     initEEnum(visibilityEEnum, Visibility.class, "Visibility");

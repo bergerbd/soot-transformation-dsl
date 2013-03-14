@@ -842,6 +842,24 @@ public interface TransformationLanguageFactory extends EFactory
   ClassConstant createClassConstant();
 
   /**
+   * Returns a new object of class '<em>Qualified Name Or Wildcard</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qualified Name Or Wildcard</em>'.
+   * @generated
+   */
+  QualifiedNameOrWildcard createQualifiedNameOrWildcard();
+
+  /**
+   * Returns a new object of class '<em>Qualified Name Wildcard</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qualified Name Wildcard</em>'.
+   * @generated
+   */
+  QualifiedNameWildcard createQualifiedNameWildcard();
+
+  /**
    * Returns a new object of class '<em>Null Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -903,6 +921,15 @@ public interface TransformationLanguageFactory extends EFactory
    * @generated
    */
   StringConstant createStringConstant();
+
+  /**
+   * Returns a new object of class '<em>Qualified Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qualified Name</em>'.
+   * @generated
+   */
+  QualifiedName createQualifiedName();
 
   /**
    * Returns the package supported by this factory.

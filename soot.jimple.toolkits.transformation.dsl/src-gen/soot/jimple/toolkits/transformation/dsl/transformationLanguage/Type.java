@@ -113,72 +113,72 @@ public interface Type extends EObject
   void setInterface(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
+   * @return the value of the '<em>Name</em>' containment reference.
+   * @see #setName(QualifiedName)
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage#getType_Name()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getName();
+  QualifiedName getName();
 
   /**
-   * Sets the value of the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getName <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
+   * @param value the new value of the '<em>Name</em>' containment reference.
    * @see #getName()
    * @generated
    */
-  void setName(String value);
+  void setName(QualifiedName value);
 
   /**
-   * Returns the value of the '<em><b>Super Class</b></em>' attribute.
+   * Returns the value of the '<em><b>Super Class</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Super Class</em>' attribute isn't clear,
+   * If the meaning of the '<em>Super Class</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Super Class</em>' attribute.
-   * @see #setSuperClass(String)
+   * @return the value of the '<em>Super Class</em>' containment reference.
+   * @see #setSuperClass(QualifiedName)
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage#getType_SuperClass()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getSuperClass();
+  QualifiedName getSuperClass();
 
   /**
-   * Sets the value of the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getSuperClass <em>Super Class</em>}' attribute.
+   * Sets the value of the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type#getSuperClass <em>Super Class</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Super Class</em>' attribute.
+   * @param value the new value of the '<em>Super Class</em>' containment reference.
    * @see #getSuperClass()
    * @generated
    */
-  void setSuperClass(String value);
+  void setSuperClass(QualifiedName value);
 
   /**
-   * Returns the value of the '<em><b>Interfaces</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Interfaces</b></em>' containment reference list.
+   * The list contents are of type {@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Interfaces</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Interfaces</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Interfaces</em>' attribute list.
+   * @return the value of the '<em>Interfaces</em>' containment reference list.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage#getType_Interfaces()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getInterfaces();
+  EList<QualifiedName> getInterfaces();
 
   /**
    * Returns the value of the '<em><b>Fields</b></em>' containment reference list.

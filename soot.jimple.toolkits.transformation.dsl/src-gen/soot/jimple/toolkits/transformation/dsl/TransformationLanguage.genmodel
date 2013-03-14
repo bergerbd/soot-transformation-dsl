@@ -37,16 +37,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/visibility"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/class"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/interface"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/superClass"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Type/interfaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Type/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Type/superClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Type/interfaces"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Type/fields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Type/methods"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//Field">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Field/visibility"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Field/static"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Field/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Field/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Field/name"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//Method">
@@ -54,7 +54,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Method/static"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Method/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Method/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Method/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Method/parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Method/body"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//Body">
@@ -65,7 +65,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//StatementSequence/statements"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//Declaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Declaration/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Declaration/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Declaration/locals"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//LabelOrStatement"/>
@@ -123,7 +123,7 @@
     <genClasses ecoreClass="TransformationLanguage.ecore#//NonExpr"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//Expr"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//AnyNewExpr">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//AnyNewExpr/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//AnyNewExpr/type"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//BinOpExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//BinOpExpr/leftOp"/>
@@ -151,18 +151,18 @@
     <genClasses ecoreClass="TransformationLanguage.ecore#//LtExpr"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//NeExpr"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//CastExpr">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//CastExpr/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//CastExpr/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//CastExpr/operand"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//InstanceOfExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InstanceOfExpr/operand"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//InstanceOfExpr/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InstanceOfExpr/type"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//SootMethodRef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootMethodRef/class"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootMethodRef/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//SootMethodRef/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//SootMethodRef/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootMethodRef/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootMethodRef/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//SootMethodRef/parameters"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//InvokeExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InvokeExpr/method"/>
@@ -200,10 +200,10 @@
     <genClasses ecoreClass="TransformationLanguage.ecore#//IdentityRef"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//ParameterRef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//ParameterRef/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//ParameterRef/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//ParameterRef/type"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//ThisRef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//ThisRef/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//ThisRef/type"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//CaughtExceptionRef"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//ConcreteRef"/>
@@ -216,8 +216,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//StaticFieldRef/fieldRef"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//SootFieldRef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootFieldRef/class"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootFieldRef/Type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//SootFieldRef/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//SootFieldRef/Type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootFieldRef/name"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//InstanceFieldRef">
@@ -226,8 +226,12 @@
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//Constant"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//ClassConstant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//ClassConstant/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//ClassConstant/name"/>
     </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//QualifiedNameOrWildcard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//QualifiedNameOrWildcard/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//QualifiedNameWildcard"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//NullConstant"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//NumericConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//NumericConstant/value"/>
@@ -239,5 +243,6 @@
     <genClasses ecoreClass="TransformationLanguage.ecore#//StringConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//StringConstant/value"/>
     </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//QualifiedName"/>
   </genPackages>
 </genmodel:GenModel>

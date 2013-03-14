@@ -15,12 +15,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Field;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Method;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Type;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility;
@@ -108,54 +108,34 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
   protected boolean interface_ = INTERFACE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected QualifiedName name;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getSuperClass() <em>Super Class</em>}' attribute.
+   * The cached value of the '{@link #getSuperClass() <em>Super Class</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSuperClass()
    * @generated
    * @ordered
    */
-  protected static final String SUPER_CLASS_EDEFAULT = null;
+  protected QualifiedName superClass;
 
   /**
-   * The cached value of the '{@link #getSuperClass() <em>Super Class</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSuperClass()
-   * @generated
-   * @ordered
-   */
-  protected String superClass = SUPER_CLASS_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' attribute list.
+   * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getInterfaces()
    * @generated
    * @ordered
    */
-  protected EList<String> interfaces;
+  protected EList<QualifiedName> interfaces;
 
   /**
    * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
@@ -272,7 +252,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public QualifiedName getName()
   {
     return name;
   }
@@ -282,12 +262,16 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public NotificationChain basicSetName(QualifiedName newName, NotificationChain msgs)
   {
-    String oldName = name;
+    QualifiedName oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.TYPE__NAME, oldName, name));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.TYPE__NAME, oldName, newName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -295,7 +279,28 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSuperClass()
+  public void setName(QualifiedName newName)
+  {
+    if (newName != name)
+    {
+      NotificationChain msgs = null;
+      if (name != null)
+        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.TYPE__NAME, null, msgs);
+      if (newName != null)
+        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.TYPE__NAME, null, msgs);
+      msgs = basicSetName(newName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.TYPE__NAME, newName, newName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QualifiedName getSuperClass()
   {
     return superClass;
   }
@@ -305,12 +310,16 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSuperClass(String newSuperClass)
+  public NotificationChain basicSetSuperClass(QualifiedName newSuperClass, NotificationChain msgs)
   {
-    String oldSuperClass = superClass;
+    QualifiedName oldSuperClass = superClass;
     superClass = newSuperClass;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.TYPE__SUPER_CLASS, oldSuperClass, superClass));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.TYPE__SUPER_CLASS, oldSuperClass, newSuperClass);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -318,11 +327,32 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getInterfaces()
+  public void setSuperClass(QualifiedName newSuperClass)
+  {
+    if (newSuperClass != superClass)
+    {
+      NotificationChain msgs = null;
+      if (superClass != null)
+        msgs = ((InternalEObject)superClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.TYPE__SUPER_CLASS, null, msgs);
+      if (newSuperClass != null)
+        msgs = ((InternalEObject)newSuperClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.TYPE__SUPER_CLASS, null, msgs);
+      msgs = basicSetSuperClass(newSuperClass, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.TYPE__SUPER_CLASS, newSuperClass, newSuperClass));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<QualifiedName> getInterfaces()
   {
     if (interfaces == null)
     {
-      interfaces = new EDataTypeEList<String>(String.class, this, TransformationLanguagePackage.TYPE__INTERFACES);
+      interfaces = new EObjectContainmentEList<QualifiedName>(QualifiedName.class, this, TransformationLanguagePackage.TYPE__INTERFACES);
     }
     return interfaces;
   }
@@ -365,6 +395,12 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
   {
     switch (featureID)
     {
+      case TransformationLanguagePackage.TYPE__NAME:
+        return basicSetName(null, msgs);
+      case TransformationLanguagePackage.TYPE__SUPER_CLASS:
+        return basicSetSuperClass(null, msgs);
+      case TransformationLanguagePackage.TYPE__INTERFACES:
+        return ((InternalEList<?>)getInterfaces()).basicRemove(otherEnd, msgs);
       case TransformationLanguagePackage.TYPE__FIELDS:
         return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
       case TransformationLanguagePackage.TYPE__METHODS:
@@ -424,14 +460,14 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
         setInterface((Boolean)newValue);
         return;
       case TransformationLanguagePackage.TYPE__NAME:
-        setName((String)newValue);
+        setName((QualifiedName)newValue);
         return;
       case TransformationLanguagePackage.TYPE__SUPER_CLASS:
-        setSuperClass((String)newValue);
+        setSuperClass((QualifiedName)newValue);
         return;
       case TransformationLanguagePackage.TYPE__INTERFACES:
         getInterfaces().clear();
-        getInterfaces().addAll((Collection<? extends String>)newValue);
+        getInterfaces().addAll((Collection<? extends QualifiedName>)newValue);
         return;
       case TransformationLanguagePackage.TYPE__FIELDS:
         getFields().clear();
@@ -465,10 +501,10 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
         setInterface(INTERFACE_EDEFAULT);
         return;
       case TransformationLanguagePackage.TYPE__NAME:
-        setName(NAME_EDEFAULT);
+        setName((QualifiedName)null);
         return;
       case TransformationLanguagePackage.TYPE__SUPER_CLASS:
-        setSuperClass(SUPER_CLASS_EDEFAULT);
+        setSuperClass((QualifiedName)null);
         return;
       case TransformationLanguagePackage.TYPE__INTERFACES:
         getInterfaces().clear();
@@ -500,9 +536,9 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
       case TransformationLanguagePackage.TYPE__INTERFACE:
         return interface_ != INTERFACE_EDEFAULT;
       case TransformationLanguagePackage.TYPE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+        return name != null;
       case TransformationLanguagePackage.TYPE__SUPER_CLASS:
-        return SUPER_CLASS_EDEFAULT == null ? superClass != null : !SUPER_CLASS_EDEFAULT.equals(superClass);
+        return superClass != null;
       case TransformationLanguagePackage.TYPE__INTERFACES:
         return interfaces != null && !interfaces.isEmpty();
       case TransformationLanguagePackage.TYPE__FIELDS:
@@ -530,12 +566,6 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
     result.append(class_);
     result.append(", interface: ");
     result.append(interface_);
-    result.append(", name: ");
-    result.append(name);
-    result.append(", superClass: ");
-    result.append(superClass);
-    result.append(", interfaces: ");
-    result.append(interfaces);
     result.append(')');
     return result.toString();
   }

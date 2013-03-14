@@ -530,6 +530,16 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
         return createClassConstantAdapter();
       }
       @Override
+      public Adapter caseQualifiedNameOrWildcard(QualifiedNameOrWildcard object)
+      {
+        return createQualifiedNameOrWildcardAdapter();
+      }
+      @Override
+      public Adapter caseQualifiedNameWildcard(QualifiedNameWildcard object)
+      {
+        return createQualifiedNameWildcardAdapter();
+      }
+      @Override
       public Adapter caseNullConstant(NullConstant object)
       {
         return createNullConstantAdapter();
@@ -563,6 +573,11 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStringConstant(StringConstant object)
       {
         return createStringConstantAdapter();
+      }
+      @Override
+      public Adapter caseQualifiedName(QualifiedName object)
+      {
+        return createQualifiedNameAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -1952,6 +1967,36 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameOrWildcard <em>Qualified Name Or Wildcard</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameOrWildcard
+   * @generated
+   */
+  public Adapter createQualifiedNameOrWildcardAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameWildcard <em>Qualified Name Wildcard</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameWildcard
+   * @generated
+   */
+  public Adapter createQualifiedNameWildcardAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.NullConstant <em>Null Constant</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2052,6 +2097,21 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStringConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName <em>Qualified Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName
+   * @generated
+   */
+  public Adapter createQualifiedNameAdapter()
   {
     return null;
   }

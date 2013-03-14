@@ -274,8 +274,14 @@ Constant :
 	ClassConstant | NullConstant | NumericConstant | StringConstant;
 
 ClassConstant :
-	'class' name = QualifiedName; 
+	'class' name = QualifiedNameOrWildcard; 
+	
+QualifiedNameOrWildcard :
+	QualifiedName | QualifiedNameWildcard;
 
+QualifiedNameWildcard :
+	'«' name = ID '»';
+	
 NullConstant :
 	{NullConstant} 'null';
 	
@@ -304,6 +310,9 @@ MethodName :
 	'<'? ID '>'?;
 
 QualifiedName :
+	name = QName;
+
+QName :
 	ID ('.' ID)*;
 
 terminal LABELNAME :

@@ -137,20 +137,20 @@ public interface Method extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Parameters</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+   * The list contents are of type {@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parameters</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameters</em>' attribute list.
+   * @return the value of the '<em>Parameters</em>' containment reference list.
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage#getMethod_Parameters()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getParameters();
+  EList<QualifiedName> getParameters();
 
   /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference.

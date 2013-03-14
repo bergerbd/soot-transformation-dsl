@@ -3,13 +3,16 @@
 package soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Field;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility;
 
@@ -72,24 +75,14 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field
   protected boolean static_ = STATIC_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected String type = TYPE_EDEFAULT;
+  protected QualifiedName type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -183,7 +176,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
+  public QualifiedName getType()
   {
     return type;
   }
@@ -193,12 +186,37 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(String newType)
+  public NotificationChain basicSetType(QualifiedName newType, NotificationChain msgs)
   {
-    String oldType = type;
+    QualifiedName oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.FIELD__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.FIELD__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(QualifiedName newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.FIELD__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.FIELD__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.FIELD__TYPE, newType, newType));
   }
 
   /**
@@ -222,6 +240,22 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.FIELD__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case TransformationLanguagePackage.FIELD__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -263,7 +297,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field
         setStatic((Boolean)newValue);
         return;
       case TransformationLanguagePackage.FIELD__TYPE:
-        setType((String)newValue);
+        setType((QualifiedName)newValue);
         return;
       case TransformationLanguagePackage.FIELD__NAME:
         setName((String)newValue);
@@ -289,7 +323,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field
         setStatic(STATIC_EDEFAULT);
         return;
       case TransformationLanguagePackage.FIELD__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((QualifiedName)null);
         return;
       case TransformationLanguagePackage.FIELD__NAME:
         setName(NAME_EDEFAULT);
@@ -313,7 +347,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field
       case TransformationLanguagePackage.FIELD__STATIC:
         return static_ != STATIC_EDEFAULT;
       case TransformationLanguagePackage.FIELD__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+        return type != null;
       case TransformationLanguagePackage.FIELD__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -335,8 +369,6 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field
     result.append(visibility);
     result.append(", static: ");
     result.append(static_);
-    result.append(", type: ");
-    result.append(type);
     result.append(", name: ");
     result.append(name);
     result.append(')');

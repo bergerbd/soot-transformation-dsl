@@ -920,6 +920,21 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TransformationLanguagePackage.QUALIFIED_NAME_OR_WILDCARD:
+      {
+        QualifiedNameOrWildcard qualifiedNameOrWildcard = (QualifiedNameOrWildcard)theEObject;
+        T result = caseQualifiedNameOrWildcard(qualifiedNameOrWildcard);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.QUALIFIED_NAME_WILDCARD:
+      {
+        QualifiedNameWildcard qualifiedNameWildcard = (QualifiedNameWildcard)theEObject;
+        T result = caseQualifiedNameWildcard(qualifiedNameWildcard);
+        if (result == null) result = caseQualifiedNameOrWildcard(qualifiedNameWildcard);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case TransformationLanguagePackage.NULL_CONSTANT:
       {
         NullConstant nullConstant = (NullConstant)theEObject;
@@ -991,6 +1006,14 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
         if (result == null) result = caseConstant(stringConstant);
         if (result == null) result = caseNonExpr(stringConstant);
         if (result == null) result = caseValue(stringConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.QUALIFIED_NAME:
+      {
+        QualifiedName qualifiedName = (QualifiedName)theEObject;
+        T result = caseQualifiedName(qualifiedName);
+        if (result == null) result = caseQualifiedNameOrWildcard(qualifiedName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2455,6 +2478,38 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Qualified Name Or Wildcard</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Qualified Name Or Wildcard</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQualifiedNameOrWildcard(QualifiedNameOrWildcard object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Qualified Name Wildcard</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Qualified Name Wildcard</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQualifiedNameWildcard(QualifiedNameWildcard object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Null Constant</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2562,6 +2617,22 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringConstant(StringConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Qualified Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Qualified Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQualifiedName(QualifiedName object)
   {
     return null;
   }

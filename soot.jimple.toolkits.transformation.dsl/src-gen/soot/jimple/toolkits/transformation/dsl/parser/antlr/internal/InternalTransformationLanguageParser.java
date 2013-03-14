@@ -435,11 +435,11 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                 {
                 int LA1_2 = input.LA(2);
 
-                if ( ((LA1_2>=29 && LA1_2<=30)||LA1_2==65||LA1_2==74) ) {
-                    alt1=1;
-                }
-                else if ( (LA1_2==RULE_ID||LA1_2==60) ) {
+                if ( (LA1_2==RULE_ID||LA1_2==60) ) {
                     alt1=2;
+                }
+                else if ( ((LA1_2>=29 && LA1_2<=30)||LA1_2==65||LA1_2==74) ) {
+                    alt1=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -454,11 +454,11 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                 {
                 int LA1_3 = input.LA(2);
 
-                if ( ((LA1_3>=16 && LA1_3<=17)) ) {
-                    alt1=3;
-                }
-                else if ( (LA1_3==RULE_ID||LA1_3==23) ) {
+                if ( (LA1_3==RULE_ID||LA1_3==23) ) {
                     alt1=2;
+                }
+                else if ( ((LA1_3>=16 && LA1_3<=17)) ) {
+                    alt1=3;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -473,11 +473,11 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                 {
                 int LA1_4 = input.LA(2);
 
-                if ( ((LA1_4>=16 && LA1_4<=17)) ) {
-                    alt1=3;
-                }
-                else if ( (LA1_4==RULE_ID||LA1_4==23) ) {
+                if ( (LA1_4==RULE_ID||LA1_4==23) ) {
                     alt1=2;
+                }
+                else if ( ((LA1_4>=16 && LA1_4<=17)) ) {
+                    alt1=3;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -1060,11 +1060,11 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                 {
                 int LA2_2 = input.LA(2);
 
-                if ( ((LA2_2>=29 && LA2_2<=30)||LA2_2==65||LA2_2==74) ) {
-                    alt2=1;
-                }
-                else if ( (LA2_2==RULE_ID||LA2_2==60) ) {
+                if ( (LA2_2==RULE_ID||LA2_2==60) ) {
                     alt2=2;
+                }
+                else if ( ((LA2_2>=29 && LA2_2<=30)||LA2_2==65||LA2_2==74) ) {
+                    alt2=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -1079,11 +1079,11 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                 {
                 int LA2_3 = input.LA(2);
 
-                if ( (LA2_3==RULE_ID||LA2_3==23) ) {
-                    alt2=2;
-                }
-                else if ( ((LA2_3>=16 && LA2_3<=17)) ) {
+                if ( ((LA2_3>=16 && LA2_3<=17)) ) {
                     alt2=3;
+                }
+                else if ( (LA2_3==RULE_ID||LA2_3==23) ) {
+                    alt2=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -1098,11 +1098,11 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                 {
                 int LA2_4 = input.LA(2);
 
-                if ( (LA2_4==RULE_ID||LA2_4==23) ) {
-                    alt2=2;
-                }
-                else if ( ((LA2_4>=16 && LA2_4<=17)) ) {
+                if ( ((LA2_4>=16 && LA2_4<=17)) ) {
                     alt2=3;
+                }
+                else if ( (LA2_4==RULE_ID||LA2_4==23) ) {
+                    alt2=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -1370,13 +1370,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_13=null;
         Enumerator lv_visibility_0_0 = null;
 
-        AntlrDatatypeRuleToken lv_name_3_0 = null;
+        EObject lv_name_3_0 = null;
 
-        AntlrDatatypeRuleToken lv_superClass_5_0 = null;
+        EObject lv_superClass_5_0 = null;
 
-        AntlrDatatypeRuleToken lv_interfaces_7_0 = null;
+        EObject lv_interfaces_7_0 = null;
 
-        AntlrDatatypeRuleToken lv_interfaces_9_0 = null;
+        EObject lv_interfaces_9_0 = null;
 
         EObject lv_fields_11_0 = null;
 
@@ -1923,7 +1923,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_4=null;
         Enumerator lv_visibility_0_0 = null;
 
-        AntlrDatatypeRuleToken lv_type_2_0 = null;
+        EObject lv_type_2_0 = null;
 
 
          enterRule(); 
@@ -2154,9 +2154,9 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
         AntlrDatatypeRuleToken lv_name_3_0 = null;
 
-        AntlrDatatypeRuleToken lv_parameters_5_0 = null;
+        EObject lv_parameters_5_0 = null;
 
-        AntlrDatatypeRuleToken lv_parameters_7_0 = null;
+        EObject lv_parameters_7_0 = null;
 
         EObject lv_body_9_0 = null;
 
@@ -2898,7 +2898,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_2=null;
         Token lv_locals_3_0=null;
         Token otherlv_4=null;
-        AntlrDatatypeRuleToken lv_type_0_0 = null;
+        EObject lv_type_0_0 = null;
 
 
          enterRule(); 
@@ -10802,7 +10802,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        AntlrDatatypeRuleToken lv_type_1_0 = null;
+        EObject lv_type_1_0 = null;
 
         EObject lv_operand_3_0 = null;
 
@@ -10968,7 +10968,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_1=null;
         EObject lv_operand_0_0 = null;
 
-        AntlrDatatypeRuleToken lv_type_2_0 = null;
+        EObject lv_type_2_0 = null;
 
 
          enterRule(); 
@@ -11129,15 +11129,15 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_7=null;
         Token otherlv_9=null;
         Token otherlv_10=null;
-        AntlrDatatypeRuleToken lv_class_1_0 = null;
+        EObject lv_class_1_0 = null;
 
-        AntlrDatatypeRuleToken lv_type_3_0 = null;
+        EObject lv_type_3_0 = null;
 
         AntlrDatatypeRuleToken lv_name_4_0 = null;
 
-        AntlrDatatypeRuleToken lv_parameters_6_0 = null;
+        EObject lv_parameters_6_0 = null;
 
-        AntlrDatatypeRuleToken lv_parameters_8_0 = null;
+        EObject lv_parameters_8_0 = null;
 
 
          enterRule(); 
@@ -13259,7 +13259,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
-        AntlrDatatypeRuleToken lv_type_2_0 = null;
+        EObject lv_type_2_0 = null;
 
         EObject lv_size_4_0 = null;
 
@@ -13429,7 +13429,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         EObject current = null;
 
         Token otherlv_0=null;
-        AntlrDatatypeRuleToken lv_type_1_0 = null;
+        EObject lv_type_1_0 = null;
 
 
          enterRule(); 
@@ -13553,7 +13553,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token lv_emptySize_5_0=null;
-        AntlrDatatypeRuleToken lv_type_2_0 = null;
+        EObject lv_type_2_0 = null;
 
         EObject lv_size_4_0 = null;
 
@@ -14420,11 +14420,11 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                 {
                 int LA46_1 = input.LA(2);
 
-                if ( (LA46_1==65||LA46_1==74) ) {
-                    alt46=1;
-                }
-                else if ( (LA46_1==EOF||LA46_1==20||LA46_1==24||LA46_1==26||LA46_1==29||LA46_1==31||(LA46_1>=42 && LA46_1<=62)||LA46_1==75) ) {
+                if ( (LA46_1==EOF||LA46_1==20||LA46_1==24||LA46_1==26||LA46_1==29||LA46_1==31||(LA46_1>=42 && LA46_1<=62)||LA46_1==75) ) {
                     alt46=3;
+                }
+                else if ( (LA46_1==65||LA46_1==74) ) {
+                    alt46=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -14662,11 +14662,6 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
             if ( (LA47_0==78) ) {
                 switch ( input.LA(2) ) {
-                case RULE_ID:
-                    {
-                    alt47=1;
-                    }
-                    break;
                 case 80:
                     {
                     alt47=3;
@@ -14675,6 +14670,11 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                 case 79:
                     {
                     alt47=2;
+                    }
+                    break;
+                case RULE_ID:
+                    {
+                    alt47=1;
                     }
                     break;
                 default:
@@ -14845,7 +14845,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_0=null;
         Token lv_name_1_0=null;
         Token otherlv_2=null;
-        AntlrDatatypeRuleToken lv_type_3_0 = null;
+        EObject lv_type_3_0 = null;
 
 
          enterRule(); 
@@ -15004,7 +15004,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
-        AntlrDatatypeRuleToken lv_type_3_0 = null;
+        EObject lv_type_3_0 = null;
 
 
          enterRule(); 
@@ -15881,9 +15881,9 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
         Token otherlv_2=null;
         Token lv_name_4_0=null;
         Token otherlv_5=null;
-        AntlrDatatypeRuleToken lv_class_1_0 = null;
+        EObject lv_class_1_0 = null;
 
-        AntlrDatatypeRuleToken lv_Type_3_0 = null;
+        EObject lv_Type_3_0 = null;
 
 
          enterRule(); 
@@ -16456,22 +16456,22 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleClassConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5955:1: ruleClassConstant returns [EObject current=null] : (otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedName ) ) ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5955:1: ruleClassConstant returns [EObject current=null] : (otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedNameOrWildcard ) ) ) ;
     public final EObject ruleClassConstant() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        AntlrDatatypeRuleToken lv_name_1_0 = null;
+        EObject lv_name_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5958:28: ( (otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedName ) ) ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5959:1: (otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedName ) ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5958:28: ( (otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedNameOrWildcard ) ) ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5959:1: (otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedNameOrWildcard ) ) )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5959:1: (otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedName ) ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5959:3: otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedName ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5959:1: (otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedNameOrWildcard ) ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5959:3: otherlv_0= 'class' ( (lv_name_1_0= ruleQualifiedNameOrWildcard ) )
             {
             otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleClassConstant13199); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -16479,19 +16479,19 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                   	newLeafNode(otherlv_0, grammarAccess.getClassConstantAccess().getClassKeyword_0());
                   
             }
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5963:1: ( (lv_name_1_0= ruleQualifiedName ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5964:1: (lv_name_1_0= ruleQualifiedName )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5963:1: ( (lv_name_1_0= ruleQualifiedNameOrWildcard ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5964:1: (lv_name_1_0= ruleQualifiedNameOrWildcard )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5964:1: (lv_name_1_0= ruleQualifiedName )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5965:3: lv_name_1_0= ruleQualifiedName
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5964:1: (lv_name_1_0= ruleQualifiedNameOrWildcard )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5965:3: lv_name_1_0= ruleQualifiedNameOrWildcard
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getClassConstantAccess().getNameQualifiedNameParserRuleCall_1_0()); 
+              	        newCompositeNode(grammarAccess.getClassConstantAccess().getNameQualifiedNameOrWildcardParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleClassConstant13220);
-            lv_name_1_0=ruleQualifiedName();
+            pushFollow(FOLLOW_ruleQualifiedNameOrWildcard_in_ruleClassConstant13220);
+            lv_name_1_0=ruleQualifiedNameOrWildcard();
 
             state._fsp--;
             if (state.failed) return current;
@@ -16504,7 +16504,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                      			current, 
                      			"name",
                       		lv_name_1_0, 
-                      		"QualifiedName");
+                      		"QualifiedNameOrWildcard");
               	        afterParserOrEnumRuleCall();
               	    
             }
@@ -16536,8 +16536,280 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
     // $ANTLR end "ruleClassConstant"
 
 
+    // $ANTLR start "entryRuleQualifiedNameOrWildcard"
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5989:1: entryRuleQualifiedNameOrWildcard returns [EObject current=null] : iv_ruleQualifiedNameOrWildcard= ruleQualifiedNameOrWildcard EOF ;
+    public final EObject entryRuleQualifiedNameOrWildcard() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleQualifiedNameOrWildcard = null;
+
+
+        try {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5990:2: (iv_ruleQualifiedNameOrWildcard= ruleQualifiedNameOrWildcard EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5991:2: iv_ruleQualifiedNameOrWildcard= ruleQualifiedNameOrWildcard EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getQualifiedNameOrWildcardRule()); 
+            }
+            pushFollow(FOLLOW_ruleQualifiedNameOrWildcard_in_entryRuleQualifiedNameOrWildcard13256);
+            iv_ruleQualifiedNameOrWildcard=ruleQualifiedNameOrWildcard();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleQualifiedNameOrWildcard; 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameOrWildcard13266); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleQualifiedNameOrWildcard"
+
+
+    // $ANTLR start "ruleQualifiedNameOrWildcard"
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5998:1: ruleQualifiedNameOrWildcard returns [EObject current=null] : (this_QualifiedName_0= ruleQualifiedName | this_QualifiedNameWildcard_1= ruleQualifiedNameWildcard ) ;
+    public final EObject ruleQualifiedNameOrWildcard() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_QualifiedName_0 = null;
+
+        EObject this_QualifiedNameWildcard_1 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6001:28: ( (this_QualifiedName_0= ruleQualifiedName | this_QualifiedNameWildcard_1= ruleQualifiedNameWildcard ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6002:1: (this_QualifiedName_0= ruleQualifiedName | this_QualifiedNameWildcard_1= ruleQualifiedNameWildcard )
+            {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6002:1: (this_QualifiedName_0= ruleQualifiedName | this_QualifiedNameWildcard_1= ruleQualifiedNameWildcard )
+            int alt51=2;
+            int LA51_0 = input.LA(1);
+
+            if ( (LA51_0==RULE_ID) ) {
+                alt51=1;
+            }
+            else if ( (LA51_0==68) ) {
+                alt51=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 51, 0, input);
+
+                throw nvae;
+            }
+            switch (alt51) {
+                case 1 :
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6003:2: this_QualifiedName_0= ruleQualifiedName
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	  /* */ 
+                      	
+                    }
+                    if ( state.backtracking==0 ) {
+                       
+                              newCompositeNode(grammarAccess.getQualifiedNameOrWildcardAccess().getQualifiedNameParserRuleCall_0()); 
+                          
+                    }
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameOrWildcard13316);
+                    this_QualifiedName_0=ruleQualifiedName();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+                       
+                              current = this_QualifiedName_0; 
+                              afterParserOrEnumRuleCall();
+                          
+                    }
+
+                    }
+                    break;
+                case 2 :
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6016:2: this_QualifiedNameWildcard_1= ruleQualifiedNameWildcard
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	  /* */ 
+                      	
+                    }
+                    if ( state.backtracking==0 ) {
+                       
+                              newCompositeNode(grammarAccess.getQualifiedNameOrWildcardAccess().getQualifiedNameWildcardParserRuleCall_1()); 
+                          
+                    }
+                    pushFollow(FOLLOW_ruleQualifiedNameWildcard_in_ruleQualifiedNameOrWildcard13346);
+                    this_QualifiedNameWildcard_1=ruleQualifiedNameWildcard();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+                       
+                              current = this_QualifiedNameWildcard_1; 
+                              afterParserOrEnumRuleCall();
+                          
+                    }
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleQualifiedNameOrWildcard"
+
+
+    // $ANTLR start "entryRuleQualifiedNameWildcard"
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6035:1: entryRuleQualifiedNameWildcard returns [EObject current=null] : iv_ruleQualifiedNameWildcard= ruleQualifiedNameWildcard EOF ;
+    public final EObject entryRuleQualifiedNameWildcard() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleQualifiedNameWildcard = null;
+
+
+        try {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6036:2: (iv_ruleQualifiedNameWildcard= ruleQualifiedNameWildcard EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6037:2: iv_ruleQualifiedNameWildcard= ruleQualifiedNameWildcard EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getQualifiedNameWildcardRule()); 
+            }
+            pushFollow(FOLLOW_ruleQualifiedNameWildcard_in_entryRuleQualifiedNameWildcard13381);
+            iv_ruleQualifiedNameWildcard=ruleQualifiedNameWildcard();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleQualifiedNameWildcard; 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWildcard13391); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleQualifiedNameWildcard"
+
+
+    // $ANTLR start "ruleQualifiedNameWildcard"
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6044:1: ruleQualifiedNameWildcard returns [EObject current=null] : (otherlv_0= '\\u00AB' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '\\u00BB' ) ;
+    public final EObject ruleQualifiedNameWildcard() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+        Token otherlv_2=null;
+
+         enterRule(); 
+            
+        try {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6047:28: ( (otherlv_0= '\\u00AB' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '\\u00BB' ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6048:1: (otherlv_0= '\\u00AB' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '\\u00BB' )
+            {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6048:1: (otherlv_0= '\\u00AB' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '\\u00BB' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6048:3: otherlv_0= '\\u00AB' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '\\u00BB'
+            {
+            otherlv_0=(Token)match(input,68,FOLLOW_68_in_ruleQualifiedNameWildcard13428); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_0, grammarAccess.getQualifiedNameWildcardAccess().getLeftPointingDoubleAngleQuotationMarkKeyword_0());
+                  
+            }
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6052:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6053:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6053:1: (lv_name_1_0= RULE_ID )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6054:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedNameWildcard13445); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			newLeafNode(lv_name_1_0, grammarAccess.getQualifiedNameWildcardAccess().getNameIDTerminalRuleCall_1_0()); 
+              		
+            }
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElement(grammarAccess.getQualifiedNameWildcardRule());
+              	        }
+                     		setWithLastConsumed(
+                     			current, 
+                     			"name",
+                      		lv_name_1_0, 
+                      		"ID");
+              	    
+            }
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,69,FOLLOW_69_in_ruleQualifiedNameWildcard13462); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_2, grammarAccess.getQualifiedNameWildcardAccess().getRightPointingDoubleAngleQuotationMarkKeyword_2());
+                  
+            }
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleQualifiedNameWildcard"
+
+
     // $ANTLR start "entryRuleNullConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5989:1: entryRuleNullConstant returns [EObject current=null] : iv_ruleNullConstant= ruleNullConstant EOF ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6082:1: entryRuleNullConstant returns [EObject current=null] : iv_ruleNullConstant= ruleNullConstant EOF ;
     public final EObject entryRuleNullConstant() throws RecognitionException {
         EObject current = null;
 
@@ -16545,13 +16817,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5990:2: (iv_ruleNullConstant= ruleNullConstant EOF )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5991:2: iv_ruleNullConstant= ruleNullConstant EOF
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6083:2: (iv_ruleNullConstant= ruleNullConstant EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6084:2: iv_ruleNullConstant= ruleNullConstant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNullConstantRule()); 
             }
-            pushFollow(FOLLOW_ruleNullConstant_in_entryRuleNullConstant13256);
+            pushFollow(FOLLOW_ruleNullConstant_in_entryRuleNullConstant13498);
             iv_ruleNullConstant=ruleNullConstant();
 
             state._fsp--;
@@ -16559,7 +16831,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
             if ( state.backtracking==0 ) {
                current =iv_ruleNullConstant; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNullConstant13266); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNullConstant13508); if (state.failed) return current;
 
             }
 
@@ -16577,7 +16849,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleNullConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:5998:1: ruleNullConstant returns [EObject current=null] : ( () otherlv_1= 'null' ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6091:1: ruleNullConstant returns [EObject current=null] : ( () otherlv_1= 'null' ) ;
     public final EObject ruleNullConstant() throws RecognitionException {
         EObject current = null;
 
@@ -16586,14 +16858,14 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6001:28: ( ( () otherlv_1= 'null' ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6002:1: ( () otherlv_1= 'null' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6094:28: ( ( () otherlv_1= 'null' ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6095:1: ( () otherlv_1= 'null' )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6002:1: ( () otherlv_1= 'null' )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6002:2: () otherlv_1= 'null'
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6095:1: ( () otherlv_1= 'null' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6095:2: () otherlv_1= 'null'
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6002:2: ()
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6003:2: 
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6095:2: ()
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6096:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -16610,7 +16882,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_1=(Token)match(input,81,FOLLOW_81_in_ruleNullConstant13315); if (state.failed) return current;
+            otherlv_1=(Token)match(input,81,FOLLOW_81_in_ruleNullConstant13557); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getNullConstantAccess().getNullKeyword_1());
@@ -16639,7 +16911,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleNumericConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6023:1: entryRuleNumericConstant returns [EObject current=null] : iv_ruleNumericConstant= ruleNumericConstant EOF ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6116:1: entryRuleNumericConstant returns [EObject current=null] : iv_ruleNumericConstant= ruleNumericConstant EOF ;
     public final EObject entryRuleNumericConstant() throws RecognitionException {
         EObject current = null;
 
@@ -16647,13 +16919,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6024:2: (iv_ruleNumericConstant= ruleNumericConstant EOF )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6025:2: iv_ruleNumericConstant= ruleNumericConstant EOF
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6117:2: (iv_ruleNumericConstant= ruleNumericConstant EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6118:2: iv_ruleNumericConstant= ruleNumericConstant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNumericConstantRule()); 
             }
-            pushFollow(FOLLOW_ruleNumericConstant_in_entryRuleNumericConstant13351);
+            pushFollow(FOLLOW_ruleNumericConstant_in_entryRuleNumericConstant13593);
             iv_ruleNumericConstant=ruleNumericConstant();
 
             state._fsp--;
@@ -16661,7 +16933,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
             if ( state.backtracking==0 ) {
                current =iv_ruleNumericConstant; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericConstant13361); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericConstant13603); if (state.failed) return current;
 
             }
 
@@ -16679,7 +16951,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleNumericConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6032:1: ruleNumericConstant returns [EObject current=null] : (this_IntConstant_0= ruleIntConstant | this_LongConstant_1= ruleLongConstant | this_DoubleConstant_2= ruleDoubleConstant | this_FloatConstant_3= ruleFloatConstant ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6125:1: ruleNumericConstant returns [EObject current=null] : (this_IntConstant_0= ruleIntConstant | this_LongConstant_1= ruleLongConstant | this_DoubleConstant_2= ruleDoubleConstant | this_FloatConstant_3= ruleFloatConstant ) ;
     public final EObject ruleNumericConstant() throws RecognitionException {
         EObject current = null;
 
@@ -16695,15 +16967,20 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6035:28: ( (this_IntConstant_0= ruleIntConstant | this_LongConstant_1= ruleLongConstant | this_DoubleConstant_2= ruleDoubleConstant | this_FloatConstant_3= ruleFloatConstant ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6036:1: (this_IntConstant_0= ruleIntConstant | this_LongConstant_1= ruleLongConstant | this_DoubleConstant_2= ruleDoubleConstant | this_FloatConstant_3= ruleFloatConstant )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6128:28: ( (this_IntConstant_0= ruleIntConstant | this_LongConstant_1= ruleLongConstant | this_DoubleConstant_2= ruleDoubleConstant | this_FloatConstant_3= ruleFloatConstant ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6129:1: (this_IntConstant_0= ruleIntConstant | this_LongConstant_1= ruleLongConstant | this_DoubleConstant_2= ruleDoubleConstant | this_FloatConstant_3= ruleFloatConstant )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6036:1: (this_IntConstant_0= ruleIntConstant | this_LongConstant_1= ruleLongConstant | this_DoubleConstant_2= ruleDoubleConstant | this_FloatConstant_3= ruleFloatConstant )
-            int alt51=4;
-            int LA51_0 = input.LA(1);
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6129:1: (this_IntConstant_0= ruleIntConstant | this_LongConstant_1= ruleLongConstant | this_DoubleConstant_2= ruleDoubleConstant | this_FloatConstant_3= ruleFloatConstant )
+            int alt52=4;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA51_0==RULE_INT) ) {
+            if ( (LA52_0==RULE_INT) ) {
                 switch ( input.LA(2) ) {
+                case 83:
+                    {
+                    alt52=3;
+                    }
+                    break;
                 case EOF:
                 case 20:
                 case 24:
@@ -16731,28 +17008,23 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                 case 61:
                 case 75:
                     {
-                    alt51=1;
-                    }
-                    break;
-                case 83:
-                    {
-                    alt51=3;
+                    alt52=1;
                     }
                     break;
                 case 84:
                     {
-                    alt51=4;
+                    alt52=4;
                     }
                     break;
                 case 82:
                     {
-                    alt51=2;
+                    alt52=2;
                     }
                     break;
                 default:
                     if (state.backtracking>0) {state.failed=true; return current;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 51, 1, input);
+                        new NoViableAltException("", 52, 1, input);
 
                     throw nvae;
                 }
@@ -16761,13 +17033,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 51, 0, input);
+                    new NoViableAltException("", 52, 0, input);
 
                 throw nvae;
             }
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6037:2: this_IntConstant_0= ruleIntConstant
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6130:2: this_IntConstant_0= ruleIntConstant
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -16779,7 +17051,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                               newCompositeNode(grammarAccess.getNumericConstantAccess().getIntConstantParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleIntConstant_in_ruleNumericConstant13411);
+                    pushFollow(FOLLOW_ruleIntConstant_in_ruleNumericConstant13653);
                     this_IntConstant_0=ruleIntConstant();
 
                     state._fsp--;
@@ -16794,7 +17066,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6050:2: this_LongConstant_1= ruleLongConstant
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6143:2: this_LongConstant_1= ruleLongConstant
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -16806,7 +17078,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                               newCompositeNode(grammarAccess.getNumericConstantAccess().getLongConstantParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleLongConstant_in_ruleNumericConstant13441);
+                    pushFollow(FOLLOW_ruleLongConstant_in_ruleNumericConstant13683);
                     this_LongConstant_1=ruleLongConstant();
 
                     state._fsp--;
@@ -16821,7 +17093,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 3 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6063:2: this_DoubleConstant_2= ruleDoubleConstant
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6156:2: this_DoubleConstant_2= ruleDoubleConstant
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -16833,7 +17105,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                               newCompositeNode(grammarAccess.getNumericConstantAccess().getDoubleConstantParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleDoubleConstant_in_ruleNumericConstant13471);
+                    pushFollow(FOLLOW_ruleDoubleConstant_in_ruleNumericConstant13713);
                     this_DoubleConstant_2=ruleDoubleConstant();
 
                     state._fsp--;
@@ -16848,7 +17120,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 4 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6076:2: this_FloatConstant_3= ruleFloatConstant
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6169:2: this_FloatConstant_3= ruleFloatConstant
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -16860,7 +17132,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                               newCompositeNode(grammarAccess.getNumericConstantAccess().getFloatConstantParserRuleCall_3()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleFloatConstant_in_ruleNumericConstant13501);
+                    pushFollow(FOLLOW_ruleFloatConstant_in_ruleNumericConstant13743);
                     this_FloatConstant_3=ruleFloatConstant();
 
                     state._fsp--;
@@ -16897,7 +17169,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleIntConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6095:1: entryRuleIntConstant returns [EObject current=null] : iv_ruleIntConstant= ruleIntConstant EOF ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6188:1: entryRuleIntConstant returns [EObject current=null] : iv_ruleIntConstant= ruleIntConstant EOF ;
     public final EObject entryRuleIntConstant() throws RecognitionException {
         EObject current = null;
 
@@ -16905,13 +17177,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6096:2: (iv_ruleIntConstant= ruleIntConstant EOF )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6097:2: iv_ruleIntConstant= ruleIntConstant EOF
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6189:2: (iv_ruleIntConstant= ruleIntConstant EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6190:2: iv_ruleIntConstant= ruleIntConstant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getIntConstantRule()); 
             }
-            pushFollow(FOLLOW_ruleIntConstant_in_entryRuleIntConstant13536);
+            pushFollow(FOLLOW_ruleIntConstant_in_entryRuleIntConstant13778);
             iv_ruleIntConstant=ruleIntConstant();
 
             state._fsp--;
@@ -16919,7 +17191,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
             if ( state.backtracking==0 ) {
                current =iv_ruleIntConstant; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIntConstant13546); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIntConstant13788); if (state.failed) return current;
 
             }
 
@@ -16937,7 +17209,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleIntConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6104:1: ruleIntConstant returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6197:1: ruleIntConstant returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
     public final EObject ruleIntConstant() throws RecognitionException {
         EObject current = null;
 
@@ -16946,16 +17218,16 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6107:28: ( ( (lv_value_0_0= RULE_INT ) ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6108:1: ( (lv_value_0_0= RULE_INT ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6200:28: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6201:1: ( (lv_value_0_0= RULE_INT ) )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6108:1: ( (lv_value_0_0= RULE_INT ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6109:1: (lv_value_0_0= RULE_INT )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6201:1: ( (lv_value_0_0= RULE_INT ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6202:1: (lv_value_0_0= RULE_INT )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6109:1: (lv_value_0_0= RULE_INT )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6110:3: lv_value_0_0= RULE_INT
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6202:1: (lv_value_0_0= RULE_INT )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6203:3: lv_value_0_0= RULE_INT
             {
-            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleIntConstant13587); if (state.failed) return current;
+            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleIntConstant13829); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_0_0, grammarAccess.getIntConstantAccess().getValueINTTerminalRuleCall_0()); 
@@ -16999,7 +17271,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleLongConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6134:1: entryRuleLongConstant returns [EObject current=null] : iv_ruleLongConstant= ruleLongConstant EOF ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6227:1: entryRuleLongConstant returns [EObject current=null] : iv_ruleLongConstant= ruleLongConstant EOF ;
     public final EObject entryRuleLongConstant() throws RecognitionException {
         EObject current = null;
 
@@ -17007,13 +17279,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6135:2: (iv_ruleLongConstant= ruleLongConstant EOF )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6136:2: iv_ruleLongConstant= ruleLongConstant EOF
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6228:2: (iv_ruleLongConstant= ruleLongConstant EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6229:2: iv_ruleLongConstant= ruleLongConstant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLongConstantRule()); 
             }
-            pushFollow(FOLLOW_ruleLongConstant_in_entryRuleLongConstant13627);
+            pushFollow(FOLLOW_ruleLongConstant_in_entryRuleLongConstant13869);
             iv_ruleLongConstant=ruleLongConstant();
 
             state._fsp--;
@@ -17021,7 +17293,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
             if ( state.backtracking==0 ) {
                current =iv_ruleLongConstant; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLongConstant13637); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLongConstant13879); if (state.failed) return current;
 
             }
 
@@ -17039,7 +17311,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleLongConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6143:1: ruleLongConstant returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L' ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6236:1: ruleLongConstant returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L' ) ;
     public final EObject ruleLongConstant() throws RecognitionException {
         EObject current = null;
 
@@ -17049,19 +17321,19 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6146:28: ( ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L' ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6147:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6239:28: ( ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L' ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6240:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L' )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6147:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L' )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6147:2: ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L'
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6240:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6240:2: ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'L'
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6147:2: ( (lv_value_0_0= RULE_INT ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6148:1: (lv_value_0_0= RULE_INT )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6240:2: ( (lv_value_0_0= RULE_INT ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6241:1: (lv_value_0_0= RULE_INT )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6148:1: (lv_value_0_0= RULE_INT )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6149:3: lv_value_0_0= RULE_INT
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6241:1: (lv_value_0_0= RULE_INT )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6242:3: lv_value_0_0= RULE_INT
             {
-            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleLongConstant13679); if (state.failed) return current;
+            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleLongConstant13921); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_0_0, grammarAccess.getLongConstantAccess().getValueINTTerminalRuleCall_0_0()); 
@@ -17085,7 +17357,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_1=(Token)match(input,82,FOLLOW_82_in_ruleLongConstant13696); if (state.failed) return current;
+            otherlv_1=(Token)match(input,82,FOLLOW_82_in_ruleLongConstant13938); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getLongConstantAccess().getLKeyword_1());
@@ -17114,7 +17386,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleDoubleConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6177:1: entryRuleDoubleConstant returns [EObject current=null] : iv_ruleDoubleConstant= ruleDoubleConstant EOF ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6270:1: entryRuleDoubleConstant returns [EObject current=null] : iv_ruleDoubleConstant= ruleDoubleConstant EOF ;
     public final EObject entryRuleDoubleConstant() throws RecognitionException {
         EObject current = null;
 
@@ -17122,13 +17394,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6178:2: (iv_ruleDoubleConstant= ruleDoubleConstant EOF )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6179:2: iv_ruleDoubleConstant= ruleDoubleConstant EOF
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6271:2: (iv_ruleDoubleConstant= ruleDoubleConstant EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6272:2: iv_ruleDoubleConstant= ruleDoubleConstant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDoubleConstantRule()); 
             }
-            pushFollow(FOLLOW_ruleDoubleConstant_in_entryRuleDoubleConstant13732);
+            pushFollow(FOLLOW_ruleDoubleConstant_in_entryRuleDoubleConstant13974);
             iv_ruleDoubleConstant=ruleDoubleConstant();
 
             state._fsp--;
@@ -17136,7 +17408,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
             if ( state.backtracking==0 ) {
                current =iv_ruleDoubleConstant; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDoubleConstant13742); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDoubleConstant13984); if (state.failed) return current;
 
             }
 
@@ -17154,7 +17426,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleDoubleConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6186:1: ruleDoubleConstant returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D' ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6279:1: ruleDoubleConstant returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D' ) ;
     public final EObject ruleDoubleConstant() throws RecognitionException {
         EObject current = null;
 
@@ -17164,19 +17436,19 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6189:28: ( ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D' ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6190:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6282:28: ( ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D' ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6283:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D' )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6190:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D' )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6190:2: ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D'
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6283:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6283:2: ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'D'
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6190:2: ( (lv_value_0_0= RULE_INT ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6191:1: (lv_value_0_0= RULE_INT )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6283:2: ( (lv_value_0_0= RULE_INT ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6284:1: (lv_value_0_0= RULE_INT )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6191:1: (lv_value_0_0= RULE_INT )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6192:3: lv_value_0_0= RULE_INT
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6284:1: (lv_value_0_0= RULE_INT )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6285:3: lv_value_0_0= RULE_INT
             {
-            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDoubleConstant13784); if (state.failed) return current;
+            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDoubleConstant14026); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_0_0, grammarAccess.getDoubleConstantAccess().getValueINTTerminalRuleCall_0_0()); 
@@ -17200,7 +17472,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_1=(Token)match(input,83,FOLLOW_83_in_ruleDoubleConstant13801); if (state.failed) return current;
+            otherlv_1=(Token)match(input,83,FOLLOW_83_in_ruleDoubleConstant14043); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getDoubleConstantAccess().getDKeyword_1());
@@ -17229,7 +17501,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleFloatConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6220:1: entryRuleFloatConstant returns [EObject current=null] : iv_ruleFloatConstant= ruleFloatConstant EOF ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6313:1: entryRuleFloatConstant returns [EObject current=null] : iv_ruleFloatConstant= ruleFloatConstant EOF ;
     public final EObject entryRuleFloatConstant() throws RecognitionException {
         EObject current = null;
 
@@ -17237,13 +17509,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6221:2: (iv_ruleFloatConstant= ruleFloatConstant EOF )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6222:2: iv_ruleFloatConstant= ruleFloatConstant EOF
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6314:2: (iv_ruleFloatConstant= ruleFloatConstant EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6315:2: iv_ruleFloatConstant= ruleFloatConstant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFloatConstantRule()); 
             }
-            pushFollow(FOLLOW_ruleFloatConstant_in_entryRuleFloatConstant13837);
+            pushFollow(FOLLOW_ruleFloatConstant_in_entryRuleFloatConstant14079);
             iv_ruleFloatConstant=ruleFloatConstant();
 
             state._fsp--;
@@ -17251,7 +17523,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
             if ( state.backtracking==0 ) {
                current =iv_ruleFloatConstant; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFloatConstant13847); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFloatConstant14089); if (state.failed) return current;
 
             }
 
@@ -17269,7 +17541,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleFloatConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6229:1: ruleFloatConstant returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F' ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6322:1: ruleFloatConstant returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F' ) ;
     public final EObject ruleFloatConstant() throws RecognitionException {
         EObject current = null;
 
@@ -17279,19 +17551,19 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6232:28: ( ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F' ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6233:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6325:28: ( ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F' ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6326:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F' )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6233:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F' )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6233:2: ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F'
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6326:1: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6326:2: ( (lv_value_0_0= RULE_INT ) ) otherlv_1= 'F'
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6233:2: ( (lv_value_0_0= RULE_INT ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6234:1: (lv_value_0_0= RULE_INT )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6326:2: ( (lv_value_0_0= RULE_INT ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6327:1: (lv_value_0_0= RULE_INT )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6234:1: (lv_value_0_0= RULE_INT )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6235:3: lv_value_0_0= RULE_INT
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6327:1: (lv_value_0_0= RULE_INT )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6328:3: lv_value_0_0= RULE_INT
             {
-            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFloatConstant13889); if (state.failed) return current;
+            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFloatConstant14131); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_0_0, grammarAccess.getFloatConstantAccess().getValueINTTerminalRuleCall_0_0()); 
@@ -17315,7 +17587,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
             }
 
-            otherlv_1=(Token)match(input,84,FOLLOW_84_in_ruleFloatConstant13906); if (state.failed) return current;
+            otherlv_1=(Token)match(input,84,FOLLOW_84_in_ruleFloatConstant14148); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getFloatConstantAccess().getFKeyword_1());
@@ -17344,7 +17616,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleStringConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6263:1: entryRuleStringConstant returns [EObject current=null] : iv_ruleStringConstant= ruleStringConstant EOF ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6356:1: entryRuleStringConstant returns [EObject current=null] : iv_ruleStringConstant= ruleStringConstant EOF ;
     public final EObject entryRuleStringConstant() throws RecognitionException {
         EObject current = null;
 
@@ -17352,13 +17624,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6264:2: (iv_ruleStringConstant= ruleStringConstant EOF )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6265:2: iv_ruleStringConstant= ruleStringConstant EOF
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6357:2: (iv_ruleStringConstant= ruleStringConstant EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6358:2: iv_ruleStringConstant= ruleStringConstant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStringConstantRule()); 
             }
-            pushFollow(FOLLOW_ruleStringConstant_in_entryRuleStringConstant13942);
+            pushFollow(FOLLOW_ruleStringConstant_in_entryRuleStringConstant14184);
             iv_ruleStringConstant=ruleStringConstant();
 
             state._fsp--;
@@ -17366,7 +17638,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
             if ( state.backtracking==0 ) {
                current =iv_ruleStringConstant; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringConstant13952); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringConstant14194); if (state.failed) return current;
 
             }
 
@@ -17384,7 +17656,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleStringConstant"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6272:1: ruleStringConstant returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6365:1: ruleStringConstant returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringConstant() throws RecognitionException {
         EObject current = null;
 
@@ -17393,16 +17665,16 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6275:28: ( ( (lv_value_0_0= RULE_STRING ) ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6276:1: ( (lv_value_0_0= RULE_STRING ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6368:28: ( ( (lv_value_0_0= RULE_STRING ) ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6369:1: ( (lv_value_0_0= RULE_STRING ) )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6276:1: ( (lv_value_0_0= RULE_STRING ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6277:1: (lv_value_0_0= RULE_STRING )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6369:1: ( (lv_value_0_0= RULE_STRING ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6370:1: (lv_value_0_0= RULE_STRING )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6277:1: (lv_value_0_0= RULE_STRING )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6278:3: lv_value_0_0= RULE_STRING
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6370:1: (lv_value_0_0= RULE_STRING )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6371:3: lv_value_0_0= RULE_STRING
             {
-            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringConstant13993); if (state.failed) return current;
+            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringConstant14235); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_0_0, grammarAccess.getStringConstantAccess().getValueSTRINGTerminalRuleCall_0()); 
@@ -17446,7 +17718,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleMethodName"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6304:1: entryRuleMethodName returns [String current=null] : iv_ruleMethodName= ruleMethodName EOF ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6397:1: entryRuleMethodName returns [String current=null] : iv_ruleMethodName= ruleMethodName EOF ;
     public final String entryRuleMethodName() throws RecognitionException {
         String current = null;
 
@@ -17454,13 +17726,13 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6305:2: (iv_ruleMethodName= ruleMethodName EOF )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6306:2: iv_ruleMethodName= ruleMethodName EOF
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6398:2: (iv_ruleMethodName= ruleMethodName EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6399:2: iv_ruleMethodName= ruleMethodName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getMethodNameRule()); 
             }
-            pushFollow(FOLLOW_ruleMethodName_in_entryRuleMethodName14036);
+            pushFollow(FOLLOW_ruleMethodName_in_entryRuleMethodName14278);
             iv_ruleMethodName=ruleMethodName();
 
             state._fsp--;
@@ -17468,7 +17740,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
             if ( state.backtracking==0 ) {
                current =iv_ruleMethodName.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMethodName14047); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMethodName14289); if (state.failed) return current;
 
             }
 
@@ -17486,7 +17758,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleMethodName"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6313:1: ruleMethodName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )? ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6406:1: ruleMethodName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )? ) ;
     public final AntlrDatatypeRuleToken ruleMethodName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -17496,24 +17768,24 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6316:28: ( ( (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )? ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6317:1: ( (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )? )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6409:28: ( ( (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )? ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6410:1: ( (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )? )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6317:1: ( (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )? )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6317:2: (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )?
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6410:1: ( (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )? )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6410:2: (kw= '<' )? this_ID_1= RULE_ID (kw= '>' )?
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6317:2: (kw= '<' )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6410:2: (kw= '<' )?
+            int alt53=2;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA52_0==60) ) {
-                alt52=1;
+            if ( (LA53_0==60) ) {
+                alt53=1;
             }
-            switch (alt52) {
+            switch (alt53) {
                 case 1 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6318:2: kw= '<'
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6411:2: kw= '<'
                     {
-                    kw=(Token)match(input,60,FOLLOW_60_in_ruleMethodName14086); if (state.failed) return current;
+                    kw=(Token)match(input,60,FOLLOW_60_in_ruleMethodName14328); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -17526,7 +17798,7 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
             }
 
-            this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMethodName14103); if (state.failed) return current;
+            this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMethodName14345); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_1);
@@ -17537,18 +17809,18 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                   newLeafNode(this_ID_1, grammarAccess.getMethodNameAccess().getIDTerminalRuleCall_1()); 
                   
             }
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6330:1: (kw= '>' )?
-            int alt53=2;
-            int LA53_0 = input.LA(1);
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6423:1: (kw= '>' )?
+            int alt54=2;
+            int LA54_0 = input.LA(1);
 
-            if ( (LA53_0==58) ) {
-                alt53=1;
+            if ( (LA54_0==58) ) {
+                alt54=1;
             }
-            switch (alt53) {
+            switch (alt54) {
                 case 1 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6331:2: kw= '>'
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6424:2: kw= '>'
                     {
-                    kw=(Token)match(input,58,FOLLOW_58_in_ruleMethodName14122); if (state.failed) return current;
+                    kw=(Token)match(input,58,FOLLOW_58_in_ruleMethodName14364); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -17584,29 +17856,29 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6344:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
-    public final String entryRuleQualifiedName() throws RecognitionException {
-        String current = null;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6437:1: entryRuleQualifiedName returns [EObject current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    public final EObject entryRuleQualifiedName() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleQualifiedName = null;
+        EObject iv_ruleQualifiedName = null;
 
 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6345:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6346:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6438:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6439:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName14165);
+            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName14406);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleQualifiedName.getText(); 
+               current =iv_ruleQualifiedName; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName14176); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName14416); if (state.failed) return current;
 
             }
 
@@ -17624,75 +17896,50 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6353:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
-    public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6446:1: ruleQualifiedName returns [EObject current=null] : ( (lv_name_0_0= ruleQName ) ) ;
+    public final EObject ruleQualifiedName() throws RecognitionException {
+        EObject current = null;
 
-        Token this_ID_0=null;
-        Token kw=null;
-        Token this_ID_2=null;
+        AntlrDatatypeRuleToken lv_name_0_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6356:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6357:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6449:28: ( ( (lv_name_0_0= ruleQName ) ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6450:1: ( (lv_name_0_0= ruleQName ) )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6357:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6357:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6450:1: ( (lv_name_0_0= ruleQName ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6451:1: (lv_name_0_0= ruleQName )
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName14216); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              		current.merge(this_ID_0);
-                  
-            }
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6451:1: (lv_name_0_0= ruleQName )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6452:3: lv_name_0_0= ruleQName
+            {
             if ( state.backtracking==0 ) {
                
-                  newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
-                  
+              	        newCompositeNode(grammarAccess.getQualifiedNameAccess().getNameQNameParserRuleCall_0()); 
+              	    
             }
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6364:1: (kw= '.' this_ID_2= RULE_ID )*
-            loop54:
-            do {
-                int alt54=2;
-                int LA54_0 = input.LA(1);
+            pushFollow(FOLLOW_ruleQName_in_ruleQualifiedName14461);
+            lv_name_0_0=ruleQName();
 
-                if ( (LA54_0==65) ) {
-                    alt54=1;
-                }
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
 
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getQualifiedNameRule());
+              	        }
+                     		set(
+                     			current, 
+                     			"name",
+                      		lv_name_0_0, 
+                      		"QName");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
 
-                switch (alt54) {
-            	case 1 :
-            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6365:2: kw= '.' this_ID_2= RULE_ID
-            	    {
-            	    kw=(Token)match(input,65,FOLLOW_65_in_ruleQualifiedName14235); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	              current.merge(kw);
-            	              newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            	          
-            	    }
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName14250); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      		current.merge(this_ID_2);
-            	          
-            	    }
-            	    if ( state.backtracking==0 ) {
-            	       
-            	          newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
-            	          
-            	    }
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop54;
-                }
-            } while (true);
+            }
 
 
             }
@@ -17716,8 +17963,141 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
     // $ANTLR end "ruleQualifiedName"
 
 
+    // $ANTLR start "entryRuleQName"
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6476:1: entryRuleQName returns [String current=null] : iv_ruleQName= ruleQName EOF ;
+    public final String entryRuleQName() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleQName = null;
+
+
+        try {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6477:2: (iv_ruleQName= ruleQName EOF )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6478:2: iv_ruleQName= ruleQName EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getQNameRule()); 
+            }
+            pushFollow(FOLLOW_ruleQName_in_entryRuleQName14497);
+            iv_ruleQName=ruleQName();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleQName.getText(); 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQName14508); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleQName"
+
+
+    // $ANTLR start "ruleQName"
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6485:1: ruleQName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    public final AntlrDatatypeRuleToken ruleQName() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_ID_0=null;
+        Token kw=null;
+        Token this_ID_2=null;
+
+         enterRule(); 
+            
+        try {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6488:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6489:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            {
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6489:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6489:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            {
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQName14548); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              		current.merge(this_ID_0);
+                  
+            }
+            if ( state.backtracking==0 ) {
+               
+                  newLeafNode(this_ID_0, grammarAccess.getQNameAccess().getIDTerminalRuleCall_0()); 
+                  
+            }
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6496:1: (kw= '.' this_ID_2= RULE_ID )*
+            loop55:
+            do {
+                int alt55=2;
+                int LA55_0 = input.LA(1);
+
+                if ( (LA55_0==65) ) {
+                    alt55=1;
+                }
+
+
+                switch (alt55) {
+            	case 1 :
+            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6497:2: kw= '.' this_ID_2= RULE_ID
+            	    {
+            	    kw=(Token)match(input,65,FOLLOW_65_in_ruleQName14567); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	              current.merge(kw);
+            	              newLeafNode(kw, grammarAccess.getQNameAccess().getFullStopKeyword_1_0()); 
+            	          
+            	    }
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQName14582); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      		current.merge(this_ID_2);
+            	          
+            	    }
+            	    if ( state.backtracking==0 ) {
+            	       
+            	          newLeafNode(this_ID_2, grammarAccess.getQNameAccess().getIDTerminalRuleCall_1_1()); 
+            	          
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop55;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleQName"
+
+
     // $ANTLR start "ruleVisibility"
-    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6385:1: ruleVisibility returns [Enumerator current=null] : ( (enumLiteral_0= 'package' ) | (enumLiteral_1= 'public' ) | (enumLiteral_2= 'protected' ) | (enumLiteral_3= 'private' ) ) ;
+    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6517:1: ruleVisibility returns [Enumerator current=null] : ( (enumLiteral_0= 'package' ) | (enumLiteral_1= 'public' ) | (enumLiteral_2= 'protected' ) | (enumLiteral_3= 'private' ) ) ;
     public final Enumerator ruleVisibility() throws RecognitionException {
         Enumerator current = null;
 
@@ -17728,48 +18108,48 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
 
          enterRule(); 
         try {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6387:28: ( ( (enumLiteral_0= 'package' ) | (enumLiteral_1= 'public' ) | (enumLiteral_2= 'protected' ) | (enumLiteral_3= 'private' ) ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6388:1: ( (enumLiteral_0= 'package' ) | (enumLiteral_1= 'public' ) | (enumLiteral_2= 'protected' ) | (enumLiteral_3= 'private' ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6519:28: ( ( (enumLiteral_0= 'package' ) | (enumLiteral_1= 'public' ) | (enumLiteral_2= 'protected' ) | (enumLiteral_3= 'private' ) ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6520:1: ( (enumLiteral_0= 'package' ) | (enumLiteral_1= 'public' ) | (enumLiteral_2= 'protected' ) | (enumLiteral_3= 'private' ) )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6388:1: ( (enumLiteral_0= 'package' ) | (enumLiteral_1= 'public' ) | (enumLiteral_2= 'protected' ) | (enumLiteral_3= 'private' ) )
-            int alt55=4;
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6520:1: ( (enumLiteral_0= 'package' ) | (enumLiteral_1= 'public' ) | (enumLiteral_2= 'protected' ) | (enumLiteral_3= 'private' ) )
+            int alt56=4;
             switch ( input.LA(1) ) {
             case 85:
                 {
-                alt55=1;
+                alt56=1;
                 }
                 break;
             case 86:
                 {
-                alt55=2;
+                alt56=2;
                 }
                 break;
             case 87:
                 {
-                alt55=3;
+                alt56=3;
                 }
                 break;
             case 88:
                 {
-                alt55=4;
+                alt56=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 55, 0, input);
+                    new NoViableAltException("", 56, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt55) {
+            switch (alt56) {
                 case 1 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6388:2: (enumLiteral_0= 'package' )
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6520:2: (enumLiteral_0= 'package' )
                     {
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6388:2: (enumLiteral_0= 'package' )
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6388:4: enumLiteral_0= 'package'
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6520:2: (enumLiteral_0= 'package' )
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6520:4: enumLiteral_0= 'package'
                     {
-                    enumLiteral_0=(Token)match(input,85,FOLLOW_85_in_ruleVisibility14311); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,85,FOLLOW_85_in_ruleVisibility14643); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getVisibilityAccess().getPackageEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -17783,12 +18163,12 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 2 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6394:6: (enumLiteral_1= 'public' )
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6526:6: (enumLiteral_1= 'public' )
                     {
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6394:6: (enumLiteral_1= 'public' )
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6394:8: enumLiteral_1= 'public'
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6526:6: (enumLiteral_1= 'public' )
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6526:8: enumLiteral_1= 'public'
                     {
-                    enumLiteral_1=(Token)match(input,86,FOLLOW_86_in_ruleVisibility14328); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,86,FOLLOW_86_in_ruleVisibility14660); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getVisibilityAccess().getPublicEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -17802,12 +18182,12 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 3 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6400:6: (enumLiteral_2= 'protected' )
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6532:6: (enumLiteral_2= 'protected' )
                     {
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6400:6: (enumLiteral_2= 'protected' )
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6400:8: enumLiteral_2= 'protected'
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6532:6: (enumLiteral_2= 'protected' )
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6532:8: enumLiteral_2= 'protected'
                     {
-                    enumLiteral_2=(Token)match(input,87,FOLLOW_87_in_ruleVisibility14345); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,87,FOLLOW_87_in_ruleVisibility14677); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getVisibilityAccess().getProtectedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -17821,12 +18201,12 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
                     }
                     break;
                 case 4 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6406:6: (enumLiteral_3= 'private' )
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6538:6: (enumLiteral_3= 'private' )
                     {
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6406:6: (enumLiteral_3= 'private' )
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6406:8: enumLiteral_3= 'private'
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6538:6: (enumLiteral_3= 'private' )
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6538:8: enumLiteral_3= 'private'
                     {
-                    enumLiteral_3=(Token)match(input,88,FOLLOW_88_in_ruleVisibility14362); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,88,FOLLOW_88_in_ruleVisibility14694); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getVisibilityAccess().getPrivateEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -20470,49 +20850,61 @@ public class InternalTransformationLanguageParser extends AbstractInternalAntlrP
     public static final BitSet FOLLOW_ruleStringConstant_in_ruleConstant13117 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleClassConstant_in_entryRuleClassConstant13152 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleClassConstant13162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleClassConstant13199 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleClassConstant13220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNullConstant_in_entryRuleNullConstant13256 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNullConstant13266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_81_in_ruleNullConstant13315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericConstant_in_entryRuleNumericConstant13351 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumericConstant13361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntConstant_in_ruleNumericConstant13411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLongConstant_in_ruleNumericConstant13441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDoubleConstant_in_ruleNumericConstant13471 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloatConstant_in_ruleNumericConstant13501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntConstant_in_entryRuleIntConstant13536 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIntConstant13546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleIntConstant13587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLongConstant_in_entryRuleLongConstant13627 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLongConstant13637 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleLongConstant13679 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_82_in_ruleLongConstant13696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDoubleConstant_in_entryRuleDoubleConstant13732 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDoubleConstant13742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleDoubleConstant13784 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_83_in_ruleDoubleConstant13801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloatConstant_in_entryRuleFloatConstant13837 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFloatConstant13847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleFloatConstant13889 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_84_in_ruleFloatConstant13906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringConstant_in_entryRuleStringConstant13942 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringConstant13952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringConstant13993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethodName_in_entryRuleMethodName14036 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMethodName14047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleMethodName14086 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMethodName14103 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleMethodName14122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName14165 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName14176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName14216 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleQualifiedName14235 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName14250 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_ruleVisibility14311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_ruleVisibility14328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_ruleVisibility14345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_88_in_ruleVisibility14362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleClassConstant13199 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedNameOrWildcard_in_ruleClassConstant13220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameOrWildcard_in_entryRuleQualifiedNameOrWildcard13256 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameOrWildcard13266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameOrWildcard13316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWildcard_in_ruleQualifiedNameOrWildcard13346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWildcard_in_entryRuleQualifiedNameWildcard13381 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWildcard13391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_ruleQualifiedNameWildcard13428 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedNameWildcard13445 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_69_in_ruleQualifiedNameWildcard13462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNullConstant_in_entryRuleNullConstant13498 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNullConstant13508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_ruleNullConstant13557 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumericConstant_in_entryRuleNumericConstant13593 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumericConstant13603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntConstant_in_ruleNumericConstant13653 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLongConstant_in_ruleNumericConstant13683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDoubleConstant_in_ruleNumericConstant13713 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloatConstant_in_ruleNumericConstant13743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntConstant_in_entryRuleIntConstant13778 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIntConstant13788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleIntConstant13829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLongConstant_in_entryRuleLongConstant13869 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLongConstant13879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleLongConstant13921 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_82_in_ruleLongConstant13938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDoubleConstant_in_entryRuleDoubleConstant13974 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDoubleConstant13984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleDoubleConstant14026 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_83_in_ruleDoubleConstant14043 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloatConstant_in_entryRuleFloatConstant14079 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFloatConstant14089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleFloatConstant14131 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_84_in_ruleFloatConstant14148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringConstant_in_entryRuleStringConstant14184 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringConstant14194 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringConstant14235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethodName_in_entryRuleMethodName14278 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMethodName14289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleMethodName14328 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMethodName14345 = new BitSet(new long[]{0x0400000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleMethodName14364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName14406 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName14416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQName_in_ruleQualifiedName14461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQName_in_entryRuleQName14497 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQName14508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQName14548 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleQName14567 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQName14582 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_ruleVisibility14643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_ruleVisibility14660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_ruleVisibility14677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_88_in_ruleVisibility14694 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDeclaration_in_synpred17_InternalTransformationLanguage1729 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNonExpr_in_synpred36_InternalTransformationLanguage4784 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBinOpExpr_in_synpred39_InternalTransformationLanguage5064 = new BitSet(new long[]{0x0000000000000002L});

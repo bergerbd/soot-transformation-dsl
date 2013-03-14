@@ -1707,12 +1707,12 @@ public class InternalTransformationLanguageLexer extends Lexer {
         try {
             int _type = RULE_LABELNAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6415:16: ( 'label' ( '0' .. '9' )+ )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6415:18: 'label' ( '0' .. '9' )+
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6547:16: ( 'label' ( '0' .. '9' )+ )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6547:18: 'label' ( '0' .. '9' )+
             {
             match("label"); 
 
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6415:26: ( '0' .. '9' )+
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6547:26: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -1726,7 +1726,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6415:27: '0' .. '9'
+            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6547:27: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1758,10 +1758,10 @@ public class InternalTransformationLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6417:9: ( ( '$' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '0' .. '9' )* )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6417:11: ( '$' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '0' .. '9' )*
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6549:9: ( ( '$' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '0' .. '9' )* )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6549:11: ( '$' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '0' .. '9' )*
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6417:11: ( '$' )?
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6549:11: ( '$' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1770,7 +1770,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6417:11: '$'
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6549:11: '$'
                     {
                     match('$'); 
 
@@ -1788,7 +1788,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6417:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '0' .. '9' )*
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6549:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -1837,10 +1837,10 @@ public class InternalTransformationLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6419:10: ( ( '0' .. '9' )+ )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6419:12: ( '0' .. '9' )+
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6551:10: ( ( '0' .. '9' )+ )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6551:12: ( '0' .. '9' )+
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6419:12: ( '0' .. '9' )+
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6551:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -1854,7 +1854,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6419:13: '0' .. '9'
+            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6551:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1886,10 +1886,10 @@ public class InternalTransformationLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1907,10 +1907,10 @@ public class InternalTransformationLanguageLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1926,7 +1926,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1942,7 +1942,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1967,10 +1967,10 @@ public class InternalTransformationLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1986,7 +1986,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2002,7 +2002,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6421:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6553:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2045,12 +2045,12 @@ public class InternalTransformationLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6423:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6423:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6555:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6555:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6423:24: ( options {greedy=false; } : . )*
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6555:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -2075,7 +2075,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6423:52: .
+            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6555:52: .
             	    {
             	    matchAny(); 
 
@@ -2105,12 +2105,12 @@ public class InternalTransformationLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6425:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6425:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6557:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6557:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6425:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6557:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -2123,7 +2123,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6425:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6557:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2143,7 +2143,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6425:40: ( ( '\\r' )? '\\n' )?
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6557:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2152,9 +2152,9 @@ public class InternalTransformationLanguageLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6425:41: ( '\\r' )? '\\n'
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6557:41: ( '\\r' )? '\\n'
                     {
-                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6425:41: ( '\\r' )?
+                    // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6557:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -2163,7 +2163,7 @@ public class InternalTransformationLanguageLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6425:41: '\\r'
+                            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6557:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2195,10 +2195,10 @@ public class InternalTransformationLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6427:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6427:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6559:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6559:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6427:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6559:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -2252,8 +2252,8 @@ public class InternalTransformationLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6429:16: ( . )
-            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6429:18: .
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6561:16: ( . )
+            // ../soot.jimple.toolkits.transformation.dsl/src-gen/soot/jimple/toolkits/transformation/dsl/parser/antlr/internal/InternalTransformationLanguage.g:6561:18: .
             {
             matchAny(); 
 

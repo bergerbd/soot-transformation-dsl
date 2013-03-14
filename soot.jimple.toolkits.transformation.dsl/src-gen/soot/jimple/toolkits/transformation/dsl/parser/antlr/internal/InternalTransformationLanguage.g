@@ -5963,9 +5963,9 @@ ruleClassConstant returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getClassConstantAccess().getNameQualifiedNameParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getClassConstantAccess().getNameQualifiedNameOrWildcardParserRuleCall_1_0()); 
 	    }
-		lv_name_1_0=ruleQualifiedName		{
+		lv_name_1_0=ruleQualifiedNameOrWildcard		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getClassConstantRule());
 	        }
@@ -5973,12 +5973,105 @@ ruleClassConstant returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"QualifiedName");
+        		"QualifiedNameOrWildcard");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 ))
+;
+
+
+
+
+
+// Entry rule entryRuleQualifiedNameOrWildcard
+entryRuleQualifiedNameOrWildcard returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getQualifiedNameOrWildcardRule()); }
+	 iv_ruleQualifiedNameOrWildcard=ruleQualifiedNameOrWildcard 
+	 { $current=$iv_ruleQualifiedNameOrWildcard.current; } 
+	 EOF 
+;
+
+// Rule QualifiedNameOrWildcard
+ruleQualifiedNameOrWildcard returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getQualifiedNameOrWildcardAccess().getQualifiedNameParserRuleCall_0()); 
+    }
+    this_QualifiedName_0=ruleQualifiedName
+    { 
+        $current = $this_QualifiedName_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getQualifiedNameOrWildcardAccess().getQualifiedNameWildcardParserRuleCall_1()); 
+    }
+    this_QualifiedNameWildcard_1=ruleQualifiedNameWildcard
+    { 
+        $current = $this_QualifiedNameWildcard_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleQualifiedNameWildcard
+entryRuleQualifiedNameWildcard returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getQualifiedNameWildcardRule()); }
+	 iv_ruleQualifiedNameWildcard=ruleQualifiedNameWildcard 
+	 { $current=$iv_ruleQualifiedNameWildcard.current; } 
+	 EOF 
+;
+
+// Rule QualifiedNameWildcard
+ruleQualifiedNameWildcard returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='\u00AB' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getQualifiedNameWildcardAccess().getLeftPointingDoubleAngleQuotationMarkKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getQualifiedNameWildcardAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getQualifiedNameWildcardRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_2='\u00BB' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getQualifiedNameWildcardAccess().getRightPointingDoubleAngleQuotationMarkKeyword_2());
+    }
+)
 ;
 
 
@@ -6341,16 +6434,55 @@ ruleMethodName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
 
 
 // Entry rule entryRuleQualifiedName
-entryRuleQualifiedName returns [String current=null] 
+entryRuleQualifiedName returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getQualifiedNameRule()); } 
+	{ newCompositeNode(grammarAccess.getQualifiedNameRule()); }
 	 iv_ruleQualifiedName=ruleQualifiedName 
-	 { $current=$iv_ruleQualifiedName.current.getText(); }  
+	 { $current=$iv_ruleQualifiedName.current; } 
 	 EOF 
 ;
 
 // Rule QualifiedName
-ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleQualifiedName returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getQualifiedNameAccess().getNameQNameParserRuleCall_0()); 
+	    }
+		lv_name_0_0=ruleQName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getQualifiedNameRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"QName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+;
+
+
+
+
+
+// Entry rule entryRuleQName
+entryRuleQName returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getQNameRule()); } 
+	 iv_ruleQName=ruleQName 
+	 { $current=$iv_ruleQName.current.getText(); }  
+	 EOF 
+;
+
+// Rule QName
+ruleQName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -6359,20 +6491,20 @@ ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
     }
 
     { 
-    newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
+    newLeafNode(this_ID_0, grammarAccess.getQNameAccess().getIDTerminalRuleCall_0()); 
     }
 (
 	kw='.' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
+        newLeafNode(kw, grammarAccess.getQNameAccess().getFullStopKeyword_1_0()); 
     }
     this_ID_2=RULE_ID    {
 		$current.merge(this_ID_2);
     }
 
     { 
-    newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
+    newLeafNode(this_ID_2, grammarAccess.getQNameAccess().getIDTerminalRuleCall_1_1()); 
     }
 )*)
     ;

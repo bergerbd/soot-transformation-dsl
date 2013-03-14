@@ -5,10 +5,12 @@ package soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Declaration;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage;
 
 /**
@@ -35,24 +38,14 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transforma
 public class DeclarationImpl extends MinimalEObjectImpl.Container implements Declaration
 {
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected String type = TYPE_EDEFAULT;
+  protected QualifiedName type;
 
   /**
    * The cached value of the '{@link #getLocals() <em>Locals</em>}' attribute list.
@@ -90,7 +83,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
+  public QualifiedName getType()
   {
     return type;
   }
@@ -100,12 +93,37 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(String newType)
+  public NotificationChain basicSetType(QualifiedName newType, NotificationChain msgs)
   {
-    String oldType = type;
+    QualifiedName oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.DECLARATION__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.DECLARATION__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(QualifiedName newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.DECLARATION__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.DECLARATION__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.DECLARATION__TYPE, newType, newType));
   }
 
   /**
@@ -120,6 +138,22 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
       locals = new EDataTypeEList<String>(String.class, this, TransformationLanguagePackage.DECLARATION__LOCALS);
     }
     return locals;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case TransformationLanguagePackage.DECLARATION__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -152,7 +186,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
     switch (featureID)
     {
       case TransformationLanguagePackage.DECLARATION__TYPE:
-        setType((String)newValue);
+        setType((QualifiedName)newValue);
         return;
       case TransformationLanguagePackage.DECLARATION__LOCALS:
         getLocals().clear();
@@ -173,7 +207,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
     switch (featureID)
     {
       case TransformationLanguagePackage.DECLARATION__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((QualifiedName)null);
         return;
       case TransformationLanguagePackage.DECLARATION__LOCALS:
         getLocals().clear();
@@ -193,7 +227,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
     switch (featureID)
     {
       case TransformationLanguagePackage.DECLARATION__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+        return type != null;
       case TransformationLanguagePackage.DECLARATION__LOCALS:
         return locals != null && !locals.isEmpty();
     }
@@ -211,9 +245,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
-    result.append(type);
-    result.append(", locals: ");
+    result.append(" (locals: ");
     result.append(locals);
     result.append(')');
     return result.toString();

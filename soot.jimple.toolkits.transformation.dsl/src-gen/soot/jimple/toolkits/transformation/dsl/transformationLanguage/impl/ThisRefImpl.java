@@ -3,11 +3,14 @@
 package soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.ThisRef;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage;
 
@@ -27,24 +30,14 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transforma
 public class ThisRefImpl extends IdentityRefImpl implements ThisRef
 {
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected String type = TYPE_EDEFAULT;
+  protected QualifiedName type;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +65,7 @@ public class ThisRefImpl extends IdentityRefImpl implements ThisRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
+  public QualifiedName getType()
   {
     return type;
   }
@@ -82,12 +75,53 @@ public class ThisRefImpl extends IdentityRefImpl implements ThisRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(String newType)
+  public NotificationChain basicSetType(QualifiedName newType, NotificationChain msgs)
   {
-    String oldType = type;
+    QualifiedName oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.THIS_REF__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.THIS_REF__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(QualifiedName newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.THIS_REF__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.THIS_REF__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.THIS_REF__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case TransformationLanguagePackage.THIS_REF__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -117,7 +151,7 @@ public class ThisRefImpl extends IdentityRefImpl implements ThisRef
     switch (featureID)
     {
       case TransformationLanguagePackage.THIS_REF__TYPE:
-        setType((String)newValue);
+        setType((QualifiedName)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +168,7 @@ public class ThisRefImpl extends IdentityRefImpl implements ThisRef
     switch (featureID)
     {
       case TransformationLanguagePackage.THIS_REF__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((QualifiedName)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +185,9 @@ public class ThisRefImpl extends IdentityRefImpl implements ThisRef
     switch (featureID)
     {
       case TransformationLanguagePackage.THIS_REF__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+        return type != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
-    result.append(type);
-    result.append(')');
-    return result.toString();
   }
 
 } //ThisRefImpl
