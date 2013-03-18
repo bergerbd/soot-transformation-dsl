@@ -93,6 +93,34 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.TypePatter
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.UshrExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.VirtualInvokeExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardBoolean;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardByte;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardCall;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardChar;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalAndExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalOrExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDouble;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardField;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardFloat;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInt;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLong;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardName;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNull;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardParExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardQName;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardShort;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardString;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardVoid;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.XorExpr;
 
 @SuppressWarnings("all")
@@ -551,14 +579,14 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 				else break;
 			case TransformationLanguagePackage.QUALIFIED_NAME:
 				if(context == grammarAccess.getQualifiedNameRule() ||
-				   context == grammarAccess.getQualifiedNameOrWildcardRule()) {
+				   context == grammarAccess.getQualifiedNameOrWildcardRule() ||
+				   context == grammarAccess.getSootTypeRule()) {
 					sequence_QualifiedName(context, (QualifiedName) semanticObject); 
 					return; 
 				}
 				else break;
 			case TransformationLanguagePackage.QUALIFIED_NAME_WILDCARD:
-				if(context == grammarAccess.getQualifiedNameOrWildcardRule() ||
-				   context == grammarAccess.getQualifiedNameWildcardRule()) {
+				if(context == grammarAccess.getQualifiedNameWildcardRule()) {
 					sequence_QualifiedNameWildcard(context, (QualifiedNameWildcard) semanticObject); 
 					return; 
 				}
@@ -756,12 +784,224 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 				}
 				else break;
 			case TransformationLanguagePackage.WILDCARD:
+				if(context == grammarAccess.getQualifiedNameOrWildcardRule() ||
+				   context == grammarAccess.getWildcardRule()) {
+					sequence_Wildcard(context, (Wildcard) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_ADDITIVE_EXPRESSION:
+				if(context == grammarAccess.getWildcardAdditiveExpressionRule()) {
+					sequence_WildcardAdditiveExpression(context, (WildcardAdditiveExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_BOOLEAN:
+				if(context == grammarAccess.getWildcardBooleanRule() ||
+				   context == grammarAccess.getWildcardLiteralRule() ||
+				   context == grammarAccess.getWildcardPrimaryRule()) {
+					sequence_WildcardBoolean(context, (WildcardBoolean) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getSootTypeRule() ||
+				   context == grammarAccess.getWildcardPrimitiveTypeRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardPrimitiveType(context, (WildcardBoolean) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_BYTE:
+				if(context == grammarAccess.getSootTypeRule() ||
+				   context == grammarAccess.getWildcardPrimitiveTypeRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardPrimitiveType(context, (WildcardByte) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_CALL:
+				if(context == grammarAccess.getWildcardCallRule() ||
+				   context == grammarAccess.getWildcardDereferenceRule() ||
+				   context == grammarAccess.getWildcardPrimaryRule()) {
+					sequence_WildcardCall(context, (WildcardCall) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_CHAR:
+				if(context == grammarAccess.getSootTypeRule() ||
+				   context == grammarAccess.getWildcardPrimitiveTypeRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardPrimitiveType(context, (WildcardChar) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_CLASS_LITERAL:
+				if(context == grammarAccess.getWildcardClassLiteralRule() ||
+				   context == grammarAccess.getWildcardPrimaryRule()) {
+					sequence_WildcardClassLiteral(context, (WildcardClassLiteral) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_CONDITIONAL_AND_EXPRESSION:
+				if(context == grammarAccess.getWildcardConditionalAndExpressionRule()) {
+					sequence_WildcardConditionalAndExpression(context, (WildcardConditionalAndExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_CONDITIONAL_OR_EXPRESSION:
+				if(context == grammarAccess.getWildcardConditionalOrExpressionRule()) {
+					sequence_WildcardConditionalOrExpression(context, (WildcardConditionalOrExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_DOUBLE:
+				if(context == grammarAccess.getSootTypeRule() ||
+				   context == grammarAccess.getWildcardPrimitiveTypeRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardPrimitiveType(context, (WildcardDouble) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_EQUALITY_EXPRESSION:
+				if(context == grammarAccess.getWildcardEqualityExpressionRule()) {
+					sequence_WildcardEqualityExpression(context, (WildcardEqualityExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_EXPRESSION:
+				if(context == grammarAccess.getWildcardExpressionRule()) {
+					sequence_WildcardExpression(context, (WildcardExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_FIELD:
+				if(context == grammarAccess.getWildcardDereferenceRule() ||
+				   context == grammarAccess.getWildcardFieldRule() ||
+				   context == grammarAccess.getWildcardPrimaryRule()) {
+					sequence_WildcardField(context, (WildcardField) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_FLOAT:
+				if(context == grammarAccess.getSootTypeRule() ||
+				   context == grammarAccess.getWildcardPrimitiveTypeRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardPrimitiveType(context, (WildcardFloat) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_INSTANCE_OF_EXPRESSION:
+				if(context == grammarAccess.getWildcardInstanceOfExpressionRule()) {
+					sequence_WildcardInstanceOfExpression(context, (WildcardInstanceOfExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_INT:
+				if(context == grammarAccess.getWildcardIntRule() ||
+				   context == grammarAccess.getWildcardLiteralRule() ||
+				   context == grammarAccess.getWildcardPrimaryRule()) {
+					sequence_WildcardInt(context, (WildcardInt) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getSootTypeRule() ||
+				   context == grammarAccess.getWildcardPrimitiveTypeRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardPrimitiveType(context, (WildcardInt) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_LONG:
+				if(context == grammarAccess.getSootTypeRule() ||
+				   context == grammarAccess.getWildcardPrimitiveTypeRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardPrimitiveType(context, (WildcardLong) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_MULTIPLICATIVE_EXPRESSION:
+				if(context == grammarAccess.getWildcardMultiplicativeExpressionRule()) {
+					sequence_WildcardMultiplicativeExpression(context, (WildcardMultiplicativeExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_NAME:
 				if(context == grammarAccess.getLocalOrWildcardRule() ||
 				   context == grammarAccess.getNonExprRule() ||
 				   context == grammarAccess.getRefRule() ||
 				   context == grammarAccess.getValueRule() ||
-				   context == grammarAccess.getWildcardRule()) {
-					sequence_Wildcard(context, (Wildcard) semanticObject); 
+				   context == grammarAccess.getWildcardNameRule()) {
+					sequence_WildcardName(context, (WildcardName) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_NEW:
+				if(context == grammarAccess.getWildcardNewRule() ||
+				   context == grammarAccess.getWildcardPrimaryRule()) {
+					sequence_WildcardNew(context, (WildcardNew) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_NULL:
+				if(context == grammarAccess.getWildcardLiteralRule() ||
+				   context == grammarAccess.getWildcardNullRule() ||
+				   context == grammarAccess.getWildcardPrimaryRule()) {
+					sequence_WildcardNull(context, (WildcardNull) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_PAR_EXPRESSION:
+				if(context == grammarAccess.getWildcardParExpressionRule() ||
+				   context == grammarAccess.getWildcardPrimaryRule()) {
+					sequence_WildcardParExpression(context, (WildcardParExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_QNAME:
+				if(context == grammarAccess.getWildcardPrimaryRule() ||
+				   context == grammarAccess.getWildcardQNameRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardQName(context, (WildcardQName) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_RELATIONAL_EXPRESSION:
+				if(context == grammarAccess.getWildcardRelationalExpressionRule()) {
+					sequence_WildcardRelationalExpression(context, (WildcardRelationalExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_SHORT:
+				if(context == grammarAccess.getSootTypeRule() ||
+				   context == grammarAccess.getWildcardPrimitiveTypeRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardPrimitiveType(context, (WildcardShort) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_STRING:
+				if(context == grammarAccess.getWildcardLiteralRule() ||
+				   context == grammarAccess.getWildcardPrimaryRule() ||
+				   context == grammarAccess.getWildcardStringRule()) {
+					sequence_WildcardString(context, (WildcardString) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_UNARY_EXPRESSION:
+				if(context == grammarAccess.getWildcardUnaryExpressionRule()) {
+					sequence_WildcardUnaryExpression(context, (WildcardUnaryExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS:
+				if(context == grammarAccess.getWildcardUnaryExpressionNotPlusMinusRule()) {
+					sequence_WildcardUnaryExpressionNotPlusMinus(context, (WildcardUnaryExpressionNotPlusMinus) semanticObject); 
+					return; 
+				}
+				else break;
+			case TransformationLanguagePackage.WILDCARD_VOID:
+				if(context == grammarAccess.getSootTypeRule() ||
+				   context == grammarAccess.getWildcardPrimitiveTypeRule() ||
+				   context == grammarAccess.getWildcardTypeRule()) {
+					sequence_WildcardPrimitiveType(context, (WildcardVoid) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1356,8 +1596,8 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 	 */
 	protected void sequence_Local(EObject context, Local semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.LOCAL_OR_WILDCARD__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.LOCAL_OR_WILDCARD__NAME));
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.LOCAL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.LOCAL__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -1602,8 +1842,8 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 	 */
 	protected void sequence_QualifiedNameWildcard(EObject context, QualifiedNameWildcard semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_OR_WILDCARD__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_OR_WILDCARD__NAME));
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_WILDCARD__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_WILDCARD__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -1618,8 +1858,8 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 	 */
 	protected void sequence_QualifiedName(EObject context, QualifiedName semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_OR_WILDCARD__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME_OR_WILDCARD__NAME));
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.QUALIFIED_NAME__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -1775,7 +2015,7 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (class=QualifiedName type=QualifiedName name=MethodName (parameters+=QualifiedName parameters+=QualifiedName*)?)
+	 *     (class=QualifiedName type=SootType name=MethodName (parameters+=QualifiedName parameters+=QualifiedName*)?)
 	 */
 	protected void sequence_SootMethodRef(EObject context, SootMethodRef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1903,20 +2143,10 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (pattern=Pattern replacement=Replacement)
+	 *     (pattern=Pattern replacement=Replacement condition=WildcardExpression?)
 	 */
 	protected void sequence_Transformation(EObject context, Transformation semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.TRANSFORMATION__PATTERN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.TRANSFORMATION__PATTERN));
-			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.TRANSFORMATION__REPLACEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.TRANSFORMATION__REPLACEMENT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTransformationAccess().getPatternPatternParserRuleCall_2_0(), semanticObject.getPattern());
-		feeder.accept(grammarAccess.getTransformationAccess().getReplacementReplacementParserRuleCall_5_0(), semanticObject.getReplacement());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1983,16 +2213,335 @@ public class TransformationLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (operands+=WildcardMultiplicativeExpression ((operators+='+' | operators+='-') operands+=WildcardMultiplicativeExpression)*)
 	 */
-	protected void sequence_Wildcard(EObject context, Wildcard semanticObject) {
+	protected void sequence_WildcardAdditiveExpression(EObject context, WildcardAdditiveExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (value='true' | value='false')
+	 */
+	protected void sequence_WildcardBoolean(EObject context, WildcardBoolean semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (parameters+=WildcardExpression parameters+=WildcardExpression*)?)
+	 */
+	protected void sequence_WildcardCall(EObject context, WildcardCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (baseType=WildcardType (dimension+='[' dimension+=']')*)
+	 */
+	protected void sequence_WildcardClassLiteral(EObject context, WildcardClassLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (operands+=WildcardEqualityExpression operands+=WildcardEqualityExpression*)
+	 */
+	protected void sequence_WildcardConditionalAndExpression(EObject context, WildcardConditionalAndExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (operands+=WildcardConditionalAndExpression operands+=WildcardConditionalAndExpression*)
+	 */
+	protected void sequence_WildcardConditionalOrExpression(EObject context, WildcardConditionalOrExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (operands+=WildcardInstanceOfExpression ((operator+='==' | operator+='!=') operands+=WildcardInstanceOfExpression)*)
+	 */
+	protected void sequence_WildcardEqualityExpression(EObject context, WildcardEqualityExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     expression=WildcardConditionalOrExpression
+	 */
+	protected void sequence_WildcardExpression(EObject context, WildcardExpression semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.LOCAL_OR_WILDCARD__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.LOCAL_OR_WILDCARD__NAME));
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_EXPRESSION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_EXPRESSION__EXPRESSION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getWildcardAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getWildcardExpressionAccess().getExpressionWildcardConditionalOrExpressionParserRuleCall_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_WildcardField(EObject context, WildcardField semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_DEREFERENCE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_DEREFERENCE__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getWildcardFieldAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (operand=WildcardRelationalExpression type=WildcardQName?)
+	 */
+	protected void sequence_WildcardInstanceOfExpression(EObject context, WildcardInstanceOfExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_WildcardInt(EObject context, WildcardInt semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_INT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_INT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getWildcardIntAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (operands+=WildcardUnaryExpression ((operators+='*' | operators+='/' | operators+='%') operands+=WildcardUnaryExpression)*)
+	 */
+	protected void sequence_WildcardMultiplicativeExpression(EObject context, WildcardMultiplicativeExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     wName=ID
+	 */
+	protected void sequence_WildcardName(EObject context, WildcardName semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_NAME__WNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_NAME__WNAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getWildcardNameAccess().getWNameIDTerminalRuleCall_1_0(), semanticObject.getWName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=WildcardQName (parameters+=WildcardExpression parameters+=WildcardExpression*)?)
+	 */
+	protected void sequence_WildcardNew(EObject context, WildcardNew semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardNull}
+	 */
+	protected void sequence_WildcardNull(EObject context, WildcardNull semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     expression=WildcardExpression
+	 */
+	protected void sequence_WildcardParExpression(EObject context, WildcardParExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_PAR_EXPRESSION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_PAR_EXPRESSION__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getWildcardParExpressionAccess().getExpressionWildcardExpressionParserRuleCall_1_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardBoolean}
+	 */
+	protected void sequence_WildcardPrimitiveType(EObject context, WildcardBoolean semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardByte}
+	 */
+	protected void sequence_WildcardPrimitiveType(EObject context, WildcardByte semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardChar}
+	 */
+	protected void sequence_WildcardPrimitiveType(EObject context, WildcardChar semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardDouble}
+	 */
+	protected void sequence_WildcardPrimitiveType(EObject context, WildcardDouble semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardFloat}
+	 */
+	protected void sequence_WildcardPrimitiveType(EObject context, WildcardFloat semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardInt}
+	 */
+	protected void sequence_WildcardPrimitiveType(EObject context, WildcardInt semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardLong}
+	 */
+	protected void sequence_WildcardPrimitiveType(EObject context, WildcardLong semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardShort}
+	 */
+	protected void sequence_WildcardPrimitiveType(EObject context, WildcardShort semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {WildcardVoid}
+	 */
+	protected void sequence_WildcardPrimitiveType(EObject context, WildcardVoid semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=WildcardQNameTerminal
+	 */
+	protected void sequence_WildcardQName(EObject context, WildcardQName semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_QNAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_QNAME__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getWildcardQNameAccess().getNameWildcardQNameTerminalParserRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (operands+=WildcardAdditiveExpression (operators+=WildcardRelationalOp operands+=WildcardAdditiveExpression)*)
+	 */
+	protected void sequence_WildcardRelationalExpression(EObject context, WildcardRelationalExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=STRING
+	 */
+	protected void sequence_WildcardString(EObject context, WildcardString semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_STRING__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.WILDCARD_STRING__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getWildcardStringAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((not?='!' operand=WildcardUnaryExpression) | (operand=WildcardPrimary dereferences+=WildcardDereference*))
+	 */
+	protected void sequence_WildcardUnaryExpressionNotPlusMinus(EObject context, WildcardUnaryExpressionNotPlusMinus semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((operator='+' operand=WildcardUnaryExpression) | (operator='-' operand=WildcardUnaryExpression) | operand=WildcardUnaryExpressionNotPlusMinus)
+	 */
+	protected void sequence_WildcardUnaryExpression(EObject context, WildcardUnaryExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     expression=WildcardExpression
+	 */
+	protected void sequence_Wildcard(EObject context, Wildcard semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TransformationLanguagePackage.Literals.WILDCARD__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TransformationLanguagePackage.Literals.WILDCARD__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getWildcardAccess().getExpressionWildcardExpressionParserRuleCall_1_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

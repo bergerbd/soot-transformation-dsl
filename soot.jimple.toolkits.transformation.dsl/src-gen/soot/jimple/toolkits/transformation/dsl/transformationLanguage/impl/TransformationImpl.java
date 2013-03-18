@@ -15,6 +15,7 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Pattern;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Replacement;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transformation;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +26,7 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transforma
  * <ul>
  *   <li>{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationImpl#getPattern <em>Pattern</em>}</li>
  *   <li>{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationImpl#getReplacement <em>Replacement</em>}</li>
+ *   <li>{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +53,16 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected Replacement replacement;
+
+  /**
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected WildcardExpression condition;
 
   /**
    * <!-- begin-user-doc -->
@@ -174,6 +186,54 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public WildcardExpression getCondition()
+  {
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCondition(WildcardExpression newCondition, NotificationChain msgs)
+  {
+    WildcardExpression oldCondition = condition;
+    condition = newCondition;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.TRANSFORMATION__CONDITION, oldCondition, newCondition);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCondition(WildcardExpression newCondition)
+  {
+    if (newCondition != condition)
+    {
+      NotificationChain msgs = null;
+      if (condition != null)
+        msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.TRANSFORMATION__CONDITION, null, msgs);
+      if (newCondition != null)
+        msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TransformationLanguagePackage.TRANSFORMATION__CONDITION, null, msgs);
+      msgs = basicSetCondition(newCondition, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TransformationLanguagePackage.TRANSFORMATION__CONDITION, newCondition, newCondition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -183,6 +243,8 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
         return basicSetPattern(null, msgs);
       case TransformationLanguagePackage.TRANSFORMATION__REPLACEMENT:
         return basicSetReplacement(null, msgs);
+      case TransformationLanguagePackage.TRANSFORMATION__CONDITION:
+        return basicSetCondition(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -201,6 +263,8 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
         return getPattern();
       case TransformationLanguagePackage.TRANSFORMATION__REPLACEMENT:
         return getReplacement();
+      case TransformationLanguagePackage.TRANSFORMATION__CONDITION:
+        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -220,6 +284,9 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
         return;
       case TransformationLanguagePackage.TRANSFORMATION__REPLACEMENT:
         setReplacement((Replacement)newValue);
+        return;
+      case TransformationLanguagePackage.TRANSFORMATION__CONDITION:
+        setCondition((WildcardExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -241,6 +308,9 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
       case TransformationLanguagePackage.TRANSFORMATION__REPLACEMENT:
         setReplacement((Replacement)null);
         return;
+      case TransformationLanguagePackage.TRANSFORMATION__CONDITION:
+        setCondition((WildcardExpression)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -259,6 +329,8 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
         return pattern != null;
       case TransformationLanguagePackage.TRANSFORMATION__REPLACEMENT:
         return replacement != null;
+      case TransformationLanguagePackage.TRANSFORMATION__CONDITION:
+        return condition != null;
     }
     return super.eIsSet(featureID);
   }

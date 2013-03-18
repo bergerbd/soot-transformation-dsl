@@ -31,13 +31,20 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Assignment cReplacementAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cReplacementReplacementParserRuleCall_5_0 = (RuleCall)cReplacementAssignment_5.eContents().get(0);
 		private final Keyword cEndKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cEndKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cWhereKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cConditionAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cConditionWildcardExpressionParserRuleCall_7_1_0 = (RuleCall)cConditionAssignment_7_1.eContents().get(0);
+		private final Keyword cEndKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
+		private final Keyword cEndKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Transformation:
-		//	"«transformation»" "«replace»" pattern=Pattern "«end»" "«by»" replacement=Replacement "«end»" "«end»";
+		//	"«transformation»" "«replace»" pattern=Pattern "«end»" "«by»" replacement=Replacement "«end»" ("«where»"
+		//	condition=WildcardExpression "«end»")? "«end»";
 		public ParserRule getRule() { return rule; }
 
-		//"«transformation»" "«replace»" pattern=Pattern "«end»" "«by»" replacement=Replacement "«end»" "«end»"
+		//"«transformation»" "«replace»" pattern=Pattern "«end»" "«by»" replacement=Replacement "«end»" ("«where»"
+		//condition=WildcardExpression "«end»")? "«end»"
 		public Group getGroup() { return cGroup; }
 
 		//"«transformation»"
@@ -67,8 +74,23 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		//"«end»"
 		public Keyword getEndKeyword_6() { return cEndKeyword_6; }
 
+		//("«where»" condition=WildcardExpression "«end»")?
+		public Group getGroup_7() { return cGroup_7; }
+
+		//"«where»"
+		public Keyword getWhereKeyword_7_0() { return cWhereKeyword_7_0; }
+
+		//condition=WildcardExpression
+		public Assignment getConditionAssignment_7_1() { return cConditionAssignment_7_1; }
+
+		//WildcardExpression
+		public RuleCall getConditionWildcardExpressionParserRuleCall_7_1_0() { return cConditionWildcardExpressionParserRuleCall_7_1_0; }
+
 		//"«end»"
-		public Keyword getEndKeyword_7() { return cEndKeyword_7; }
+		public Keyword getEndKeyword_7_2() { return cEndKeyword_7_2; }
+
+		//"«end»"
+		public Keyword getEndKeyword_8() { return cEndKeyword_8; }
 	}
 
 	public class PatternElements extends AbstractParserRuleElementFinder {
@@ -2076,7 +2098,7 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		private final RuleCall cClassQualifiedNameParserRuleCall_1_0 = (RuleCall)cClassAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTypeQualifiedNameParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final RuleCall cTypeSootTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cNameMethodNameParserRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
@@ -2091,11 +2113,11 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cGreaterThanSignKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//SootMethodRef:
-		//	"<" class=QualifiedName ":" type=QualifiedName name=MethodName "(" (parameters+=QualifiedName (","
+		//	"<" class=QualifiedName ":" type=SootType name=MethodName "(" (parameters+=QualifiedName (","
 		//	parameters+=QualifiedName)*)? ")" ">";
 		public ParserRule getRule() { return rule; }
 
-		//"<" class=QualifiedName ":" type=QualifiedName name=MethodName "(" (parameters+=QualifiedName (","
+		//"<" class=QualifiedName ":" type=SootType name=MethodName "(" (parameters+=QualifiedName (","
 		//parameters+=QualifiedName)*)? ")" ">"
 		public Group getGroup() { return cGroup; }
 
@@ -2111,11 +2133,11 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//type=QualifiedName
+		//type=SootType
 		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
-		//QualifiedName
-		public RuleCall getTypeQualifiedNameParserRuleCall_3_0() { return cTypeQualifiedNameParserRuleCall_3_0; }
+		//SootType
+		public RuleCall getTypeSootTypeParserRuleCall_3_0() { return cTypeSootTypeParserRuleCall_3_0; }
 
 		//name=MethodName
 		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
@@ -2152,6 +2174,26 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 
 		//">"
 		public Keyword getGreaterThanSignKeyword_8() { return cGreaterThanSignKeyword_8; }
+	}
+
+	public class SootTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SootType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cWildcardPrimitiveTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cQualifiedNameParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//SootType:
+		//	WildcardPrimitiveType | QualifiedName;
+		public ParserRule getRule() { return rule; }
+
+		//WildcardPrimitiveType | QualifiedName
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//WildcardPrimitiveType
+		public RuleCall getWildcardPrimitiveTypeParserRuleCall_0() { return cWildcardPrimitiveTypeParserRuleCall_0; }
+
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_1() { return cQualifiedNameParserRuleCall_1; }
 	}
 
 	public class InvokeExprElements extends AbstractParserRuleElementFinder {
@@ -2486,48 +2528,20 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalOrWildcard");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cLocalParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cWildcardParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cWildcardNameParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//LocalOrWildcard:
-		//	Local | Wildcard;
+		//	Local | WildcardName;
 		public ParserRule getRule() { return rule; }
 
-		//Local | Wildcard
+		//Local | WildcardName
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Local
 		public RuleCall getLocalParserRuleCall_0() { return cLocalParserRuleCall_0; }
 
-		//Wildcard
-		public RuleCall getWildcardParserRuleCall_1() { return cWildcardParserRuleCall_1; }
-	}
-
-	public class WildcardElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Wildcard");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeftPointingDoubleAngleQuotationMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cRightPointingDoubleAngleQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//Wildcard:
-		//	"«" name=ID "»";
-		public ParserRule getRule() { return rule; }
-
-		//"«" name=ID "»"
-		public Group getGroup() { return cGroup; }
-
-		//"«"
-		public Keyword getLeftPointingDoubleAngleQuotationMarkKeyword_0() { return cLeftPointingDoubleAngleQuotationMarkKeyword_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
-		//"»"
-		public Keyword getRightPointingDoubleAngleQuotationMarkKeyword_2() { return cRightPointingDoubleAngleQuotationMarkKeyword_2; }
+		//WildcardName
+		public RuleCall getWildcardNameParserRuleCall_1() { return cWildcardNameParserRuleCall_1; }
 	}
 
 	public class NewArrayExprElements extends AbstractParserRuleElementFinder {
@@ -3122,20 +3136,21 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameOrWildcard");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cQualifiedNameWildcardParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cWildcardParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
+		////QualifiedNameWildcard;
 		//QualifiedNameOrWildcard:
-		//	QualifiedName | QualifiedNameWildcard;
+		//	QualifiedName | Wildcard;
 		public ParserRule getRule() { return rule; }
 
-		//QualifiedName | QualifiedNameWildcard
+		//QualifiedName | Wildcard
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//QualifiedName
 		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
 
-		//QualifiedNameWildcard
-		public RuleCall getQualifiedNameWildcardParserRuleCall_1() { return cQualifiedNameWildcardParserRuleCall_1; }
+		//Wildcard
+		public RuleCall getWildcardParserRuleCall_1() { return cWildcardParserRuleCall_1; }
 	}
 
 	public class QualifiedNameWildcardElements extends AbstractParserRuleElementFinder {
@@ -3370,6 +3385,1109 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		public RuleCall getNameQNameParserRuleCall_0() { return cNameQNameParserRuleCall_0; }
 	}
 
+	public class WildcardElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Wildcard");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftPointingDoubleAngleQuotationMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionWildcardExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
+		private final Keyword cRightPointingDoubleAngleQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//Wildcard:
+		//	"«" expression=WildcardExpression "»";
+		public ParserRule getRule() { return rule; }
+
+		//"«" expression=WildcardExpression "»"
+		public Group getGroup() { return cGroup; }
+
+		//"«"
+		public Keyword getLeftPointingDoubleAngleQuotationMarkKeyword_0() { return cLeftPointingDoubleAngleQuotationMarkKeyword_0; }
+
+		//expression=WildcardExpression
+		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
+
+		//WildcardExpression
+		public RuleCall getExpressionWildcardExpressionParserRuleCall_1_0() { return cExpressionWildcardExpressionParserRuleCall_1_0; }
+
+		//"»"
+		public Keyword getRightPointingDoubleAngleQuotationMarkKeyword_2() { return cRightPointingDoubleAngleQuotationMarkKeyword_2; }
+	}
+
+	public class WildcardNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftPointingDoubleAngleQuotationMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cWNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cWNameIDTerminalRuleCall_1_0 = (RuleCall)cWNameAssignment_1.eContents().get(0);
+		private final Keyword cRightPointingDoubleAngleQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//WildcardName:
+		//	"«" wName=ID "»";
+		public ParserRule getRule() { return rule; }
+
+		//"«" wName=ID "»"
+		public Group getGroup() { return cGroup; }
+
+		//"«"
+		public Keyword getLeftPointingDoubleAngleQuotationMarkKeyword_0() { return cLeftPointingDoubleAngleQuotationMarkKeyword_0; }
+
+		//wName=ID
+		public Assignment getWNameAssignment_1() { return cWNameAssignment_1; }
+
+		//ID
+		public RuleCall getWNameIDTerminalRuleCall_1_0() { return cWNameIDTerminalRuleCall_1_0; }
+
+		//"»"
+		public Keyword getRightPointingDoubleAngleQuotationMarkKeyword_2() { return cRightPointingDoubleAngleQuotationMarkKeyword_2; }
+	}
+
+	public class WildcardExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardExpression");
+		private final Assignment cExpressionAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cExpressionWildcardConditionalOrExpressionParserRuleCall_0 = (RuleCall)cExpressionAssignment.eContents().get(0);
+		
+		//WildcardExpression:
+		//	expression=WildcardConditionalOrExpression;
+		public ParserRule getRule() { return rule; }
+
+		//expression=WildcardConditionalOrExpression
+		public Assignment getExpressionAssignment() { return cExpressionAssignment; }
+
+		//WildcardConditionalOrExpression
+		public RuleCall getExpressionWildcardConditionalOrExpressionParserRuleCall_0() { return cExpressionWildcardConditionalOrExpressionParserRuleCall_0; }
+	}
+
+	public class WildcardConditionalOrExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardConditionalOrExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOperandsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOperandsWildcardConditionalAndExpressionParserRuleCall_0_0 = (RuleCall)cOperandsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cVerticalLineVerticalLineKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cOperandsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperandsWildcardConditionalAndExpressionParserRuleCall_1_1_0 = (RuleCall)cOperandsAssignment_1_1.eContents().get(0);
+		
+		//WildcardConditionalOrExpression:
+		//	operands+=WildcardConditionalAndExpression ("||" operands+=WildcardConditionalAndExpression)*;
+		public ParserRule getRule() { return rule; }
+
+		//operands+=WildcardConditionalAndExpression ("||" operands+=WildcardConditionalAndExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//operands+=WildcardConditionalAndExpression
+		public Assignment getOperandsAssignment_0() { return cOperandsAssignment_0; }
+
+		//WildcardConditionalAndExpression
+		public RuleCall getOperandsWildcardConditionalAndExpressionParserRuleCall_0_0() { return cOperandsWildcardConditionalAndExpressionParserRuleCall_0_0; }
+
+		//("||" operands+=WildcardConditionalAndExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_1_0() { return cVerticalLineVerticalLineKeyword_1_0; }
+
+		//operands+=WildcardConditionalAndExpression
+		public Assignment getOperandsAssignment_1_1() { return cOperandsAssignment_1_1; }
+
+		//WildcardConditionalAndExpression
+		public RuleCall getOperandsWildcardConditionalAndExpressionParserRuleCall_1_1_0() { return cOperandsWildcardConditionalAndExpressionParserRuleCall_1_1_0; }
+	}
+
+	public class WildcardConditionalAndExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardConditionalAndExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOperandsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOperandsWildcardEqualityExpressionParserRuleCall_0_0 = (RuleCall)cOperandsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cAmpersandAmpersandKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cOperandsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperandsWildcardEqualityExpressionParserRuleCall_1_1_0 = (RuleCall)cOperandsAssignment_1_1.eContents().get(0);
+		
+		//WildcardConditionalAndExpression:
+		//	operands+=WildcardEqualityExpression ("&&" operands+=WildcardEqualityExpression)*;
+		public ParserRule getRule() { return rule; }
+
+		//operands+=WildcardEqualityExpression ("&&" operands+=WildcardEqualityExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//operands+=WildcardEqualityExpression
+		public Assignment getOperandsAssignment_0() { return cOperandsAssignment_0; }
+
+		//WildcardEqualityExpression
+		public RuleCall getOperandsWildcardEqualityExpressionParserRuleCall_0_0() { return cOperandsWildcardEqualityExpressionParserRuleCall_0_0; }
+
+		//("&&" operands+=WildcardEqualityExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"&&"
+		public Keyword getAmpersandAmpersandKeyword_1_0() { return cAmpersandAmpersandKeyword_1_0; }
+
+		//operands+=WildcardEqualityExpression
+		public Assignment getOperandsAssignment_1_1() { return cOperandsAssignment_1_1; }
+
+		//WildcardEqualityExpression
+		public RuleCall getOperandsWildcardEqualityExpressionParserRuleCall_1_1_0() { return cOperandsWildcardEqualityExpressionParserRuleCall_1_1_0; }
+	}
+
+	public class WildcardEqualityExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardEqualityExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOperandsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOperandsWildcardInstanceOfExpressionParserRuleCall_0_0 = (RuleCall)cOperandsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
+		private final Keyword cOperatorEqualsSignEqualsSignKeyword_1_0_0_0 = (Keyword)cOperatorAssignment_1_0_0.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
+		private final Keyword cOperatorExclamationMarkEqualsSignKeyword_1_0_1_0 = (Keyword)cOperatorAssignment_1_0_1.eContents().get(0);
+		private final Assignment cOperandsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperandsWildcardInstanceOfExpressionParserRuleCall_1_1_0 = (RuleCall)cOperandsAssignment_1_1.eContents().get(0);
+		
+		//WildcardEqualityExpression:
+		//	operands+=WildcardInstanceOfExpression ((operator+="==" | operator+="!=") operands+=WildcardInstanceOfExpression)*;
+		public ParserRule getRule() { return rule; }
+
+		//operands+=WildcardInstanceOfExpression ((operator+="==" | operator+="!=") operands+=WildcardInstanceOfExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//operands+=WildcardInstanceOfExpression
+		public Assignment getOperandsAssignment_0() { return cOperandsAssignment_0; }
+
+		//WildcardInstanceOfExpression
+		public RuleCall getOperandsWildcardInstanceOfExpressionParserRuleCall_0_0() { return cOperandsWildcardInstanceOfExpressionParserRuleCall_0_0; }
+
+		//((operator+="==" | operator+="!=") operands+=WildcardInstanceOfExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//operator+="==" | operator+="!="
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+
+		//operator+="=="
+		public Assignment getOperatorAssignment_1_0_0() { return cOperatorAssignment_1_0_0; }
+
+		//"=="
+		public Keyword getOperatorEqualsSignEqualsSignKeyword_1_0_0_0() { return cOperatorEqualsSignEqualsSignKeyword_1_0_0_0; }
+
+		//operator+="!="
+		public Assignment getOperatorAssignment_1_0_1() { return cOperatorAssignment_1_0_1; }
+
+		//"!="
+		public Keyword getOperatorExclamationMarkEqualsSignKeyword_1_0_1_0() { return cOperatorExclamationMarkEqualsSignKeyword_1_0_1_0; }
+
+		//operands+=WildcardInstanceOfExpression
+		public Assignment getOperandsAssignment_1_1() { return cOperandsAssignment_1_1; }
+
+		//WildcardInstanceOfExpression
+		public RuleCall getOperandsWildcardInstanceOfExpressionParserRuleCall_1_1_0() { return cOperandsWildcardInstanceOfExpressionParserRuleCall_1_1_0; }
+	}
+
+	public class WildcardInstanceOfExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardInstanceOfExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOperandAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOperandWildcardRelationalExpressionParserRuleCall_0_0 = (RuleCall)cOperandAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cInstanceofKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cTypeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cTypeWildcardQNameParserRuleCall_1_1_0 = (RuleCall)cTypeAssignment_1_1.eContents().get(0);
+		
+		//WildcardInstanceOfExpression:
+		//	operand=WildcardRelationalExpression ("instanceof" type=WildcardQName)?;
+		public ParserRule getRule() { return rule; }
+
+		//operand=WildcardRelationalExpression ("instanceof" type=WildcardQName)?
+		public Group getGroup() { return cGroup; }
+
+		//operand=WildcardRelationalExpression
+		public Assignment getOperandAssignment_0() { return cOperandAssignment_0; }
+
+		//WildcardRelationalExpression
+		public RuleCall getOperandWildcardRelationalExpressionParserRuleCall_0_0() { return cOperandWildcardRelationalExpressionParserRuleCall_0_0; }
+
+		//("instanceof" type=WildcardQName)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"instanceof"
+		public Keyword getInstanceofKeyword_1_0() { return cInstanceofKeyword_1_0; }
+
+		//type=WildcardQName
+		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
+
+		//WildcardQName
+		public RuleCall getTypeWildcardQNameParserRuleCall_1_1_0() { return cTypeWildcardQNameParserRuleCall_1_1_0; }
+	}
+
+	public class WildcardRelationalExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardRelationalExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOperandsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOperandsWildcardAdditiveExpressionParserRuleCall_0_0 = (RuleCall)cOperandsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cOperatorsAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cOperatorsWildcardRelationalOpParserRuleCall_1_0_0 = (RuleCall)cOperatorsAssignment_1_0.eContents().get(0);
+		private final Assignment cOperandsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperandsWildcardAdditiveExpressionParserRuleCall_1_1_0 = (RuleCall)cOperandsAssignment_1_1.eContents().get(0);
+		
+		//WildcardRelationalExpression:
+		//	operands+=WildcardAdditiveExpression (operators+=WildcardRelationalOp operands+=WildcardAdditiveExpression)*;
+		public ParserRule getRule() { return rule; }
+
+		//operands+=WildcardAdditiveExpression (operators+=WildcardRelationalOp operands+=WildcardAdditiveExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//operands+=WildcardAdditiveExpression
+		public Assignment getOperandsAssignment_0() { return cOperandsAssignment_0; }
+
+		//WildcardAdditiveExpression
+		public RuleCall getOperandsWildcardAdditiveExpressionParserRuleCall_0_0() { return cOperandsWildcardAdditiveExpressionParserRuleCall_0_0; }
+
+		//(operators+=WildcardRelationalOp operands+=WildcardAdditiveExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//operators+=WildcardRelationalOp
+		public Assignment getOperatorsAssignment_1_0() { return cOperatorsAssignment_1_0; }
+
+		//WildcardRelationalOp
+		public RuleCall getOperatorsWildcardRelationalOpParserRuleCall_1_0_0() { return cOperatorsWildcardRelationalOpParserRuleCall_1_0_0; }
+
+		//operands+=WildcardAdditiveExpression
+		public Assignment getOperandsAssignment_1_1() { return cOperandsAssignment_1_1; }
+
+		//WildcardAdditiveExpression
+		public RuleCall getOperandsWildcardAdditiveExpressionParserRuleCall_1_1_0() { return cOperandsWildcardAdditiveExpressionParserRuleCall_1_1_0; }
+	}
+
+	public class WildcardRelationalOpElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardRelationalOp");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cLessThanSignEqualsSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cGreaterThanSignEqualsSignKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cLessThanSignKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cGreaterThanSignKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		
+		//WildcardRelationalOp:
+		//	"<=" | ">=" | "<" | ">";
+		public ParserRule getRule() { return rule; }
+
+		//"<=" | ">=" | "<" | ">"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"<="
+		public Keyword getLessThanSignEqualsSignKeyword_0() { return cLessThanSignEqualsSignKeyword_0; }
+
+		//">="
+		public Keyword getGreaterThanSignEqualsSignKeyword_1() { return cGreaterThanSignEqualsSignKeyword_1; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_3() { return cGreaterThanSignKeyword_3; }
+	}
+
+	public class WildcardAdditiveExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardAdditiveExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOperandsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOperandsWildcardMultiplicativeExpressionParserRuleCall_0_0 = (RuleCall)cOperandsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
+		private final Keyword cOperatorsPlusSignKeyword_1_0_0_0 = (Keyword)cOperatorsAssignment_1_0_0.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
+		private final Keyword cOperatorsHyphenMinusKeyword_1_0_1_0 = (Keyword)cOperatorsAssignment_1_0_1.eContents().get(0);
+		private final Assignment cOperandsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperandsWildcardMultiplicativeExpressionParserRuleCall_1_1_0 = (RuleCall)cOperandsAssignment_1_1.eContents().get(0);
+		
+		//WildcardAdditiveExpression:
+		//	operands+=WildcardMultiplicativeExpression ((operators+="+" | operators+="-")
+		//	operands+=WildcardMultiplicativeExpression)*;
+		public ParserRule getRule() { return rule; }
+
+		//operands+=WildcardMultiplicativeExpression ((operators+="+" | operators+="-")
+		//operands+=WildcardMultiplicativeExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//operands+=WildcardMultiplicativeExpression
+		public Assignment getOperandsAssignment_0() { return cOperandsAssignment_0; }
+
+		//WildcardMultiplicativeExpression
+		public RuleCall getOperandsWildcardMultiplicativeExpressionParserRuleCall_0_0() { return cOperandsWildcardMultiplicativeExpressionParserRuleCall_0_0; }
+
+		//((operators+="+" | operators+="-") operands+=WildcardMultiplicativeExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//operators+="+" | operators+="-"
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+
+		//operators+="+"
+		public Assignment getOperatorsAssignment_1_0_0() { return cOperatorsAssignment_1_0_0; }
+
+		//"+"
+		public Keyword getOperatorsPlusSignKeyword_1_0_0_0() { return cOperatorsPlusSignKeyword_1_0_0_0; }
+
+		//operators+="-"
+		public Assignment getOperatorsAssignment_1_0_1() { return cOperatorsAssignment_1_0_1; }
+
+		//"-"
+		public Keyword getOperatorsHyphenMinusKeyword_1_0_1_0() { return cOperatorsHyphenMinusKeyword_1_0_1_0; }
+
+		//operands+=WildcardMultiplicativeExpression
+		public Assignment getOperandsAssignment_1_1() { return cOperandsAssignment_1_1; }
+
+		//WildcardMultiplicativeExpression
+		public RuleCall getOperandsWildcardMultiplicativeExpressionParserRuleCall_1_1_0() { return cOperandsWildcardMultiplicativeExpressionParserRuleCall_1_1_0; }
+	}
+
+	public class WildcardMultiplicativeExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardMultiplicativeExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOperandsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOperandsWildcardUnaryExpressionParserRuleCall_0_0 = (RuleCall)cOperandsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
+		private final Keyword cOperatorsAsteriskKeyword_1_0_0_0 = (Keyword)cOperatorsAssignment_1_0_0.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
+		private final Keyword cOperatorsSolidusKeyword_1_0_1_0 = (Keyword)cOperatorsAssignment_1_0_1.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_2 = (Assignment)cAlternatives_1_0.eContents().get(2);
+		private final Keyword cOperatorsPercentSignKeyword_1_0_2_0 = (Keyword)cOperatorsAssignment_1_0_2.eContents().get(0);
+		private final Assignment cOperandsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperandsWildcardUnaryExpressionParserRuleCall_1_1_0 = (RuleCall)cOperandsAssignment_1_1.eContents().get(0);
+		
+		//WildcardMultiplicativeExpression:
+		//	operands+=WildcardUnaryExpression ((operators+="*" | operators+="/" | operators+="%")
+		//	operands+=WildcardUnaryExpression)*;
+		public ParserRule getRule() { return rule; }
+
+		//operands+=WildcardUnaryExpression ((operators+="*" | operators+="/" | operators+="%")
+		//operands+=WildcardUnaryExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//operands+=WildcardUnaryExpression
+		public Assignment getOperandsAssignment_0() { return cOperandsAssignment_0; }
+
+		//WildcardUnaryExpression
+		public RuleCall getOperandsWildcardUnaryExpressionParserRuleCall_0_0() { return cOperandsWildcardUnaryExpressionParserRuleCall_0_0; }
+
+		//((operators+="*" | operators+="/" | operators+="%") operands+=WildcardUnaryExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//operators+="*" | operators+="/" | operators+="%"
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+
+		//operators+="*"
+		public Assignment getOperatorsAssignment_1_0_0() { return cOperatorsAssignment_1_0_0; }
+
+		//"*"
+		public Keyword getOperatorsAsteriskKeyword_1_0_0_0() { return cOperatorsAsteriskKeyword_1_0_0_0; }
+
+		//operators+="/"
+		public Assignment getOperatorsAssignment_1_0_1() { return cOperatorsAssignment_1_0_1; }
+
+		//"/"
+		public Keyword getOperatorsSolidusKeyword_1_0_1_0() { return cOperatorsSolidusKeyword_1_0_1_0; }
+
+		//operators+="%"
+		public Assignment getOperatorsAssignment_1_0_2() { return cOperatorsAssignment_1_0_2; }
+
+		//"%"
+		public Keyword getOperatorsPercentSignKeyword_1_0_2_0() { return cOperatorsPercentSignKeyword_1_0_2_0; }
+
+		//operands+=WildcardUnaryExpression
+		public Assignment getOperandsAssignment_1_1() { return cOperandsAssignment_1_1; }
+
+		//WildcardUnaryExpression
+		public RuleCall getOperandsWildcardUnaryExpressionParserRuleCall_1_1_0() { return cOperandsWildcardUnaryExpressionParserRuleCall_1_1_0; }
+	}
+
+	public class WildcardUnaryExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardUnaryExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cOperatorAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final Keyword cOperatorPlusSignKeyword_0_0_0 = (Keyword)cOperatorAssignment_0_0.eContents().get(0);
+		private final Assignment cOperandAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cOperandWildcardUnaryExpressionParserRuleCall_0_1_0 = (RuleCall)cOperandAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cOperatorAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final Keyword cOperatorHyphenMinusKeyword_1_0_0 = (Keyword)cOperatorAssignment_1_0.eContents().get(0);
+		private final Assignment cOperandAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperandWildcardUnaryExpressionParserRuleCall_1_1_0 = (RuleCall)cOperandAssignment_1_1.eContents().get(0);
+		private final Assignment cOperandAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cOperandWildcardUnaryExpressionNotPlusMinusParserRuleCall_2_0 = (RuleCall)cOperandAssignment_2.eContents().get(0);
+		
+		//WildcardUnaryExpression:
+		//	operator="+" operand=WildcardUnaryExpression | operator="-" operand=WildcardUnaryExpression |
+		//	operand=WildcardUnaryExpressionNotPlusMinus;
+		public ParserRule getRule() { return rule; }
+
+		//operator="+" operand=WildcardUnaryExpression | operator="-" operand=WildcardUnaryExpression |
+		//operand=WildcardUnaryExpressionNotPlusMinus
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//operator="+" operand=WildcardUnaryExpression
+		public Group getGroup_0() { return cGroup_0; }
+
+		//operator="+"
+		public Assignment getOperatorAssignment_0_0() { return cOperatorAssignment_0_0; }
+
+		//"+"
+		public Keyword getOperatorPlusSignKeyword_0_0_0() { return cOperatorPlusSignKeyword_0_0_0; }
+
+		//operand=WildcardUnaryExpression
+		public Assignment getOperandAssignment_0_1() { return cOperandAssignment_0_1; }
+
+		//WildcardUnaryExpression
+		public RuleCall getOperandWildcardUnaryExpressionParserRuleCall_0_1_0() { return cOperandWildcardUnaryExpressionParserRuleCall_0_1_0; }
+
+		//operator="-" operand=WildcardUnaryExpression
+		public Group getGroup_1() { return cGroup_1; }
+
+		//operator="-"
+		public Assignment getOperatorAssignment_1_0() { return cOperatorAssignment_1_0; }
+
+		//"-"
+		public Keyword getOperatorHyphenMinusKeyword_1_0_0() { return cOperatorHyphenMinusKeyword_1_0_0; }
+
+		//operand=WildcardUnaryExpression
+		public Assignment getOperandAssignment_1_1() { return cOperandAssignment_1_1; }
+
+		//WildcardUnaryExpression
+		public RuleCall getOperandWildcardUnaryExpressionParserRuleCall_1_1_0() { return cOperandWildcardUnaryExpressionParserRuleCall_1_1_0; }
+
+		//operand=WildcardUnaryExpressionNotPlusMinus
+		public Assignment getOperandAssignment_2() { return cOperandAssignment_2; }
+
+		//WildcardUnaryExpressionNotPlusMinus
+		public RuleCall getOperandWildcardUnaryExpressionNotPlusMinusParserRuleCall_2_0() { return cOperandWildcardUnaryExpressionNotPlusMinusParserRuleCall_2_0; }
+	}
+
+	public class WildcardUnaryExpressionNotPlusMinusElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardUnaryExpressionNotPlusMinus");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cNotAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final Keyword cNotExclamationMarkKeyword_0_0_0 = (Keyword)cNotAssignment_0_0.eContents().get(0);
+		private final Assignment cOperandAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cOperandWildcardUnaryExpressionParserRuleCall_0_1_0 = (RuleCall)cOperandAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cOperandAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cOperandWildcardPrimaryParserRuleCall_1_0_0 = (RuleCall)cOperandAssignment_1_0.eContents().get(0);
+		private final Assignment cDereferencesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cDereferencesWildcardDereferenceParserRuleCall_1_1_0 = (RuleCall)cDereferencesAssignment_1_1.eContents().get(0);
+		
+		////(selectors += WildcardSelector )*
+		//WildcardUnaryExpressionNotPlusMinus:
+		//	not?="!" operand=WildcardUnaryExpression | operand=WildcardPrimary dereferences+=WildcardDereference*;
+		public ParserRule getRule() { return rule; }
+
+		//not?="!" operand=WildcardUnaryExpression | operand=WildcardPrimary dereferences+=WildcardDereference*
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//not?="!" operand=WildcardUnaryExpression
+		public Group getGroup_0() { return cGroup_0; }
+
+		//not?="!"
+		public Assignment getNotAssignment_0_0() { return cNotAssignment_0_0; }
+
+		//"!"
+		public Keyword getNotExclamationMarkKeyword_0_0_0() { return cNotExclamationMarkKeyword_0_0_0; }
+
+		//operand=WildcardUnaryExpression
+		public Assignment getOperandAssignment_0_1() { return cOperandAssignment_0_1; }
+
+		//WildcardUnaryExpression
+		public RuleCall getOperandWildcardUnaryExpressionParserRuleCall_0_1_0() { return cOperandWildcardUnaryExpressionParserRuleCall_0_1_0; }
+
+		//operand=WildcardPrimary dereferences+=WildcardDereference*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//operand=WildcardPrimary
+		public Assignment getOperandAssignment_1_0() { return cOperandAssignment_1_0; }
+
+		//WildcardPrimary
+		public RuleCall getOperandWildcardPrimaryParserRuleCall_1_0_0() { return cOperandWildcardPrimaryParserRuleCall_1_0_0; }
+
+		//dereferences+=WildcardDereference*
+		public Assignment getDereferencesAssignment_1_1() { return cDereferencesAssignment_1_1; }
+
+		//WildcardDereference
+		public RuleCall getDereferencesWildcardDereferenceParserRuleCall_1_1_0() { return cDereferencesWildcardDereferenceParserRuleCall_1_1_0; }
+	}
+
+	public class WildcardPrimaryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardPrimary");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cWildcardParExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cWildcardDereferenceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cWildcardLiteralParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cWildcardClassLiteralParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cWildcardNewParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cWildcardQNameParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		
+		//WildcardPrimary:
+		//	WildcardParExpression | WildcardDereference | WildcardLiteral | WildcardClassLiteral | WildcardNew | WildcardQName;
+		public ParserRule getRule() { return rule; }
+
+		//WildcardParExpression | WildcardDereference | WildcardLiteral | WildcardClassLiteral | WildcardNew | WildcardQName
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//WildcardParExpression
+		public RuleCall getWildcardParExpressionParserRuleCall_0() { return cWildcardParExpressionParserRuleCall_0; }
+
+		//WildcardDereference
+		public RuleCall getWildcardDereferenceParserRuleCall_1() { return cWildcardDereferenceParserRuleCall_1; }
+
+		//WildcardLiteral
+		public RuleCall getWildcardLiteralParserRuleCall_2() { return cWildcardLiteralParserRuleCall_2; }
+
+		//WildcardClassLiteral
+		public RuleCall getWildcardClassLiteralParserRuleCall_3() { return cWildcardClassLiteralParserRuleCall_3; }
+
+		//WildcardNew
+		public RuleCall getWildcardNewParserRuleCall_4() { return cWildcardNewParserRuleCall_4; }
+
+		//WildcardQName
+		public RuleCall getWildcardQNameParserRuleCall_5() { return cWildcardQNameParserRuleCall_5; }
+	}
+
+	public class WildcardParExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardParExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionWildcardExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//WildcardParExpression:
+		//	"(" expression=WildcardExpression ")";
+		public ParserRule getRule() { return rule; }
+
+		//"(" expression=WildcardExpression ")"
+		public Group getGroup() { return cGroup; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
+
+		//expression=WildcardExpression
+		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
+
+		//WildcardExpression
+		public RuleCall getExpressionWildcardExpressionParserRuleCall_1_0() { return cExpressionWildcardExpressionParserRuleCall_1_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
+	}
+
+	public class WildcardClassLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardClassLiteral");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cBaseTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cBaseTypeWildcardTypeParserRuleCall_0_0 = (RuleCall)cBaseTypeAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cDimensionAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final Keyword cDimensionLeftSquareBracketKeyword_1_0_0 = (Keyword)cDimensionAssignment_1_0.eContents().get(0);
+		private final Assignment cDimensionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final Keyword cDimensionRightSquareBracketKeyword_1_1_0 = (Keyword)cDimensionAssignment_1_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cClassKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//WildcardClassLiteral:
+		//	baseType=WildcardType (dimension+="[" dimension+="]")* "." "class";
+		public ParserRule getRule() { return rule; }
+
+		//baseType=WildcardType (dimension+="[" dimension+="]")* "." "class"
+		public Group getGroup() { return cGroup; }
+
+		//baseType=WildcardType
+		public Assignment getBaseTypeAssignment_0() { return cBaseTypeAssignment_0; }
+
+		//WildcardType
+		public RuleCall getBaseTypeWildcardTypeParserRuleCall_0_0() { return cBaseTypeWildcardTypeParserRuleCall_0_0; }
+
+		//(dimension+="[" dimension+="]")*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//dimension+="["
+		public Assignment getDimensionAssignment_1_0() { return cDimensionAssignment_1_0; }
+
+		//"["
+		public Keyword getDimensionLeftSquareBracketKeyword_1_0_0() { return cDimensionLeftSquareBracketKeyword_1_0_0; }
+
+		//dimension+="]"
+		public Assignment getDimensionAssignment_1_1() { return cDimensionAssignment_1_1; }
+
+		//"]"
+		public Keyword getDimensionRightSquareBracketKeyword_1_1_0() { return cDimensionRightSquareBracketKeyword_1_1_0; }
+
+		//"."
+		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
+
+		//"class"
+		public Keyword getClassKeyword_3() { return cClassKeyword_3; }
+	}
+
+	public class WildcardTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cWildcardPrimitiveTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cWildcardQNameParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//WildcardType:
+		//	WildcardPrimitiveType | WildcardQName;
+		public ParserRule getRule() { return rule; }
+
+		//WildcardPrimitiveType | WildcardQName
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//WildcardPrimitiveType
+		public RuleCall getWildcardPrimitiveTypeParserRuleCall_0() { return cWildcardPrimitiveTypeParserRuleCall_0; }
+
+		//WildcardQName
+		public RuleCall getWildcardQNameParserRuleCall_1() { return cWildcardQNameParserRuleCall_1; }
+	}
+
+	public class WildcardPrimitiveTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardPrimitiveType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cWildcardBooleanAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cBooleanKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cWildcardCharAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cCharKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cWildcardByteAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cByteKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cWildcardShortAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Keyword cShortKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Action cWildcardIntAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Keyword cIntKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Action cWildcardLongAction_5_0 = (Action)cGroup_5.eContents().get(0);
+		private final Keyword cLongKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
+		private final Action cWildcardFloatAction_6_0 = (Action)cGroup_6.eContents().get(0);
+		private final Keyword cFloatKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
+		private final Action cWildcardDoubleAction_7_0 = (Action)cGroup_7.eContents().get(0);
+		private final Keyword cDoubleKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
+		private final Action cWildcardVoidAction_8_0 = (Action)cGroup_8.eContents().get(0);
+		private final Keyword cVoidKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		
+		//WildcardPrimitiveType:
+		//	{WildcardBoolean} "boolean" | {WildcardChar} "char" | {WildcardByte} "byte" | {WildcardShort} "short" | {WildcardInt}
+		//	"int" | {WildcardLong} "long" | {WildcardFloat} "float" | {WildcardDouble} "double" | {WildcardVoid} "void";
+		public ParserRule getRule() { return rule; }
+
+		//{WildcardBoolean} "boolean" | {WildcardChar} "char" | {WildcardByte} "byte" | {WildcardShort} "short" | {WildcardInt}
+		//"int" | {WildcardLong} "long" | {WildcardFloat} "float" | {WildcardDouble} "double" | {WildcardVoid} "void"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//{WildcardBoolean} "boolean"
+		public Group getGroup_0() { return cGroup_0; }
+
+		//{WildcardBoolean}
+		public Action getWildcardBooleanAction_0_0() { return cWildcardBooleanAction_0_0; }
+
+		//"boolean"
+		public Keyword getBooleanKeyword_0_1() { return cBooleanKeyword_0_1; }
+
+		//{WildcardChar} "char"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{WildcardChar}
+		public Action getWildcardCharAction_1_0() { return cWildcardCharAction_1_0; }
+
+		//"char"
+		public Keyword getCharKeyword_1_1() { return cCharKeyword_1_1; }
+
+		//{WildcardByte} "byte"
+		public Group getGroup_2() { return cGroup_2; }
+
+		//{WildcardByte}
+		public Action getWildcardByteAction_2_0() { return cWildcardByteAction_2_0; }
+
+		//"byte"
+		public Keyword getByteKeyword_2_1() { return cByteKeyword_2_1; }
+
+		//{WildcardShort} "short"
+		public Group getGroup_3() { return cGroup_3; }
+
+		//{WildcardShort}
+		public Action getWildcardShortAction_3_0() { return cWildcardShortAction_3_0; }
+
+		//"short"
+		public Keyword getShortKeyword_3_1() { return cShortKeyword_3_1; }
+
+		//{WildcardInt} "int"
+		public Group getGroup_4() { return cGroup_4; }
+
+		//{WildcardInt}
+		public Action getWildcardIntAction_4_0() { return cWildcardIntAction_4_0; }
+
+		//"int"
+		public Keyword getIntKeyword_4_1() { return cIntKeyword_4_1; }
+
+		//{WildcardLong} "long"
+		public Group getGroup_5() { return cGroup_5; }
+
+		//{WildcardLong}
+		public Action getWildcardLongAction_5_0() { return cWildcardLongAction_5_0; }
+
+		//"long"
+		public Keyword getLongKeyword_5_1() { return cLongKeyword_5_1; }
+
+		//{WildcardFloat} "float"
+		public Group getGroup_6() { return cGroup_6; }
+
+		//{WildcardFloat}
+		public Action getWildcardFloatAction_6_0() { return cWildcardFloatAction_6_0; }
+
+		//"float"
+		public Keyword getFloatKeyword_6_1() { return cFloatKeyword_6_1; }
+
+		//{WildcardDouble} "double"
+		public Group getGroup_7() { return cGroup_7; }
+
+		//{WildcardDouble}
+		public Action getWildcardDoubleAction_7_0() { return cWildcardDoubleAction_7_0; }
+
+		//"double"
+		public Keyword getDoubleKeyword_7_1() { return cDoubleKeyword_7_1; }
+
+		//{WildcardVoid} "void"
+		public Group getGroup_8() { return cGroup_8; }
+
+		//{WildcardVoid}
+		public Action getWildcardVoidAction_8_0() { return cWildcardVoidAction_8_0; }
+
+		//"void"
+		public Keyword getVoidKeyword_8_1() { return cVoidKeyword_8_1; }
+	}
+
+	public class WildcardLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardLiteral");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cWildcardBooleanParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cWildcardIntParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cWildcardNullParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cWildcardStringParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		
+		////WildcardValue :
+		////	WildcardLiteral | WildcardNew | WildcardQName ;
+		//WildcardLiteral:
+		//	WildcardBoolean | WildcardInt | WildcardNull | WildcardString;
+		public ParserRule getRule() { return rule; }
+
+		//WildcardBoolean | WildcardInt | WildcardNull | WildcardString
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//WildcardBoolean
+		public RuleCall getWildcardBooleanParserRuleCall_0() { return cWildcardBooleanParserRuleCall_0; }
+
+		//WildcardInt
+		public RuleCall getWildcardIntParserRuleCall_1() { return cWildcardIntParserRuleCall_1; }
+
+		//WildcardNull
+		public RuleCall getWildcardNullParserRuleCall_2() { return cWildcardNullParserRuleCall_2; }
+
+		//WildcardString
+		public RuleCall getWildcardStringParserRuleCall_3() { return cWildcardStringParserRuleCall_3; }
+	}
+
+	public class WildcardBooleanElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardBoolean");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cValueTrueKeyword_0_0 = (Keyword)cValueAssignment_0.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cValueFalseKeyword_1_0 = (Keyword)cValueAssignment_1.eContents().get(0);
+		
+		//WildcardBoolean:
+		//	value="true" | value="false";
+		public ParserRule getRule() { return rule; }
+
+		//value="true" | value="false"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//value="true"
+		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+
+		//"true"
+		public Keyword getValueTrueKeyword_0_0() { return cValueTrueKeyword_0_0; }
+
+		//value="false"
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//"false"
+		public Keyword getValueFalseKeyword_1_0() { return cValueFalseKeyword_1_0; }
+	}
+
+	public class WildcardIntElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardInt");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//WildcardInt:
+		//	value=INT;
+		public ParserRule getRule() { return rule; }
+
+		//value=INT
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
+	}
+
+	public class WildcardNullElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardNull");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cWildcardNullAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cNullKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//WildcardNull:
+		//	{WildcardNull} "null";
+		public ParserRule getRule() { return rule; }
+
+		//{WildcardNull} "null"
+		public Group getGroup() { return cGroup; }
+
+		//{WildcardNull}
+		public Action getWildcardNullAction_0() { return cWildcardNullAction_0; }
+
+		//"null"
+		public Keyword getNullKeyword_1() { return cNullKeyword_1; }
+	}
+
+	public class WildcardStringElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardString");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//WildcardString:
+		//	value=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//value=STRING
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
+	}
+
+	public class WildcardNewElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardNew");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNewKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameWildcardQNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cParametersAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cParametersWildcardExpressionParserRuleCall_3_0_0 = (RuleCall)cParametersAssignment_3_0.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Assignment cParametersAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cParametersWildcardExpressionParserRuleCall_3_1_1_0 = (RuleCall)cParametersAssignment_3_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//WildcardNew:
+		//	"new" name=WildcardQName "(" (parameters+=WildcardExpression ("," parameters+=WildcardExpression)*)? ")";
+		public ParserRule getRule() { return rule; }
+
+		//"new" name=WildcardQName "(" (parameters+=WildcardExpression ("," parameters+=WildcardExpression)*)? ")"
+		public Group getGroup() { return cGroup; }
+
+		//"new"
+		public Keyword getNewKeyword_0() { return cNewKeyword_0; }
+
+		//name=WildcardQName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//WildcardQName
+		public RuleCall getNameWildcardQNameParserRuleCall_1_0() { return cNameWildcardQNameParserRuleCall_1_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+
+		//(parameters+=WildcardExpression ("," parameters+=WildcardExpression)*)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//parameters+=WildcardExpression
+		public Assignment getParametersAssignment_3_0() { return cParametersAssignment_3_0; }
+
+		//WildcardExpression
+		public RuleCall getParametersWildcardExpressionParserRuleCall_3_0_0() { return cParametersWildcardExpressionParserRuleCall_3_0_0; }
+
+		//("," parameters+=WildcardExpression)*
+		public Group getGroup_3_1() { return cGroup_3_1; }
+
+		//","
+		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+
+		//parameters+=WildcardExpression
+		public Assignment getParametersAssignment_3_1_1() { return cParametersAssignment_3_1_1; }
+
+		//WildcardExpression
+		public RuleCall getParametersWildcardExpressionParserRuleCall_3_1_1_0() { return cParametersWildcardExpressionParserRuleCall_3_1_1_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+	}
+
+	public class WildcardQNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardQName");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameWildcardQNameTerminalParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//WildcardQName:
+		//	name=WildcardQNameTerminal;
+		public ParserRule getRule() { return rule; }
+
+		//name=WildcardQNameTerminal
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
+		//WildcardQNameTerminal
+		public RuleCall getNameWildcardQNameTerminalParserRuleCall_0() { return cNameWildcardQNameTerminalParserRuleCall_0; }
+	}
+
+	public class WildcardQNameTerminalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardQNameTerminal");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cColonColonKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//WildcardQNameTerminal:
+		//	ID ("::" ID)*;
+		public ParserRule getRule() { return rule; }
+
+		//ID ("::" ID)*
+		public Group getGroup() { return cGroup; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+
+		//("::" ID)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"::"
+		public Keyword getColonColonKeyword_1_0() { return cColonColonKeyword_1_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+	}
+
+	public class WildcardDereferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardDereference");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cWildcardCallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cWildcardFieldParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//WildcardDereference:
+		//	WildcardCall | WildcardField;
+		public ParserRule getRule() { return rule; }
+
+		//WildcardCall | WildcardField
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//WildcardCall
+		public RuleCall getWildcardCallParserRuleCall_0() { return cWildcardCallParserRuleCall_0; }
+
+		//WildcardField
+		public RuleCall getWildcardFieldParserRuleCall_1() { return cWildcardFieldParserRuleCall_1; }
+	}
+
+	public class WildcardCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardCall");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cParametersAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cParametersWildcardExpressionParserRuleCall_3_0_0 = (RuleCall)cParametersAssignment_3_0.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Assignment cParametersAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cParametersWildcardExpressionParserRuleCall_3_1_1_0 = (RuleCall)cParametersAssignment_3_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//WildcardCall:
+		//	"." name=ID "(" (parameters+=WildcardExpression ("," parameters+=WildcardExpression)*)? ")";
+		public ParserRule getRule() { return rule; }
+
+		//"." name=ID "(" (parameters+=WildcardExpression ("," parameters+=WildcardExpression)*)? ")"
+		public Group getGroup() { return cGroup; }
+
+		//"."
+		public Keyword getFullStopKeyword_0() { return cFullStopKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+
+		//(parameters+=WildcardExpression ("," parameters+=WildcardExpression)*)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//parameters+=WildcardExpression
+		public Assignment getParametersAssignment_3_0() { return cParametersAssignment_3_0; }
+
+		//WildcardExpression
+		public RuleCall getParametersWildcardExpressionParserRuleCall_3_0_0() { return cParametersWildcardExpressionParserRuleCall_3_0_0; }
+
+		//("," parameters+=WildcardExpression)*
+		public Group getGroup_3_1() { return cGroup_3_1; }
+
+		//","
+		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+
+		//parameters+=WildcardExpression
+		public Assignment getParametersAssignment_3_1_1() { return cParametersAssignment_3_1_1; }
+
+		//WildcardExpression
+		public RuleCall getParametersWildcardExpressionParserRuleCall_3_1_1_0() { return cParametersWildcardExpressionParserRuleCall_3_1_1_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+	}
+
+	public class WildcardFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WildcardField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//WildcardField:
+		//	"." name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"." name=ID
+		public Group getGroup() { return cGroup; }
+
+		//"."
+		public Keyword getFullStopKeyword_0() { return cFullStopKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
 	public class QNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3506,6 +4624,7 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	private CastExprElements pCastExpr;
 	private InstanceOfExprElements pInstanceOfExpr;
 	private SootMethodRefElements pSootMethodRef;
+	private SootTypeElements pSootType;
 	private InvokeExprElements pInvokeExpr;
 	private InstanceInvokeExprElements pInstanceInvokeExpr;
 	private StaticInvokeExprElements pStaticInvokeExpr;
@@ -3513,7 +4632,6 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	private SpecialInvokeExprElements pSpecialInvokeExpr;
 	private VirtualInvokeExprElements pVirtualInvokeExpr;
 	private LocalOrWildcardElements pLocalOrWildcard;
-	private WildcardElements pWildcard;
 	private NewArrayExprElements pNewArrayExpr;
 	private NewExprElements pNewExpr;
 	private NewMultiArrayExprElements pNewMultiArrayExpr;
@@ -3547,6 +4665,35 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	private FieldNameElements pFieldName;
 	private MethodNameElements pMethodName;
 	private QualifiedNameElements pQualifiedName;
+	private WildcardElements pWildcard;
+	private WildcardNameElements pWildcardName;
+	private WildcardExpressionElements pWildcardExpression;
+	private WildcardConditionalOrExpressionElements pWildcardConditionalOrExpression;
+	private WildcardConditionalAndExpressionElements pWildcardConditionalAndExpression;
+	private WildcardEqualityExpressionElements pWildcardEqualityExpression;
+	private WildcardInstanceOfExpressionElements pWildcardInstanceOfExpression;
+	private WildcardRelationalExpressionElements pWildcardRelationalExpression;
+	private WildcardRelationalOpElements pWildcardRelationalOp;
+	private WildcardAdditiveExpressionElements pWildcardAdditiveExpression;
+	private WildcardMultiplicativeExpressionElements pWildcardMultiplicativeExpression;
+	private WildcardUnaryExpressionElements pWildcardUnaryExpression;
+	private WildcardUnaryExpressionNotPlusMinusElements pWildcardUnaryExpressionNotPlusMinus;
+	private WildcardPrimaryElements pWildcardPrimary;
+	private WildcardParExpressionElements pWildcardParExpression;
+	private WildcardClassLiteralElements pWildcardClassLiteral;
+	private WildcardTypeElements pWildcardType;
+	private WildcardPrimitiveTypeElements pWildcardPrimitiveType;
+	private WildcardLiteralElements pWildcardLiteral;
+	private WildcardBooleanElements pWildcardBoolean;
+	private WildcardIntElements pWildcardInt;
+	private WildcardNullElements pWildcardNull;
+	private WildcardStringElements pWildcardString;
+	private WildcardNewElements pWildcardNew;
+	private WildcardQNameElements pWildcardQName;
+	private WildcardQNameTerminalElements pWildcardQNameTerminal;
+	private WildcardDereferenceElements pWildcardDereference;
+	private WildcardCallElements pWildcardCall;
+	private WildcardFieldElements pWildcardField;
 	private QNameElements pQName;
 	private TerminalRule tLABELNAME;
 	private TerminalRule tID;
@@ -3590,7 +4737,8 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 
 	
 	//Transformation:
-	//	"«transformation»" "«replace»" pattern=Pattern "«end»" "«by»" replacement=Replacement "«end»" "«end»";
+	//	"«transformation»" "«replace»" pattern=Pattern "«end»" "«by»" replacement=Replacement "«end»" ("«where»"
+	//	condition=WildcardExpression "«end»")? "«end»";
 	public TransformationElements getTransformationAccess() {
 		return (pTransformation != null) ? pTransformation : (pTransformation = new TransformationElements());
 	}
@@ -4218,7 +5366,7 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//SootMethodRef:
-	//	"<" class=QualifiedName ":" type=QualifiedName name=MethodName "(" (parameters+=QualifiedName (","
+	//	"<" class=QualifiedName ":" type=SootType name=MethodName "(" (parameters+=QualifiedName (","
 	//	parameters+=QualifiedName)*)? ")" ">";
 	public SootMethodRefElements getSootMethodRefAccess() {
 		return (pSootMethodRef != null) ? pSootMethodRef : (pSootMethodRef = new SootMethodRefElements());
@@ -4226,6 +5374,16 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	
 	public ParserRule getSootMethodRefRule() {
 		return getSootMethodRefAccess().getRule();
+	}
+
+	//SootType:
+	//	WildcardPrimitiveType | QualifiedName;
+	public SootTypeElements getSootTypeAccess() {
+		return (pSootType != null) ? pSootType : (pSootType = new SootTypeElements());
+	}
+	
+	public ParserRule getSootTypeRule() {
+		return getSootTypeAccess().getRule();
 	}
 
 	//InvokeExpr:
@@ -4292,23 +5450,13 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//LocalOrWildcard:
-	//	Local | Wildcard;
+	//	Local | WildcardName;
 	public LocalOrWildcardElements getLocalOrWildcardAccess() {
 		return (pLocalOrWildcard != null) ? pLocalOrWildcard : (pLocalOrWildcard = new LocalOrWildcardElements());
 	}
 	
 	public ParserRule getLocalOrWildcardRule() {
 		return getLocalOrWildcardAccess().getRule();
-	}
-
-	//Wildcard:
-	//	"«" name=ID "»";
-	public WildcardElements getWildcardAccess() {
-		return (pWildcard != null) ? pWildcard : (pWildcard = new WildcardElements());
-	}
-	
-	public ParserRule getWildcardRule() {
-		return getWildcardAccess().getRule();
 	}
 
 	//NewArrayExpr:
@@ -4521,8 +5669,9 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 		return getClassConstantAccess().getRule();
 	}
 
+	////QualifiedNameWildcard;
 	//QualifiedNameOrWildcard:
-	//	QualifiedName | QualifiedNameWildcard;
+	//	QualifiedName | Wildcard;
 	public QualifiedNameOrWildcardElements getQualifiedNameOrWildcardAccess() {
 		return (pQualifiedNameOrWildcard != null) ? pQualifiedNameOrWildcard : (pQualifiedNameOrWildcard = new QualifiedNameOrWildcardElements());
 	}
@@ -4639,6 +5788,303 @@ public class TransformationLanguageGrammarAccess extends AbstractGrammarElementF
 	
 	public ParserRule getQualifiedNameRule() {
 		return getQualifiedNameAccess().getRule();
+	}
+
+	//Wildcard:
+	//	"«" expression=WildcardExpression "»";
+	public WildcardElements getWildcardAccess() {
+		return (pWildcard != null) ? pWildcard : (pWildcard = new WildcardElements());
+	}
+	
+	public ParserRule getWildcardRule() {
+		return getWildcardAccess().getRule();
+	}
+
+	//WildcardName:
+	//	"«" wName=ID "»";
+	public WildcardNameElements getWildcardNameAccess() {
+		return (pWildcardName != null) ? pWildcardName : (pWildcardName = new WildcardNameElements());
+	}
+	
+	public ParserRule getWildcardNameRule() {
+		return getWildcardNameAccess().getRule();
+	}
+
+	//WildcardExpression:
+	//	expression=WildcardConditionalOrExpression;
+	public WildcardExpressionElements getWildcardExpressionAccess() {
+		return (pWildcardExpression != null) ? pWildcardExpression : (pWildcardExpression = new WildcardExpressionElements());
+	}
+	
+	public ParserRule getWildcardExpressionRule() {
+		return getWildcardExpressionAccess().getRule();
+	}
+
+	//WildcardConditionalOrExpression:
+	//	operands+=WildcardConditionalAndExpression ("||" operands+=WildcardConditionalAndExpression)*;
+	public WildcardConditionalOrExpressionElements getWildcardConditionalOrExpressionAccess() {
+		return (pWildcardConditionalOrExpression != null) ? pWildcardConditionalOrExpression : (pWildcardConditionalOrExpression = new WildcardConditionalOrExpressionElements());
+	}
+	
+	public ParserRule getWildcardConditionalOrExpressionRule() {
+		return getWildcardConditionalOrExpressionAccess().getRule();
+	}
+
+	//WildcardConditionalAndExpression:
+	//	operands+=WildcardEqualityExpression ("&&" operands+=WildcardEqualityExpression)*;
+	public WildcardConditionalAndExpressionElements getWildcardConditionalAndExpressionAccess() {
+		return (pWildcardConditionalAndExpression != null) ? pWildcardConditionalAndExpression : (pWildcardConditionalAndExpression = new WildcardConditionalAndExpressionElements());
+	}
+	
+	public ParserRule getWildcardConditionalAndExpressionRule() {
+		return getWildcardConditionalAndExpressionAccess().getRule();
+	}
+
+	//WildcardEqualityExpression:
+	//	operands+=WildcardInstanceOfExpression ((operator+="==" | operator+="!=") operands+=WildcardInstanceOfExpression)*;
+	public WildcardEqualityExpressionElements getWildcardEqualityExpressionAccess() {
+		return (pWildcardEqualityExpression != null) ? pWildcardEqualityExpression : (pWildcardEqualityExpression = new WildcardEqualityExpressionElements());
+	}
+	
+	public ParserRule getWildcardEqualityExpressionRule() {
+		return getWildcardEqualityExpressionAccess().getRule();
+	}
+
+	//WildcardInstanceOfExpression:
+	//	operand=WildcardRelationalExpression ("instanceof" type=WildcardQName)?;
+	public WildcardInstanceOfExpressionElements getWildcardInstanceOfExpressionAccess() {
+		return (pWildcardInstanceOfExpression != null) ? pWildcardInstanceOfExpression : (pWildcardInstanceOfExpression = new WildcardInstanceOfExpressionElements());
+	}
+	
+	public ParserRule getWildcardInstanceOfExpressionRule() {
+		return getWildcardInstanceOfExpressionAccess().getRule();
+	}
+
+	//WildcardRelationalExpression:
+	//	operands+=WildcardAdditiveExpression (operators+=WildcardRelationalOp operands+=WildcardAdditiveExpression)*;
+	public WildcardRelationalExpressionElements getWildcardRelationalExpressionAccess() {
+		return (pWildcardRelationalExpression != null) ? pWildcardRelationalExpression : (pWildcardRelationalExpression = new WildcardRelationalExpressionElements());
+	}
+	
+	public ParserRule getWildcardRelationalExpressionRule() {
+		return getWildcardRelationalExpressionAccess().getRule();
+	}
+
+	//WildcardRelationalOp:
+	//	"<=" | ">=" | "<" | ">";
+	public WildcardRelationalOpElements getWildcardRelationalOpAccess() {
+		return (pWildcardRelationalOp != null) ? pWildcardRelationalOp : (pWildcardRelationalOp = new WildcardRelationalOpElements());
+	}
+	
+	public ParserRule getWildcardRelationalOpRule() {
+		return getWildcardRelationalOpAccess().getRule();
+	}
+
+	//WildcardAdditiveExpression:
+	//	operands+=WildcardMultiplicativeExpression ((operators+="+" | operators+="-")
+	//	operands+=WildcardMultiplicativeExpression)*;
+	public WildcardAdditiveExpressionElements getWildcardAdditiveExpressionAccess() {
+		return (pWildcardAdditiveExpression != null) ? pWildcardAdditiveExpression : (pWildcardAdditiveExpression = new WildcardAdditiveExpressionElements());
+	}
+	
+	public ParserRule getWildcardAdditiveExpressionRule() {
+		return getWildcardAdditiveExpressionAccess().getRule();
+	}
+
+	//WildcardMultiplicativeExpression:
+	//	operands+=WildcardUnaryExpression ((operators+="*" | operators+="/" | operators+="%")
+	//	operands+=WildcardUnaryExpression)*;
+	public WildcardMultiplicativeExpressionElements getWildcardMultiplicativeExpressionAccess() {
+		return (pWildcardMultiplicativeExpression != null) ? pWildcardMultiplicativeExpression : (pWildcardMultiplicativeExpression = new WildcardMultiplicativeExpressionElements());
+	}
+	
+	public ParserRule getWildcardMultiplicativeExpressionRule() {
+		return getWildcardMultiplicativeExpressionAccess().getRule();
+	}
+
+	//WildcardUnaryExpression:
+	//	operator="+" operand=WildcardUnaryExpression | operator="-" operand=WildcardUnaryExpression |
+	//	operand=WildcardUnaryExpressionNotPlusMinus;
+	public WildcardUnaryExpressionElements getWildcardUnaryExpressionAccess() {
+		return (pWildcardUnaryExpression != null) ? pWildcardUnaryExpression : (pWildcardUnaryExpression = new WildcardUnaryExpressionElements());
+	}
+	
+	public ParserRule getWildcardUnaryExpressionRule() {
+		return getWildcardUnaryExpressionAccess().getRule();
+	}
+
+	////(selectors += WildcardSelector )*
+	//WildcardUnaryExpressionNotPlusMinus:
+	//	not?="!" operand=WildcardUnaryExpression | operand=WildcardPrimary dereferences+=WildcardDereference*;
+	public WildcardUnaryExpressionNotPlusMinusElements getWildcardUnaryExpressionNotPlusMinusAccess() {
+		return (pWildcardUnaryExpressionNotPlusMinus != null) ? pWildcardUnaryExpressionNotPlusMinus : (pWildcardUnaryExpressionNotPlusMinus = new WildcardUnaryExpressionNotPlusMinusElements());
+	}
+	
+	public ParserRule getWildcardUnaryExpressionNotPlusMinusRule() {
+		return getWildcardUnaryExpressionNotPlusMinusAccess().getRule();
+	}
+
+	//WildcardPrimary:
+	//	WildcardParExpression | WildcardDereference | WildcardLiteral | WildcardClassLiteral | WildcardNew | WildcardQName;
+	public WildcardPrimaryElements getWildcardPrimaryAccess() {
+		return (pWildcardPrimary != null) ? pWildcardPrimary : (pWildcardPrimary = new WildcardPrimaryElements());
+	}
+	
+	public ParserRule getWildcardPrimaryRule() {
+		return getWildcardPrimaryAccess().getRule();
+	}
+
+	//WildcardParExpression:
+	//	"(" expression=WildcardExpression ")";
+	public WildcardParExpressionElements getWildcardParExpressionAccess() {
+		return (pWildcardParExpression != null) ? pWildcardParExpression : (pWildcardParExpression = new WildcardParExpressionElements());
+	}
+	
+	public ParserRule getWildcardParExpressionRule() {
+		return getWildcardParExpressionAccess().getRule();
+	}
+
+	//WildcardClassLiteral:
+	//	baseType=WildcardType (dimension+="[" dimension+="]")* "." "class";
+	public WildcardClassLiteralElements getWildcardClassLiteralAccess() {
+		return (pWildcardClassLiteral != null) ? pWildcardClassLiteral : (pWildcardClassLiteral = new WildcardClassLiteralElements());
+	}
+	
+	public ParserRule getWildcardClassLiteralRule() {
+		return getWildcardClassLiteralAccess().getRule();
+	}
+
+	//WildcardType:
+	//	WildcardPrimitiveType | WildcardQName;
+	public WildcardTypeElements getWildcardTypeAccess() {
+		return (pWildcardType != null) ? pWildcardType : (pWildcardType = new WildcardTypeElements());
+	}
+	
+	public ParserRule getWildcardTypeRule() {
+		return getWildcardTypeAccess().getRule();
+	}
+
+	//WildcardPrimitiveType:
+	//	{WildcardBoolean} "boolean" | {WildcardChar} "char" | {WildcardByte} "byte" | {WildcardShort} "short" | {WildcardInt}
+	//	"int" | {WildcardLong} "long" | {WildcardFloat} "float" | {WildcardDouble} "double" | {WildcardVoid} "void";
+	public WildcardPrimitiveTypeElements getWildcardPrimitiveTypeAccess() {
+		return (pWildcardPrimitiveType != null) ? pWildcardPrimitiveType : (pWildcardPrimitiveType = new WildcardPrimitiveTypeElements());
+	}
+	
+	public ParserRule getWildcardPrimitiveTypeRule() {
+		return getWildcardPrimitiveTypeAccess().getRule();
+	}
+
+	////WildcardValue :
+	////	WildcardLiteral | WildcardNew | WildcardQName ;
+	//WildcardLiteral:
+	//	WildcardBoolean | WildcardInt | WildcardNull | WildcardString;
+	public WildcardLiteralElements getWildcardLiteralAccess() {
+		return (pWildcardLiteral != null) ? pWildcardLiteral : (pWildcardLiteral = new WildcardLiteralElements());
+	}
+	
+	public ParserRule getWildcardLiteralRule() {
+		return getWildcardLiteralAccess().getRule();
+	}
+
+	//WildcardBoolean:
+	//	value="true" | value="false";
+	public WildcardBooleanElements getWildcardBooleanAccess() {
+		return (pWildcardBoolean != null) ? pWildcardBoolean : (pWildcardBoolean = new WildcardBooleanElements());
+	}
+	
+	public ParserRule getWildcardBooleanRule() {
+		return getWildcardBooleanAccess().getRule();
+	}
+
+	//WildcardInt:
+	//	value=INT;
+	public WildcardIntElements getWildcardIntAccess() {
+		return (pWildcardInt != null) ? pWildcardInt : (pWildcardInt = new WildcardIntElements());
+	}
+	
+	public ParserRule getWildcardIntRule() {
+		return getWildcardIntAccess().getRule();
+	}
+
+	//WildcardNull:
+	//	{WildcardNull} "null";
+	public WildcardNullElements getWildcardNullAccess() {
+		return (pWildcardNull != null) ? pWildcardNull : (pWildcardNull = new WildcardNullElements());
+	}
+	
+	public ParserRule getWildcardNullRule() {
+		return getWildcardNullAccess().getRule();
+	}
+
+	//WildcardString:
+	//	value=STRING;
+	public WildcardStringElements getWildcardStringAccess() {
+		return (pWildcardString != null) ? pWildcardString : (pWildcardString = new WildcardStringElements());
+	}
+	
+	public ParserRule getWildcardStringRule() {
+		return getWildcardStringAccess().getRule();
+	}
+
+	//WildcardNew:
+	//	"new" name=WildcardQName "(" (parameters+=WildcardExpression ("," parameters+=WildcardExpression)*)? ")";
+	public WildcardNewElements getWildcardNewAccess() {
+		return (pWildcardNew != null) ? pWildcardNew : (pWildcardNew = new WildcardNewElements());
+	}
+	
+	public ParserRule getWildcardNewRule() {
+		return getWildcardNewAccess().getRule();
+	}
+
+	//WildcardQName:
+	//	name=WildcardQNameTerminal;
+	public WildcardQNameElements getWildcardQNameAccess() {
+		return (pWildcardQName != null) ? pWildcardQName : (pWildcardQName = new WildcardQNameElements());
+	}
+	
+	public ParserRule getWildcardQNameRule() {
+		return getWildcardQNameAccess().getRule();
+	}
+
+	//WildcardQNameTerminal:
+	//	ID ("::" ID)*;
+	public WildcardQNameTerminalElements getWildcardQNameTerminalAccess() {
+		return (pWildcardQNameTerminal != null) ? pWildcardQNameTerminal : (pWildcardQNameTerminal = new WildcardQNameTerminalElements());
+	}
+	
+	public ParserRule getWildcardQNameTerminalRule() {
+		return getWildcardQNameTerminalAccess().getRule();
+	}
+
+	//WildcardDereference:
+	//	WildcardCall | WildcardField;
+	public WildcardDereferenceElements getWildcardDereferenceAccess() {
+		return (pWildcardDereference != null) ? pWildcardDereference : (pWildcardDereference = new WildcardDereferenceElements());
+	}
+	
+	public ParserRule getWildcardDereferenceRule() {
+		return getWildcardDereferenceAccess().getRule();
+	}
+
+	//WildcardCall:
+	//	"." name=ID "(" (parameters+=WildcardExpression ("," parameters+=WildcardExpression)*)? ")";
+	public WildcardCallElements getWildcardCallAccess() {
+		return (pWildcardCall != null) ? pWildcardCall : (pWildcardCall = new WildcardCallElements());
+	}
+	
+	public ParserRule getWildcardCallRule() {
+		return getWildcardCallAccess().getRule();
+	}
+
+	//WildcardField:
+	//	"." name=ID;
+	public WildcardFieldElements getWildcardFieldAccess() {
+		return (pWildcardField != null) ? pWildcardField : (pWildcardField = new WildcardFieldElements());
+	}
+	
+	public ParserRule getWildcardFieldRule() {
+		return getWildcardFieldAccess().getRule();
 	}
 
 	//QName:

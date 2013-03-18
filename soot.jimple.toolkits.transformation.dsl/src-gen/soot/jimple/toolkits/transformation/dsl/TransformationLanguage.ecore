@@ -7,6 +7,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="replacement" eType="#//Replacement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//WildcardExpression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pattern"/>
   <eClassifiers xsi:type="ecore:EClass" name="SequencePattern" eSuperTypes="#//Pattern">
@@ -191,12 +193,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="SootMethodRef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" eType="#//QualifiedName"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//QualifiedName"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//SootType"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//QualifiedName" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SootType"/>
   <eClassifiers xsi:type="ecore:EClass" name="InvokeExpr" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="#//SootMethodRef"
         containment="true"/>
@@ -211,10 +214,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceInvokeExpr" eSuperTypes="#//InstanceInvokeExpr"/>
   <eClassifiers xsi:type="ecore:EClass" name="SpecialInvokeExpr" eSuperTypes="#//InstanceInvokeExpr"/>
   <eClassifiers xsi:type="ecore:EClass" name="VirtualInvokeExpr" eSuperTypes="#//InstanceInvokeExpr"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LocalOrWildcard" eSuperTypes="#//Ref">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Wildcard" eSuperTypes="#//LocalOrWildcard"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalOrWildcard" eSuperTypes="#//Ref"/>
   <eClassifiers xsi:type="ecore:EClass" name="NewArrayExpr" eSuperTypes="#//AnyNewExpr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Dimension"
         containment="true"/>
@@ -235,7 +235,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LengthExpr" eSuperTypes="#//UnopExpr"/>
   <eClassifiers xsi:type="ecore:EClass" name="NegExpr" eSuperTypes="#//UnopExpr"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Local" eSuperTypes="#//LocalOrWildcard"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Local" eSuperTypes="#//LocalOrWildcard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ref" eSuperTypes="#//NonExpr"/>
   <eClassifiers xsi:type="ecore:EClass" name="IdentityRef" eSuperTypes="#//Ref"/>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterRef" eSuperTypes="#//IdentityRef">
@@ -278,10 +280,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//QualifiedNameOrWildcard"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QualifiedNameOrWildcard">
+  <eClassifiers xsi:type="ecore:EClass" name="QualifiedNameOrWildcard"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QualifiedNameWildcard">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QualifiedNameWildcard" eSuperTypes="#//QualifiedNameOrWildcard"/>
   <eClassifiers xsi:type="ecore:EClass" name="NullConstant" eSuperTypes="#//Constant"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumericConstant" eSuperTypes="#//Constant">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -293,5 +295,116 @@
   <eClassifiers xsi:type="ecore:EClass" name="StringConstant" eSuperTypes="#//Constant">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QualifiedName" eSuperTypes="#//QualifiedNameOrWildcard"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QualifiedName" eSuperTypes="#//SootType #//QualifiedNameOrWildcard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Wildcard" eSuperTypes="#//QualifiedNameOrWildcard">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//WildcardExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardName" eSuperTypes="#//LocalOrWildcard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//WildcardConditionalOrExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardConditionalOrExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"
+        eType="#//WildcardConditionalAndExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardConditionalAndExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"
+        eType="#//WildcardEqualityExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardEqualityExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"
+        eType="#//WildcardInstanceOfExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardInstanceOfExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="#//WildcardRelationalExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//WildcardQName"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardRelationalExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"
+        eType="#//WildcardAdditiveExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operators" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardAdditiveExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"
+        eType="#//WildcardMultiplicativeExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operators" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardMultiplicativeExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"
+        eType="#//WildcardUnaryExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operators" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardUnaryExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardUnaryExpressionNotPlusMinus">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="not" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dereferences" upperBound="-1"
+        eType="#//WildcardDereference" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardPrimary"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardParExpression" eSuperTypes="#//WildcardPrimary">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//WildcardExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardClassLiteral" eSuperTypes="#//WildcardPrimary">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseType" eType="#//WildcardType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimension" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardPrimitiveType" eSuperTypes="#//SootType #//WildcardType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardLiteral" eSuperTypes="#//WildcardPrimary"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardBoolean" eSuperTypes="#//WildcardPrimitiveType #//WildcardLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardInt" eSuperTypes="#//WildcardPrimitiveType #//WildcardLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardNull" eSuperTypes="#//WildcardLiteral"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardString" eSuperTypes="#//WildcardLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardNew" eSuperTypes="#//WildcardPrimary">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//WildcardQName"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//WildcardExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardQName" eSuperTypes="#//WildcardPrimary #//WildcardType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardDereference" eSuperTypes="#//WildcardPrimary">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardCall" eSuperTypes="#//WildcardDereference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//WildcardExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardField" eSuperTypes="#//WildcardDereference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardChar" eSuperTypes="#//WildcardPrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardByte" eSuperTypes="#//WildcardPrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardShort" eSuperTypes="#//WildcardPrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardLong" eSuperTypes="#//WildcardPrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardFloat" eSuperTypes="#//WildcardPrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardDouble" eSuperTypes="#//WildcardPrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardVoid" eSuperTypes="#//WildcardPrimitiveType"/>
 </ecore:EPackage>

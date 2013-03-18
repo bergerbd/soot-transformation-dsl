@@ -626,6 +626,13 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TransformationLanguagePackage.SOOT_TYPE:
+      {
+        SootType sootType = (SootType)theEObject;
+        T result = caseSootType(sootType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case TransformationLanguagePackage.INVOKE_EXPR:
       {
         InvokeExpr invokeExpr = (InvokeExpr)theEObject;
@@ -695,17 +702,6 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
         if (result == null) result = caseRef(localOrWildcard);
         if (result == null) result = caseNonExpr(localOrWildcard);
         if (result == null) result = caseValue(localOrWildcard);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TransformationLanguagePackage.WILDCARD:
-      {
-        Wildcard wildcard = (Wildcard)theEObject;
-        T result = caseWildcard(wildcard);
-        if (result == null) result = caseLocalOrWildcard(wildcard);
-        if (result == null) result = caseRef(wildcard);
-        if (result == null) result = caseNonExpr(wildcard);
-        if (result == null) result = caseValue(wildcard);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -931,7 +927,6 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
       {
         QualifiedNameWildcard qualifiedNameWildcard = (QualifiedNameWildcard)theEObject;
         T result = caseQualifiedNameWildcard(qualifiedNameWildcard);
-        if (result == null) result = caseQualifiedNameOrWildcard(qualifiedNameWildcard);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1013,7 +1008,299 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
       {
         QualifiedName qualifiedName = (QualifiedName)theEObject;
         T result = caseQualifiedName(qualifiedName);
+        if (result == null) result = caseSootType(qualifiedName);
         if (result == null) result = caseQualifiedNameOrWildcard(qualifiedName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD:
+      {
+        Wildcard wildcard = (Wildcard)theEObject;
+        T result = caseWildcard(wildcard);
+        if (result == null) result = caseQualifiedNameOrWildcard(wildcard);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_NAME:
+      {
+        WildcardName wildcardName = (WildcardName)theEObject;
+        T result = caseWildcardName(wildcardName);
+        if (result == null) result = caseLocalOrWildcard(wildcardName);
+        if (result == null) result = caseRef(wildcardName);
+        if (result == null) result = caseNonExpr(wildcardName);
+        if (result == null) result = caseValue(wildcardName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_EXPRESSION:
+      {
+        WildcardExpression wildcardExpression = (WildcardExpression)theEObject;
+        T result = caseWildcardExpression(wildcardExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_CONDITIONAL_OR_EXPRESSION:
+      {
+        WildcardConditionalOrExpression wildcardConditionalOrExpression = (WildcardConditionalOrExpression)theEObject;
+        T result = caseWildcardConditionalOrExpression(wildcardConditionalOrExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_CONDITIONAL_AND_EXPRESSION:
+      {
+        WildcardConditionalAndExpression wildcardConditionalAndExpression = (WildcardConditionalAndExpression)theEObject;
+        T result = caseWildcardConditionalAndExpression(wildcardConditionalAndExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_EQUALITY_EXPRESSION:
+      {
+        WildcardEqualityExpression wildcardEqualityExpression = (WildcardEqualityExpression)theEObject;
+        T result = caseWildcardEqualityExpression(wildcardEqualityExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_INSTANCE_OF_EXPRESSION:
+      {
+        WildcardInstanceOfExpression wildcardInstanceOfExpression = (WildcardInstanceOfExpression)theEObject;
+        T result = caseWildcardInstanceOfExpression(wildcardInstanceOfExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_RELATIONAL_EXPRESSION:
+      {
+        WildcardRelationalExpression wildcardRelationalExpression = (WildcardRelationalExpression)theEObject;
+        T result = caseWildcardRelationalExpression(wildcardRelationalExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_ADDITIVE_EXPRESSION:
+      {
+        WildcardAdditiveExpression wildcardAdditiveExpression = (WildcardAdditiveExpression)theEObject;
+        T result = caseWildcardAdditiveExpression(wildcardAdditiveExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_MULTIPLICATIVE_EXPRESSION:
+      {
+        WildcardMultiplicativeExpression wildcardMultiplicativeExpression = (WildcardMultiplicativeExpression)theEObject;
+        T result = caseWildcardMultiplicativeExpression(wildcardMultiplicativeExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_UNARY_EXPRESSION:
+      {
+        WildcardUnaryExpression wildcardUnaryExpression = (WildcardUnaryExpression)theEObject;
+        T result = caseWildcardUnaryExpression(wildcardUnaryExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS:
+      {
+        WildcardUnaryExpressionNotPlusMinus wildcardUnaryExpressionNotPlusMinus = (WildcardUnaryExpressionNotPlusMinus)theEObject;
+        T result = caseWildcardUnaryExpressionNotPlusMinus(wildcardUnaryExpressionNotPlusMinus);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_PRIMARY:
+      {
+        WildcardPrimary wildcardPrimary = (WildcardPrimary)theEObject;
+        T result = caseWildcardPrimary(wildcardPrimary);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_PAR_EXPRESSION:
+      {
+        WildcardParExpression wildcardParExpression = (WildcardParExpression)theEObject;
+        T result = caseWildcardParExpression(wildcardParExpression);
+        if (result == null) result = caseWildcardPrimary(wildcardParExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_CLASS_LITERAL:
+      {
+        WildcardClassLiteral wildcardClassLiteral = (WildcardClassLiteral)theEObject;
+        T result = caseWildcardClassLiteral(wildcardClassLiteral);
+        if (result == null) result = caseWildcardPrimary(wildcardClassLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_TYPE:
+      {
+        WildcardType wildcardType = (WildcardType)theEObject;
+        T result = caseWildcardType(wildcardType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_PRIMITIVE_TYPE:
+      {
+        WildcardPrimitiveType wildcardPrimitiveType = (WildcardPrimitiveType)theEObject;
+        T result = caseWildcardPrimitiveType(wildcardPrimitiveType);
+        if (result == null) result = caseSootType(wildcardPrimitiveType);
+        if (result == null) result = caseWildcardType(wildcardPrimitiveType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_LITERAL:
+      {
+        WildcardLiteral wildcardLiteral = (WildcardLiteral)theEObject;
+        T result = caseWildcardLiteral(wildcardLiteral);
+        if (result == null) result = caseWildcardPrimary(wildcardLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_BOOLEAN:
+      {
+        WildcardBoolean wildcardBoolean = (WildcardBoolean)theEObject;
+        T result = caseWildcardBoolean(wildcardBoolean);
+        if (result == null) result = caseWildcardPrimitiveType(wildcardBoolean);
+        if (result == null) result = caseWildcardLiteral(wildcardBoolean);
+        if (result == null) result = caseSootType(wildcardBoolean);
+        if (result == null) result = caseWildcardType(wildcardBoolean);
+        if (result == null) result = caseWildcardPrimary(wildcardBoolean);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_INT:
+      {
+        WildcardInt wildcardInt = (WildcardInt)theEObject;
+        T result = caseWildcardInt(wildcardInt);
+        if (result == null) result = caseWildcardPrimitiveType(wildcardInt);
+        if (result == null) result = caseWildcardLiteral(wildcardInt);
+        if (result == null) result = caseSootType(wildcardInt);
+        if (result == null) result = caseWildcardType(wildcardInt);
+        if (result == null) result = caseWildcardPrimary(wildcardInt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_NULL:
+      {
+        WildcardNull wildcardNull = (WildcardNull)theEObject;
+        T result = caseWildcardNull(wildcardNull);
+        if (result == null) result = caseWildcardLiteral(wildcardNull);
+        if (result == null) result = caseWildcardPrimary(wildcardNull);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_STRING:
+      {
+        WildcardString wildcardString = (WildcardString)theEObject;
+        T result = caseWildcardString(wildcardString);
+        if (result == null) result = caseWildcardLiteral(wildcardString);
+        if (result == null) result = caseWildcardPrimary(wildcardString);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_NEW:
+      {
+        WildcardNew wildcardNew = (WildcardNew)theEObject;
+        T result = caseWildcardNew(wildcardNew);
+        if (result == null) result = caseWildcardPrimary(wildcardNew);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_QNAME:
+      {
+        WildcardQName wildcardQName = (WildcardQName)theEObject;
+        T result = caseWildcardQName(wildcardQName);
+        if (result == null) result = caseWildcardPrimary(wildcardQName);
+        if (result == null) result = caseWildcardType(wildcardQName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_DEREFERENCE:
+      {
+        WildcardDereference wildcardDereference = (WildcardDereference)theEObject;
+        T result = caseWildcardDereference(wildcardDereference);
+        if (result == null) result = caseWildcardPrimary(wildcardDereference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_CALL:
+      {
+        WildcardCall wildcardCall = (WildcardCall)theEObject;
+        T result = caseWildcardCall(wildcardCall);
+        if (result == null) result = caseWildcardDereference(wildcardCall);
+        if (result == null) result = caseWildcardPrimary(wildcardCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_FIELD:
+      {
+        WildcardField wildcardField = (WildcardField)theEObject;
+        T result = caseWildcardField(wildcardField);
+        if (result == null) result = caseWildcardDereference(wildcardField);
+        if (result == null) result = caseWildcardPrimary(wildcardField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_CHAR:
+      {
+        WildcardChar wildcardChar = (WildcardChar)theEObject;
+        T result = caseWildcardChar(wildcardChar);
+        if (result == null) result = caseWildcardPrimitiveType(wildcardChar);
+        if (result == null) result = caseSootType(wildcardChar);
+        if (result == null) result = caseWildcardType(wildcardChar);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_BYTE:
+      {
+        WildcardByte wildcardByte = (WildcardByte)theEObject;
+        T result = caseWildcardByte(wildcardByte);
+        if (result == null) result = caseWildcardPrimitiveType(wildcardByte);
+        if (result == null) result = caseSootType(wildcardByte);
+        if (result == null) result = caseWildcardType(wildcardByte);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_SHORT:
+      {
+        WildcardShort wildcardShort = (WildcardShort)theEObject;
+        T result = caseWildcardShort(wildcardShort);
+        if (result == null) result = caseWildcardPrimitiveType(wildcardShort);
+        if (result == null) result = caseSootType(wildcardShort);
+        if (result == null) result = caseWildcardType(wildcardShort);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_LONG:
+      {
+        WildcardLong wildcardLong = (WildcardLong)theEObject;
+        T result = caseWildcardLong(wildcardLong);
+        if (result == null) result = caseWildcardPrimitiveType(wildcardLong);
+        if (result == null) result = caseSootType(wildcardLong);
+        if (result == null) result = caseWildcardType(wildcardLong);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_FLOAT:
+      {
+        WildcardFloat wildcardFloat = (WildcardFloat)theEObject;
+        T result = caseWildcardFloat(wildcardFloat);
+        if (result == null) result = caseWildcardPrimitiveType(wildcardFloat);
+        if (result == null) result = caseSootType(wildcardFloat);
+        if (result == null) result = caseWildcardType(wildcardFloat);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_DOUBLE:
+      {
+        WildcardDouble wildcardDouble = (WildcardDouble)theEObject;
+        T result = caseWildcardDouble(wildcardDouble);
+        if (result == null) result = caseWildcardPrimitiveType(wildcardDouble);
+        if (result == null) result = caseSootType(wildcardDouble);
+        if (result == null) result = caseWildcardType(wildcardDouble);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TransformationLanguagePackage.WILDCARD_VOID:
+      {
+        WildcardVoid wildcardVoid = (WildcardVoid)theEObject;
+        T result = caseWildcardVoid(wildcardVoid);
+        if (result == null) result = caseWildcardPrimitiveType(wildcardVoid);
+        if (result == null) result = caseSootType(wildcardVoid);
+        if (result == null) result = caseWildcardType(wildcardVoid);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2014,6 +2301,22 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Soot Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Soot Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSootType(SootType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Invoke Expr</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2121,22 +2424,6 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLocalOrWildcard(LocalOrWildcard object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Wildcard</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Wildcard</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseWildcard(Wildcard object)
   {
     return null;
   }
@@ -2633,6 +2920,550 @@ public class TransformationLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseQualifiedName(QualifiedName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcard(Wildcard object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardName(WildcardName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardExpression(WildcardExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Conditional Or Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Conditional Or Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardConditionalOrExpression(WildcardConditionalOrExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Conditional And Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Conditional And Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardConditionalAndExpression(WildcardConditionalAndExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Equality Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Equality Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardEqualityExpression(WildcardEqualityExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Instance Of Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Instance Of Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardInstanceOfExpression(WildcardInstanceOfExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Relational Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Relational Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardRelationalExpression(WildcardRelationalExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Additive Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Additive Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardAdditiveExpression(WildcardAdditiveExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Multiplicative Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Multiplicative Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardMultiplicativeExpression(WildcardMultiplicativeExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Unary Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Unary Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardUnaryExpression(WildcardUnaryExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Unary Expression Not Plus Minus</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Unary Expression Not Plus Minus</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardUnaryExpressionNotPlusMinus(WildcardUnaryExpressionNotPlusMinus object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Primary</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Primary</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardPrimary(WildcardPrimary object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Par Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Par Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardParExpression(WildcardParExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Class Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Class Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardClassLiteral(WildcardClassLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardType(WildcardType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Primitive Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Primitive Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardPrimitiveType(WildcardPrimitiveType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardLiteral(WildcardLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Boolean</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Boolean</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardBoolean(WildcardBoolean object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Int</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Int</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardInt(WildcardInt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Null</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Null</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardNull(WildcardNull object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard String</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard String</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardString(WildcardString object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard New</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard New</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardNew(WildcardNew object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard QName</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard QName</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardQName(WildcardQName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Dereference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Dereference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardDereference(WildcardDereference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardCall(WildcardCall object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardField(WildcardField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Char</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Char</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardChar(WildcardChar object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Byte</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Byte</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardByte(WildcardByte object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Short</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Short</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardShort(WildcardShort object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Long</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Long</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardLong(WildcardLong object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Float</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Float</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardFloat(WildcardFloat object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Double</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Double</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardDouble(WildcardDouble object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wildcard Void</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wildcard Void</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWildcardVoid(WildcardVoid object)
   {
     return null;
   }

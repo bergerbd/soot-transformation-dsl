@@ -127,6 +127,7 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
       case TransformationLanguagePackage.CAST_EXPR: return createCastExpr();
       case TransformationLanguagePackage.INSTANCE_OF_EXPR: return createInstanceOfExpr();
       case TransformationLanguagePackage.SOOT_METHOD_REF: return createSootMethodRef();
+      case TransformationLanguagePackage.SOOT_TYPE: return createSootType();
       case TransformationLanguagePackage.INVOKE_EXPR: return createInvokeExpr();
       case TransformationLanguagePackage.INSTANCE_INVOKE_EXPR: return createInstanceInvokeExpr();
       case TransformationLanguagePackage.STATIC_INVOKE_EXPR: return createStaticInvokeExpr();
@@ -134,7 +135,6 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
       case TransformationLanguagePackage.SPECIAL_INVOKE_EXPR: return createSpecialInvokeExpr();
       case TransformationLanguagePackage.VIRTUAL_INVOKE_EXPR: return createVirtualInvokeExpr();
       case TransformationLanguagePackage.LOCAL_OR_WILDCARD: return createLocalOrWildcard();
-      case TransformationLanguagePackage.WILDCARD: return createWildcard();
       case TransformationLanguagePackage.NEW_ARRAY_EXPR: return createNewArrayExpr();
       case TransformationLanguagePackage.NEW_EXPR: return createNewExpr();
       case TransformationLanguagePackage.NEW_MULTI_ARRAY_EXPR: return createNewMultiArrayExpr();
@@ -166,6 +166,40 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
       case TransformationLanguagePackage.FLOAT_CONSTANT: return createFloatConstant();
       case TransformationLanguagePackage.STRING_CONSTANT: return createStringConstant();
       case TransformationLanguagePackage.QUALIFIED_NAME: return createQualifiedName();
+      case TransformationLanguagePackage.WILDCARD: return createWildcard();
+      case TransformationLanguagePackage.WILDCARD_NAME: return createWildcardName();
+      case TransformationLanguagePackage.WILDCARD_EXPRESSION: return createWildcardExpression();
+      case TransformationLanguagePackage.WILDCARD_CONDITIONAL_OR_EXPRESSION: return createWildcardConditionalOrExpression();
+      case TransformationLanguagePackage.WILDCARD_CONDITIONAL_AND_EXPRESSION: return createWildcardConditionalAndExpression();
+      case TransformationLanguagePackage.WILDCARD_EQUALITY_EXPRESSION: return createWildcardEqualityExpression();
+      case TransformationLanguagePackage.WILDCARD_INSTANCE_OF_EXPRESSION: return createWildcardInstanceOfExpression();
+      case TransformationLanguagePackage.WILDCARD_RELATIONAL_EXPRESSION: return createWildcardRelationalExpression();
+      case TransformationLanguagePackage.WILDCARD_ADDITIVE_EXPRESSION: return createWildcardAdditiveExpression();
+      case TransformationLanguagePackage.WILDCARD_MULTIPLICATIVE_EXPRESSION: return createWildcardMultiplicativeExpression();
+      case TransformationLanguagePackage.WILDCARD_UNARY_EXPRESSION: return createWildcardUnaryExpression();
+      case TransformationLanguagePackage.WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS: return createWildcardUnaryExpressionNotPlusMinus();
+      case TransformationLanguagePackage.WILDCARD_PRIMARY: return createWildcardPrimary();
+      case TransformationLanguagePackage.WILDCARD_PAR_EXPRESSION: return createWildcardParExpression();
+      case TransformationLanguagePackage.WILDCARD_CLASS_LITERAL: return createWildcardClassLiteral();
+      case TransformationLanguagePackage.WILDCARD_TYPE: return createWildcardType();
+      case TransformationLanguagePackage.WILDCARD_PRIMITIVE_TYPE: return createWildcardPrimitiveType();
+      case TransformationLanguagePackage.WILDCARD_LITERAL: return createWildcardLiteral();
+      case TransformationLanguagePackage.WILDCARD_BOOLEAN: return createWildcardBoolean();
+      case TransformationLanguagePackage.WILDCARD_INT: return createWildcardInt();
+      case TransformationLanguagePackage.WILDCARD_NULL: return createWildcardNull();
+      case TransformationLanguagePackage.WILDCARD_STRING: return createWildcardString();
+      case TransformationLanguagePackage.WILDCARD_NEW: return createWildcardNew();
+      case TransformationLanguagePackage.WILDCARD_QNAME: return createWildcardQName();
+      case TransformationLanguagePackage.WILDCARD_DEREFERENCE: return createWildcardDereference();
+      case TransformationLanguagePackage.WILDCARD_CALL: return createWildcardCall();
+      case TransformationLanguagePackage.WILDCARD_FIELD: return createWildcardField();
+      case TransformationLanguagePackage.WILDCARD_CHAR: return createWildcardChar();
+      case TransformationLanguagePackage.WILDCARD_BYTE: return createWildcardByte();
+      case TransformationLanguagePackage.WILDCARD_SHORT: return createWildcardShort();
+      case TransformationLanguagePackage.WILDCARD_LONG: return createWildcardLong();
+      case TransformationLanguagePackage.WILDCARD_FLOAT: return createWildcardFloat();
+      case TransformationLanguagePackage.WILDCARD_DOUBLE: return createWildcardDouble();
+      case TransformationLanguagePackage.WILDCARD_VOID: return createWildcardVoid();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -892,6 +926,17 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
+  public SootType createSootType()
+  {
+    SootTypeImpl sootType = new SootTypeImpl();
+    return sootType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public InvokeExpr createInvokeExpr()
   {
     InvokeExprImpl invokeExpr = new InvokeExprImpl();
@@ -962,17 +1007,6 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
   {
     LocalOrWildcardImpl localOrWildcard = new LocalOrWildcardImpl();
     return localOrWildcard;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Wildcard createWildcard()
-  {
-    WildcardImpl wildcard = new WildcardImpl();
-    return wildcard;
   }
 
   /**
@@ -1314,6 +1348,380 @@ public class TransformationLanguageFactoryImpl extends EFactoryImpl implements T
   {
     QualifiedNameImpl qualifiedName = new QualifiedNameImpl();
     return qualifiedName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Wildcard createWildcard()
+  {
+    WildcardImpl wildcard = new WildcardImpl();
+    return wildcard;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardName createWildcardName()
+  {
+    WildcardNameImpl wildcardName = new WildcardNameImpl();
+    return wildcardName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardExpression createWildcardExpression()
+  {
+    WildcardExpressionImpl wildcardExpression = new WildcardExpressionImpl();
+    return wildcardExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardConditionalOrExpression createWildcardConditionalOrExpression()
+  {
+    WildcardConditionalOrExpressionImpl wildcardConditionalOrExpression = new WildcardConditionalOrExpressionImpl();
+    return wildcardConditionalOrExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardConditionalAndExpression createWildcardConditionalAndExpression()
+  {
+    WildcardConditionalAndExpressionImpl wildcardConditionalAndExpression = new WildcardConditionalAndExpressionImpl();
+    return wildcardConditionalAndExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardEqualityExpression createWildcardEqualityExpression()
+  {
+    WildcardEqualityExpressionImpl wildcardEqualityExpression = new WildcardEqualityExpressionImpl();
+    return wildcardEqualityExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardInstanceOfExpression createWildcardInstanceOfExpression()
+  {
+    WildcardInstanceOfExpressionImpl wildcardInstanceOfExpression = new WildcardInstanceOfExpressionImpl();
+    return wildcardInstanceOfExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardRelationalExpression createWildcardRelationalExpression()
+  {
+    WildcardRelationalExpressionImpl wildcardRelationalExpression = new WildcardRelationalExpressionImpl();
+    return wildcardRelationalExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardAdditiveExpression createWildcardAdditiveExpression()
+  {
+    WildcardAdditiveExpressionImpl wildcardAdditiveExpression = new WildcardAdditiveExpressionImpl();
+    return wildcardAdditiveExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardMultiplicativeExpression createWildcardMultiplicativeExpression()
+  {
+    WildcardMultiplicativeExpressionImpl wildcardMultiplicativeExpression = new WildcardMultiplicativeExpressionImpl();
+    return wildcardMultiplicativeExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardUnaryExpression createWildcardUnaryExpression()
+  {
+    WildcardUnaryExpressionImpl wildcardUnaryExpression = new WildcardUnaryExpressionImpl();
+    return wildcardUnaryExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardUnaryExpressionNotPlusMinus createWildcardUnaryExpressionNotPlusMinus()
+  {
+    WildcardUnaryExpressionNotPlusMinusImpl wildcardUnaryExpressionNotPlusMinus = new WildcardUnaryExpressionNotPlusMinusImpl();
+    return wildcardUnaryExpressionNotPlusMinus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardPrimary createWildcardPrimary()
+  {
+    WildcardPrimaryImpl wildcardPrimary = new WildcardPrimaryImpl();
+    return wildcardPrimary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardParExpression createWildcardParExpression()
+  {
+    WildcardParExpressionImpl wildcardParExpression = new WildcardParExpressionImpl();
+    return wildcardParExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardClassLiteral createWildcardClassLiteral()
+  {
+    WildcardClassLiteralImpl wildcardClassLiteral = new WildcardClassLiteralImpl();
+    return wildcardClassLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardType createWildcardType()
+  {
+    WildcardTypeImpl wildcardType = new WildcardTypeImpl();
+    return wildcardType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardPrimitiveType createWildcardPrimitiveType()
+  {
+    WildcardPrimitiveTypeImpl wildcardPrimitiveType = new WildcardPrimitiveTypeImpl();
+    return wildcardPrimitiveType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardLiteral createWildcardLiteral()
+  {
+    WildcardLiteralImpl wildcardLiteral = new WildcardLiteralImpl();
+    return wildcardLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardBoolean createWildcardBoolean()
+  {
+    WildcardBooleanImpl wildcardBoolean = new WildcardBooleanImpl();
+    return wildcardBoolean;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardInt createWildcardInt()
+  {
+    WildcardIntImpl wildcardInt = new WildcardIntImpl();
+    return wildcardInt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardNull createWildcardNull()
+  {
+    WildcardNullImpl wildcardNull = new WildcardNullImpl();
+    return wildcardNull;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardString createWildcardString()
+  {
+    WildcardStringImpl wildcardString = new WildcardStringImpl();
+    return wildcardString;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardNew createWildcardNew()
+  {
+    WildcardNewImpl wildcardNew = new WildcardNewImpl();
+    return wildcardNew;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardQName createWildcardQName()
+  {
+    WildcardQNameImpl wildcardQName = new WildcardQNameImpl();
+    return wildcardQName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardDereference createWildcardDereference()
+  {
+    WildcardDereferenceImpl wildcardDereference = new WildcardDereferenceImpl();
+    return wildcardDereference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardCall createWildcardCall()
+  {
+    WildcardCallImpl wildcardCall = new WildcardCallImpl();
+    return wildcardCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardField createWildcardField()
+  {
+    WildcardFieldImpl wildcardField = new WildcardFieldImpl();
+    return wildcardField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardChar createWildcardChar()
+  {
+    WildcardCharImpl wildcardChar = new WildcardCharImpl();
+    return wildcardChar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardByte createWildcardByte()
+  {
+    WildcardByteImpl wildcardByte = new WildcardByteImpl();
+    return wildcardByte;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardShort createWildcardShort()
+  {
+    WildcardShortImpl wildcardShort = new WildcardShortImpl();
+    return wildcardShort;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardLong createWildcardLong()
+  {
+    WildcardLongImpl wildcardLong = new WildcardLongImpl();
+    return wildcardLong;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardFloat createWildcardFloat()
+  {
+    WildcardFloatImpl wildcardFloat = new WildcardFloatImpl();
+    return wildcardFloat;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardDouble createWildcardDouble()
+  {
+    WildcardDoubleImpl wildcardDouble = new WildcardDoubleImpl();
+    return wildcardDouble;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WildcardVoid createWildcardVoid()
+  {
+    WildcardVoidImpl wildcardVoid = new WildcardVoidImpl();
+    return wildcardVoid;
   }
 
   /**

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transformation#getPattern <em>Pattern</em>}</li>
  *   <li>{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transformation#getReplacement <em>Replacement</em>}</li>
+ *   <li>{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transformation#getCondition <em>Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,31 @@ public interface Transformation extends EObject
    * @generated
    */
   void setReplacement(Replacement value);
+
+  /**
+   * Returns the value of the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Condition</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Condition</em>' containment reference.
+   * @see #setCondition(WildcardExpression)
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage#getTransformation_Condition()
+   * @model containment="true"
+   * @generated
+   */
+  WildcardExpression getCondition();
+
+  /**
+   * Sets the value of the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transformation#getCondition <em>Condition</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Condition</em>' containment reference.
+   * @see #getCondition()
+   * @generated
+   */
+  void setCondition(WildcardExpression value);
 
 } // Transformation

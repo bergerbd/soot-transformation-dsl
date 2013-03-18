@@ -17,6 +17,7 @@
     <genClasses ecoreClass="TransformationLanguage.ecore#//Transformation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Transformation/pattern"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Transformation/replacement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Transformation/condition"/>
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//Pattern"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//SequencePattern">
@@ -164,6 +165,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//SootMethodRef/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//SootMethodRef/parameters"/>
     </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//SootType"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//InvokeExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InvokeExpr/method"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//InvokeExpr/parameters"/>
@@ -175,10 +177,7 @@
     <genClasses ecoreClass="TransformationLanguage.ecore#//InterfaceInvokeExpr"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//SpecialInvokeExpr"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//VirtualInvokeExpr"/>
-    <genClasses ecoreClass="TransformationLanguage.ecore#//LocalOrWildcard">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//LocalOrWildcard/name"/>
-    </genClasses>
-    <genClasses ecoreClass="TransformationLanguage.ecore#//Wildcard"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//LocalOrWildcard"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//NewArrayExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//NewArrayExpr/size"/>
     </genClasses>
@@ -195,7 +194,9 @@
     </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//LengthExpr"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//NegExpr"/>
-    <genClasses ecoreClass="TransformationLanguage.ecore#//Local"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Local">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//Local/name"/>
+    </genClasses>
     <genClasses ecoreClass="TransformationLanguage.ecore#//Ref"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//IdentityRef"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//ParameterRef">
@@ -228,10 +229,10 @@
     <genClasses ecoreClass="TransformationLanguage.ecore#//ClassConstant">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//ClassConstant/name"/>
     </genClasses>
-    <genClasses ecoreClass="TransformationLanguage.ecore#//QualifiedNameOrWildcard">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//QualifiedNameOrWildcard/name"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//QualifiedNameOrWildcard"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//QualifiedNameWildcard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//QualifiedNameWildcard/name"/>
     </genClasses>
-    <genClasses ecoreClass="TransformationLanguage.ecore#//QualifiedNameWildcard"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//NullConstant"/>
     <genClasses ecoreClass="TransformationLanguage.ecore#//NumericConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//NumericConstant/value"/>
@@ -243,6 +244,94 @@
     <genClasses ecoreClass="TransformationLanguage.ecore#//StringConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//StringConstant/value"/>
     </genClasses>
-    <genClasses ecoreClass="TransformationLanguage.ecore#//QualifiedName"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//QualifiedName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//QualifiedName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//Wildcard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//Wildcard/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardName/wName"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardConditionalOrExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardConditionalOrExpression/operands"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardConditionalAndExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardConditionalAndExpression/operands"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardEqualityExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardEqualityExpression/operands"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardEqualityExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardInstanceOfExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardInstanceOfExpression/operand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardInstanceOfExpression/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardRelationalExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardRelationalExpression/operands"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardRelationalExpression/operators"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardAdditiveExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardAdditiveExpression/operands"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardAdditiveExpression/operators"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardMultiplicativeExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardMultiplicativeExpression/operands"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardMultiplicativeExpression/operators"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardUnaryExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardUnaryExpression/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardUnaryExpression/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardUnaryExpressionNotPlusMinus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardUnaryExpressionNotPlusMinus/not"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardUnaryExpressionNotPlusMinus/operand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardUnaryExpressionNotPlusMinus/dereferences"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardPrimary"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardParExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardParExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardClassLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardClassLiteral/baseType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardClassLiteral/dimension"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardType"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardPrimitiveType"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardLiteral"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardBoolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardBoolean/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardInt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardInt/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardNull"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardString/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardNew">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardNew/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardNew/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardQName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardQName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardDereference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TransformationLanguage.ecore#//WildcardDereference/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TransformationLanguage.ecore#//WildcardCall/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardField"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardChar"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardByte"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardShort"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardLong"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardFloat"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardDouble"/>
+    <genClasses ecoreClass="TransformationLanguage.ecore#//WildcardVoid"/>
   </genPackages>
 </genmodel:GenModel>

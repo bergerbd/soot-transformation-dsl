@@ -86,13 +86,22 @@ public interface TransformationLanguagePackage extends EPackage
   int TRANSFORMATION__REPLACEMENT = 1;
 
   /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSFORMATION__CONDITION = 2;
+
+  /**
    * The number of structural features of the '<em>Transformation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSFORMATION_FEATURE_COUNT = 2;
+  int TRANSFORMATION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.PatternImpl <em>Pattern</em>}' class.
@@ -2172,6 +2181,25 @@ public interface TransformationLanguagePackage extends EPackage
   int SOOT_METHOD_REF_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.SootTypeImpl <em>Soot Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.SootTypeImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getSootType()
+   * @generated
+   */
+  int SOOT_TYPE = 62;
+
+  /**
+   * The number of structural features of the '<em>Soot Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOOT_TYPE_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.InvokeExprImpl <em>Invoke Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2179,7 +2207,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getInvokeExpr()
    * @generated
    */
-  int INVOKE_EXPR = 62;
+  int INVOKE_EXPR = 63;
 
   /**
    * The feature id for the '<em><b>Method</b></em>' containment reference.
@@ -2216,7 +2244,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getInstanceInvokeExpr()
    * @generated
    */
-  int INSTANCE_INVOKE_EXPR = 63;
+  int INSTANCE_INVOKE_EXPR = 64;
 
   /**
    * The feature id for the '<em><b>Method</b></em>' containment reference.
@@ -2262,7 +2290,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getStaticInvokeExpr()
    * @generated
    */
-  int STATIC_INVOKE_EXPR = 64;
+  int STATIC_INVOKE_EXPR = 65;
 
   /**
    * The feature id for the '<em><b>Method</b></em>' containment reference.
@@ -2299,7 +2327,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getInterfaceInvokeExpr()
    * @generated
    */
-  int INTERFACE_INVOKE_EXPR = 65;
+  int INTERFACE_INVOKE_EXPR = 66;
 
   /**
    * The feature id for the '<em><b>Method</b></em>' containment reference.
@@ -2345,7 +2373,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getSpecialInvokeExpr()
    * @generated
    */
-  int SPECIAL_INVOKE_EXPR = 66;
+  int SPECIAL_INVOKE_EXPR = 67;
 
   /**
    * The feature id for the '<em><b>Method</b></em>' containment reference.
@@ -2391,7 +2419,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getVirtualInvokeExpr()
    * @generated
    */
-  int VIRTUAL_INVOKE_EXPR = 67;
+  int VIRTUAL_INVOKE_EXPR = 68;
 
   /**
    * The feature id for the '<em><b>Method</b></em>' containment reference.
@@ -2456,16 +2484,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getLocalOrWildcard()
    * @generated
    */
-  int LOCAL_OR_WILDCARD = 68;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_OR_WILDCARD__NAME = REF_FEATURE_COUNT + 0;
+  int LOCAL_OR_WILDCARD = 69;
 
   /**
    * The number of structural features of the '<em>Local Or Wildcard</em>' class.
@@ -2474,35 +2493,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOCAL_OR_WILDCARD_FEATURE_COUNT = REF_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardImpl <em>Wildcard</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardImpl
-   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcard()
-   * @generated
-   */
-  int WILDCARD = 69;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WILDCARD__NAME = LOCAL_OR_WILDCARD__NAME;
-
-  /**
-   * The number of structural features of the '<em>Wildcard</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WILDCARD_FEATURE_COUNT = LOCAL_OR_WILDCARD_FEATURE_COUNT + 0;
+  int LOCAL_OR_WILDCARD_FEATURE_COUNT = REF_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.NewArrayExprImpl <em>New Array Expr</em>}' class.
@@ -2744,7 +2735,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOCAL__NAME = LOCAL_OR_WILDCARD__NAME;
+  int LOCAL__NAME = LOCAL_OR_WILDCARD_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Local</em>' class.
@@ -2753,7 +2744,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOCAL_FEATURE_COUNT = LOCAL_OR_WILDCARD_FEATURE_COUNT + 0;
+  int LOCAL_FEATURE_COUNT = LOCAL_OR_WILDCARD_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.IdentityRefImpl <em>Identity Ref</em>}' class.
@@ -3102,22 +3093,13 @@ public interface TransformationLanguagePackage extends EPackage
   int QUALIFIED_NAME_OR_WILDCARD = 91;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUALIFIED_NAME_OR_WILDCARD__NAME = 0;
-
-  /**
    * The number of structural features of the '<em>Qualified Name Or Wildcard</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUALIFIED_NAME_OR_WILDCARD_FEATURE_COUNT = 1;
+  int QUALIFIED_NAME_OR_WILDCARD_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameWildcardImpl <em>Qualified Name Wildcard</em>}' class.
@@ -3136,7 +3118,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUALIFIED_NAME_WILDCARD__NAME = QUALIFIED_NAME_OR_WILDCARD__NAME;
+  int QUALIFIED_NAME_WILDCARD__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Qualified Name Wildcard</em>' class.
@@ -3145,7 +3127,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUALIFIED_NAME_WILDCARD_FEATURE_COUNT = QUALIFIED_NAME_OR_WILDCARD_FEATURE_COUNT + 0;
+  int QUALIFIED_NAME_WILDCARD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.NullConstantImpl <em>Null Constant</em>}' class.
@@ -3351,7 +3333,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUALIFIED_NAME__NAME = QUALIFIED_NAME_OR_WILDCARD__NAME;
+  int QUALIFIED_NAME__NAME = SOOT_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Qualified Name</em>' class.
@@ -3360,7 +3342,950 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUALIFIED_NAME_FEATURE_COUNT = QUALIFIED_NAME_OR_WILDCARD_FEATURE_COUNT + 0;
+  int QUALIFIED_NAME_FEATURE_COUNT = SOOT_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardImpl <em>Wildcard</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcard()
+   * @generated
+   */
+  int WILDCARD = 101;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD__EXPRESSION = QUALIFIED_NAME_OR_WILDCARD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_FEATURE_COUNT = QUALIFIED_NAME_OR_WILDCARD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNameImpl <em>Wildcard Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNameImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardName()
+   * @generated
+   */
+  int WILDCARD_NAME = 102;
+
+  /**
+   * The feature id for the '<em><b>WName</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_NAME__WNAME = LOCAL_OR_WILDCARD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_NAME_FEATURE_COUNT = LOCAL_OR_WILDCARD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardExpressionImpl <em>Wildcard Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardExpression()
+   * @generated
+   */
+  int WILDCARD_EXPRESSION = 103;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_EXPRESSION__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardConditionalOrExpressionImpl <em>Wildcard Conditional Or Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardConditionalOrExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardConditionalOrExpression()
+   * @generated
+   */
+  int WILDCARD_CONDITIONAL_OR_EXPRESSION = 104;
+
+  /**
+   * The feature id for the '<em><b>Operands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CONDITIONAL_OR_EXPRESSION__OPERANDS = 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Conditional Or Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CONDITIONAL_OR_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardConditionalAndExpressionImpl <em>Wildcard Conditional And Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardConditionalAndExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardConditionalAndExpression()
+   * @generated
+   */
+  int WILDCARD_CONDITIONAL_AND_EXPRESSION = 105;
+
+  /**
+   * The feature id for the '<em><b>Operands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CONDITIONAL_AND_EXPRESSION__OPERANDS = 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Conditional And Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CONDITIONAL_AND_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardEqualityExpressionImpl <em>Wildcard Equality Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardEqualityExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardEqualityExpression()
+   * @generated
+   */
+  int WILDCARD_EQUALITY_EXPRESSION = 106;
+
+  /**
+   * The feature id for the '<em><b>Operands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_EQUALITY_EXPRESSION__OPERANDS = 0;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_EQUALITY_EXPRESSION__OPERATOR = 1;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Equality Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_EQUALITY_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardInstanceOfExpressionImpl <em>Wildcard Instance Of Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardInstanceOfExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardInstanceOfExpression()
+   * @generated
+   */
+  int WILDCARD_INSTANCE_OF_EXPRESSION = 107;
+
+  /**
+   * The feature id for the '<em><b>Operand</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_INSTANCE_OF_EXPRESSION__OPERAND = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_INSTANCE_OF_EXPRESSION__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Instance Of Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_INSTANCE_OF_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardRelationalExpressionImpl <em>Wildcard Relational Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardRelationalExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardRelationalExpression()
+   * @generated
+   */
+  int WILDCARD_RELATIONAL_EXPRESSION = 108;
+
+  /**
+   * The feature id for the '<em><b>Operands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_RELATIONAL_EXPRESSION__OPERANDS = 0;
+
+  /**
+   * The feature id for the '<em><b>Operators</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_RELATIONAL_EXPRESSION__OPERATORS = 1;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Relational Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_RELATIONAL_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardAdditiveExpressionImpl <em>Wildcard Additive Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardAdditiveExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardAdditiveExpression()
+   * @generated
+   */
+  int WILDCARD_ADDITIVE_EXPRESSION = 109;
+
+  /**
+   * The feature id for the '<em><b>Operands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_ADDITIVE_EXPRESSION__OPERANDS = 0;
+
+  /**
+   * The feature id for the '<em><b>Operators</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_ADDITIVE_EXPRESSION__OPERATORS = 1;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Additive Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_ADDITIVE_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardMultiplicativeExpressionImpl <em>Wildcard Multiplicative Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardMultiplicativeExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardMultiplicativeExpression()
+   * @generated
+   */
+  int WILDCARD_MULTIPLICATIVE_EXPRESSION = 110;
+
+  /**
+   * The feature id for the '<em><b>Operands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_MULTIPLICATIVE_EXPRESSION__OPERANDS = 0;
+
+  /**
+   * The feature id for the '<em><b>Operators</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_MULTIPLICATIVE_EXPRESSION__OPERATORS = 1;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Multiplicative Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_MULTIPLICATIVE_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardUnaryExpressionImpl <em>Wildcard Unary Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardUnaryExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardUnaryExpression()
+   * @generated
+   */
+  int WILDCARD_UNARY_EXPRESSION = 111;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_UNARY_EXPRESSION__OPERATOR = 0;
+
+  /**
+   * The feature id for the '<em><b>Operand</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_UNARY_EXPRESSION__OPERAND = 1;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Unary Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_UNARY_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardUnaryExpressionNotPlusMinusImpl <em>Wildcard Unary Expression Not Plus Minus</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardUnaryExpressionNotPlusMinusImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardUnaryExpressionNotPlusMinus()
+   * @generated
+   */
+  int WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS = 112;
+
+  /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS__NOT = 0;
+
+  /**
+   * The feature id for the '<em><b>Operand</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS__OPERAND = 1;
+
+  /**
+   * The feature id for the '<em><b>Dereferences</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS__DEREFERENCES = 2;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Unary Expression Not Plus Minus</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardPrimaryImpl <em>Wildcard Primary</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardPrimaryImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardPrimary()
+   * @generated
+   */
+  int WILDCARD_PRIMARY = 113;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Primary</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_PRIMARY_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardParExpressionImpl <em>Wildcard Par Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardParExpressionImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardParExpression()
+   * @generated
+   */
+  int WILDCARD_PAR_EXPRESSION = 114;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_PAR_EXPRESSION__EXPRESSION = WILDCARD_PRIMARY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Par Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_PAR_EXPRESSION_FEATURE_COUNT = WILDCARD_PRIMARY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardClassLiteralImpl <em>Wildcard Class Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardClassLiteralImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardClassLiteral()
+   * @generated
+   */
+  int WILDCARD_CLASS_LITERAL = 115;
+
+  /**
+   * The feature id for the '<em><b>Base Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CLASS_LITERAL__BASE_TYPE = WILDCARD_PRIMARY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Dimension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CLASS_LITERAL__DIMENSION = WILDCARD_PRIMARY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Class Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CLASS_LITERAL_FEATURE_COUNT = WILDCARD_PRIMARY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardTypeImpl <em>Wildcard Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardTypeImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardType()
+   * @generated
+   */
+  int WILDCARD_TYPE = 116;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_TYPE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardPrimitiveTypeImpl <em>Wildcard Primitive Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardPrimitiveTypeImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardPrimitiveType()
+   * @generated
+   */
+  int WILDCARD_PRIMITIVE_TYPE = 117;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Primitive Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT = SOOT_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardLiteralImpl <em>Wildcard Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardLiteralImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardLiteral()
+   * @generated
+   */
+  int WILDCARD_LITERAL = 118;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_LITERAL_FEATURE_COUNT = WILDCARD_PRIMARY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardBooleanImpl <em>Wildcard Boolean</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardBooleanImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardBoolean()
+   * @generated
+   */
+  int WILDCARD_BOOLEAN = 119;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_BOOLEAN__VALUE = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Boolean</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_BOOLEAN_FEATURE_COUNT = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardIntImpl <em>Wildcard Int</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardIntImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardInt()
+   * @generated
+   */
+  int WILDCARD_INT = 120;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_INT__VALUE = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Int</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_INT_FEATURE_COUNT = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNullImpl <em>Wildcard Null</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNullImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardNull()
+   * @generated
+   */
+  int WILDCARD_NULL = 121;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Null</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_NULL_FEATURE_COUNT = WILDCARD_LITERAL_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardStringImpl <em>Wildcard String</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardStringImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardString()
+   * @generated
+   */
+  int WILDCARD_STRING = 122;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_STRING__VALUE = WILDCARD_LITERAL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard String</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_STRING_FEATURE_COUNT = WILDCARD_LITERAL_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNewImpl <em>Wildcard New</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNewImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardNew()
+   * @generated
+   */
+  int WILDCARD_NEW = 123;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_NEW__NAME = WILDCARD_PRIMARY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_NEW__PARAMETERS = WILDCARD_PRIMARY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Wildcard New</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_NEW_FEATURE_COUNT = WILDCARD_PRIMARY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardQNameImpl <em>Wildcard QName</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardQNameImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardQName()
+   * @generated
+   */
+  int WILDCARD_QNAME = 124;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_QNAME__NAME = WILDCARD_PRIMARY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard QName</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_QNAME_FEATURE_COUNT = WILDCARD_PRIMARY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardDereferenceImpl <em>Wildcard Dereference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardDereferenceImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardDereference()
+   * @generated
+   */
+  int WILDCARD_DEREFERENCE = 125;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_DEREFERENCE__NAME = WILDCARD_PRIMARY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Dereference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_DEREFERENCE_FEATURE_COUNT = WILDCARD_PRIMARY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardCallImpl <em>Wildcard Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardCallImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardCall()
+   * @generated
+   */
+  int WILDCARD_CALL = 126;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CALL__NAME = WILDCARD_DEREFERENCE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CALL__PARAMETERS = WILDCARD_DEREFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CALL_FEATURE_COUNT = WILDCARD_DEREFERENCE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardFieldImpl <em>Wildcard Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardFieldImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardField()
+   * @generated
+   */
+  int WILDCARD_FIELD = 127;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_FIELD__NAME = WILDCARD_DEREFERENCE__NAME;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_FIELD_FEATURE_COUNT = WILDCARD_DEREFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardCharImpl <em>Wildcard Char</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardCharImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardChar()
+   * @generated
+   */
+  int WILDCARD_CHAR = 128;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Char</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_CHAR_FEATURE_COUNT = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardByteImpl <em>Wildcard Byte</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardByteImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardByte()
+   * @generated
+   */
+  int WILDCARD_BYTE = 129;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Byte</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_BYTE_FEATURE_COUNT = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardShortImpl <em>Wildcard Short</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardShortImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardShort()
+   * @generated
+   */
+  int WILDCARD_SHORT = 130;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Short</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_SHORT_FEATURE_COUNT = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardLongImpl <em>Wildcard Long</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardLongImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardLong()
+   * @generated
+   */
+  int WILDCARD_LONG = 131;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Long</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_LONG_FEATURE_COUNT = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardFloatImpl <em>Wildcard Float</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardFloatImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardFloat()
+   * @generated
+   */
+  int WILDCARD_FLOAT = 132;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Float</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_FLOAT_FEATURE_COUNT = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardDoubleImpl <em>Wildcard Double</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardDoubleImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardDouble()
+   * @generated
+   */
+  int WILDCARD_DOUBLE = 133;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Double</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_DOUBLE_FEATURE_COUNT = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardVoidImpl <em>Wildcard Void</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardVoidImpl
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardVoid()
+   * @generated
+   */
+  int WILDCARD_VOID = 134;
+
+  /**
+   * The number of structural features of the '<em>Wildcard Void</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WILDCARD_VOID_FEATURE_COUNT = WILDCARD_PRIMITIVE_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility <em>Visibility</em>}' enum.
@@ -3370,7 +4295,7 @@ public interface TransformationLanguagePackage extends EPackage
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getVisibility()
    * @generated
    */
-  int VISIBILITY = 101;
+  int VISIBILITY = 135;
 
 
   /**
@@ -3404,6 +4329,17 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    */
   EReference getTransformation_Replacement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transformation#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Transformation#getCondition()
+   * @see #getTransformation()
+   * @generated
+   */
+  EReference getTransformation_Condition();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Pattern <em>Pattern</em>}'.
@@ -4654,6 +5590,16 @@ public interface TransformationLanguagePackage extends EPackage
   EReference getSootMethodRef_Parameters();
 
   /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootType <em>Soot Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Soot Type</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootType
+   * @generated
+   */
+  EClass getSootType();
+
+  /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.InvokeExpr <em>Invoke Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4755,27 +5701,6 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    */
   EClass getLocalOrWildcard();
-
-  /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.LocalOrWildcard#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.LocalOrWildcard#getName()
-   * @see #getLocalOrWildcard()
-   * @generated
-   */
-  EAttribute getLocalOrWildcard_Name();
-
-  /**
-   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard <em>Wildcard</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Wildcard</em>'.
-   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard
-   * @generated
-   */
-  EClass getWildcard();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.NewArrayExpr <em>New Array Expr</em>}'.
@@ -4911,6 +5836,17 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    */
   EClass getLocal();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Local#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Local#getName()
+   * @see #getLocal()
+   * @generated
+   */
+  EAttribute getLocal_Name();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Ref <em>Ref</em>}'.
@@ -5185,17 +6121,6 @@ public interface TransformationLanguagePackage extends EPackage
   EClass getQualifiedNameOrWildcard();
 
   /**
-   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameOrWildcard#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameOrWildcard#getName()
-   * @see #getQualifiedNameOrWildcard()
-   * @generated
-   */
-  EAttribute getQualifiedNameOrWildcard_Name();
-
-  /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameWildcard <em>Qualified Name Wildcard</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5204,6 +6129,17 @@ public interface TransformationLanguagePackage extends EPackage
    * @generated
    */
   EClass getQualifiedNameWildcard();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameWildcard#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedNameWildcard#getName()
+   * @see #getQualifiedNameWildcard()
+   * @generated
+   */
+  EAttribute getQualifiedNameWildcard_Name();
 
   /**
    * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.NullConstant <em>Null Constant</em>}'.
@@ -5308,6 +6244,698 @@ public interface TransformationLanguagePackage extends EPackage
   EClass getQualifiedName();
 
   /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName#getName()
+   * @see #getQualifiedName()
+   * @generated
+   */
+  EAttribute getQualifiedName_Name();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard <em>Wildcard</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard
+   * @generated
+   */
+  EClass getWildcard();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard#getExpression()
+   * @see #getWildcard()
+   * @generated
+   */
+  EReference getWildcard_Expression();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardName <em>Wildcard Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Name</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardName
+   * @generated
+   */
+  EClass getWildcardName();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardName#getWName <em>WName</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>WName</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardName#getWName()
+   * @see #getWildcardName()
+   * @generated
+   */
+  EAttribute getWildcardName_WName();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardExpression <em>Wildcard Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardExpression
+   * @generated
+   */
+  EClass getWildcardExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardExpression#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardExpression#getExpression()
+   * @see #getWildcardExpression()
+   * @generated
+   */
+  EReference getWildcardExpression_Expression();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalOrExpression <em>Wildcard Conditional Or Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Conditional Or Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalOrExpression
+   * @generated
+   */
+  EClass getWildcardConditionalOrExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalOrExpression#getOperands <em>Operands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operands</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalOrExpression#getOperands()
+   * @see #getWildcardConditionalOrExpression()
+   * @generated
+   */
+  EReference getWildcardConditionalOrExpression_Operands();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalAndExpression <em>Wildcard Conditional And Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Conditional And Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalAndExpression
+   * @generated
+   */
+  EClass getWildcardConditionalAndExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalAndExpression#getOperands <em>Operands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operands</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalAndExpression#getOperands()
+   * @see #getWildcardConditionalAndExpression()
+   * @generated
+   */
+  EReference getWildcardConditionalAndExpression_Operands();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression <em>Wildcard Equality Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Equality Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression
+   * @generated
+   */
+  EClass getWildcardEqualityExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression#getOperands <em>Operands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operands</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression#getOperands()
+   * @see #getWildcardEqualityExpression()
+   * @generated
+   */
+  EReference getWildcardEqualityExpression_Operands();
+
+  /**
+   * Returns the meta object for the attribute list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Operator</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression#getOperator()
+   * @see #getWildcardEqualityExpression()
+   * @generated
+   */
+  EAttribute getWildcardEqualityExpression_Operator();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression <em>Wildcard Instance Of Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Instance Of Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression
+   * @generated
+   */
+  EClass getWildcardInstanceOfExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression#getOperand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression#getOperand()
+   * @see #getWildcardInstanceOfExpression()
+   * @generated
+   */
+  EReference getWildcardInstanceOfExpression_Operand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression#getType()
+   * @see #getWildcardInstanceOfExpression()
+   * @generated
+   */
+  EReference getWildcardInstanceOfExpression_Type();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression <em>Wildcard Relational Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Relational Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression
+   * @generated
+   */
+  EClass getWildcardRelationalExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression#getOperands <em>Operands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operands</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression#getOperands()
+   * @see #getWildcardRelationalExpression()
+   * @generated
+   */
+  EReference getWildcardRelationalExpression_Operands();
+
+  /**
+   * Returns the meta object for the attribute list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression#getOperators <em>Operators</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Operators</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression#getOperators()
+   * @see #getWildcardRelationalExpression()
+   * @generated
+   */
+  EAttribute getWildcardRelationalExpression_Operators();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression <em>Wildcard Additive Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Additive Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression
+   * @generated
+   */
+  EClass getWildcardAdditiveExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression#getOperands <em>Operands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operands</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression#getOperands()
+   * @see #getWildcardAdditiveExpression()
+   * @generated
+   */
+  EReference getWildcardAdditiveExpression_Operands();
+
+  /**
+   * Returns the meta object for the attribute list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression#getOperators <em>Operators</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Operators</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression#getOperators()
+   * @see #getWildcardAdditiveExpression()
+   * @generated
+   */
+  EAttribute getWildcardAdditiveExpression_Operators();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression <em>Wildcard Multiplicative Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Multiplicative Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression
+   * @generated
+   */
+  EClass getWildcardMultiplicativeExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression#getOperands <em>Operands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operands</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression#getOperands()
+   * @see #getWildcardMultiplicativeExpression()
+   * @generated
+   */
+  EReference getWildcardMultiplicativeExpression_Operands();
+
+  /**
+   * Returns the meta object for the attribute list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression#getOperators <em>Operators</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Operators</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression#getOperators()
+   * @see #getWildcardMultiplicativeExpression()
+   * @generated
+   */
+  EAttribute getWildcardMultiplicativeExpression_Operators();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression <em>Wildcard Unary Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Unary Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression
+   * @generated
+   */
+  EClass getWildcardUnaryExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression#getOperator()
+   * @see #getWildcardUnaryExpression()
+   * @generated
+   */
+  EAttribute getWildcardUnaryExpression_Operator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression#getOperand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression#getOperand()
+   * @see #getWildcardUnaryExpression()
+   * @generated
+   */
+  EReference getWildcardUnaryExpression_Operand();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus <em>Wildcard Unary Expression Not Plus Minus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Unary Expression Not Plus Minus</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus
+   * @generated
+   */
+  EClass getWildcardUnaryExpressionNotPlusMinus();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus#isNot <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Not</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus#isNot()
+   * @see #getWildcardUnaryExpressionNotPlusMinus()
+   * @generated
+   */
+  EAttribute getWildcardUnaryExpressionNotPlusMinus_Not();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus#getOperand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus#getOperand()
+   * @see #getWildcardUnaryExpressionNotPlusMinus()
+   * @generated
+   */
+  EReference getWildcardUnaryExpressionNotPlusMinus_Operand();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus#getDereferences <em>Dereferences</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Dereferences</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus#getDereferences()
+   * @see #getWildcardUnaryExpressionNotPlusMinus()
+   * @generated
+   */
+  EReference getWildcardUnaryExpressionNotPlusMinus_Dereferences();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimary <em>Wildcard Primary</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Primary</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimary
+   * @generated
+   */
+  EClass getWildcardPrimary();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardParExpression <em>Wildcard Par Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Par Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardParExpression
+   * @generated
+   */
+  EClass getWildcardParExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardParExpression#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardParExpression#getExpression()
+   * @see #getWildcardParExpression()
+   * @generated
+   */
+  EReference getWildcardParExpression_Expression();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral <em>Wildcard Class Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Class Literal</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral
+   * @generated
+   */
+  EClass getWildcardClassLiteral();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral#getBaseType <em>Base Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Base Type</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral#getBaseType()
+   * @see #getWildcardClassLiteral()
+   * @generated
+   */
+  EReference getWildcardClassLiteral_BaseType();
+
+  /**
+   * Returns the meta object for the attribute list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral#getDimension <em>Dimension</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Dimension</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral#getDimension()
+   * @see #getWildcardClassLiteral()
+   * @generated
+   */
+  EAttribute getWildcardClassLiteral_Dimension();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardType <em>Wildcard Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Type</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardType
+   * @generated
+   */
+  EClass getWildcardType();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimitiveType <em>Wildcard Primitive Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Primitive Type</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimitiveType
+   * @generated
+   */
+  EClass getWildcardPrimitiveType();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLiteral <em>Wildcard Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Literal</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLiteral
+   * @generated
+   */
+  EClass getWildcardLiteral();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardBoolean <em>Wildcard Boolean</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Boolean</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardBoolean
+   * @generated
+   */
+  EClass getWildcardBoolean();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardBoolean#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardBoolean#getValue()
+   * @see #getWildcardBoolean()
+   * @generated
+   */
+  EAttribute getWildcardBoolean_Value();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInt <em>Wildcard Int</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Int</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInt
+   * @generated
+   */
+  EClass getWildcardInt();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInt#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInt#getValue()
+   * @see #getWildcardInt()
+   * @generated
+   */
+  EAttribute getWildcardInt_Value();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNull <em>Wildcard Null</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Null</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNull
+   * @generated
+   */
+  EClass getWildcardNull();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardString <em>Wildcard String</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard String</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardString
+   * @generated
+   */
+  EClass getWildcardString();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardString#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardString#getValue()
+   * @see #getWildcardString()
+   * @generated
+   */
+  EAttribute getWildcardString_Value();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew <em>Wildcard New</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard New</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew
+   * @generated
+   */
+  EClass getWildcardNew();
+
+  /**
+   * Returns the meta object for the containment reference '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew#getName()
+   * @see #getWildcardNew()
+   * @generated
+   */
+  EReference getWildcardNew_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew#getParameters()
+   * @see #getWildcardNew()
+   * @generated
+   */
+  EReference getWildcardNew_Parameters();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardQName <em>Wildcard QName</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard QName</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardQName
+   * @generated
+   */
+  EClass getWildcardQName();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardQName#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardQName#getName()
+   * @see #getWildcardQName()
+   * @generated
+   */
+  EAttribute getWildcardQName_Name();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDereference <em>Wildcard Dereference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Dereference</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDereference
+   * @generated
+   */
+  EClass getWildcardDereference();
+
+  /**
+   * Returns the meta object for the attribute '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDereference#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDereference#getName()
+   * @see #getWildcardDereference()
+   * @generated
+   */
+  EAttribute getWildcardDereference_Name();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardCall <em>Wildcard Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Call</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardCall
+   * @generated
+   */
+  EClass getWildcardCall();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardCall#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardCall#getParameters()
+   * @see #getWildcardCall()
+   * @generated
+   */
+  EReference getWildcardCall_Parameters();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardField <em>Wildcard Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Field</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardField
+   * @generated
+   */
+  EClass getWildcardField();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardChar <em>Wildcard Char</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Char</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardChar
+   * @generated
+   */
+  EClass getWildcardChar();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardByte <em>Wildcard Byte</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Byte</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardByte
+   * @generated
+   */
+  EClass getWildcardByte();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardShort <em>Wildcard Short</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Short</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardShort
+   * @generated
+   */
+  EClass getWildcardShort();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLong <em>Wildcard Long</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Long</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLong
+   * @generated
+   */
+  EClass getWildcardLong();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardFloat <em>Wildcard Float</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Float</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardFloat
+   * @generated
+   */
+  EClass getWildcardFloat();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDouble <em>Wildcard Double</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Double</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDouble
+   * @generated
+   */
+  EClass getWildcardDouble();
+
+  /**
+   * Returns the meta object for class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardVoid <em>Wildcard Void</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wildcard Void</em>'.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardVoid
+   * @generated
+   */
+  EClass getWildcardVoid();
+
+  /**
    * Returns the meta object for enum '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility <em>Visibility</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5365,6 +6993,14 @@ public interface TransformationLanguagePackage extends EPackage
      * @generated
      */
     EReference TRANSFORMATION__REPLACEMENT = eINSTANCE.getTransformation_Replacement();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRANSFORMATION__CONDITION = eINSTANCE.getTransformation_Condition();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.PatternImpl <em>Pattern</em>}' class.
@@ -6441,6 +8077,16 @@ public interface TransformationLanguagePackage extends EPackage
     EReference SOOT_METHOD_REF__PARAMETERS = eINSTANCE.getSootMethodRef_Parameters();
 
     /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.SootTypeImpl <em>Soot Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.SootTypeImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getSootType()
+     * @generated
+     */
+    EClass SOOT_TYPE = eINSTANCE.getSootType();
+
+    /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.InvokeExprImpl <em>Invoke Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6533,24 +8179,6 @@ public interface TransformationLanguagePackage extends EPackage
      * @generated
      */
     EClass LOCAL_OR_WILDCARD = eINSTANCE.getLocalOrWildcard();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LOCAL_OR_WILDCARD__NAME = eINSTANCE.getLocalOrWildcard_Name();
-
-    /**
-     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardImpl <em>Wildcard</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardImpl
-     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcard()
-     * @generated
-     */
-    EClass WILDCARD = eINSTANCE.getWildcard();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.NewArrayExprImpl <em>New Array Expr</em>}' class.
@@ -6671,6 +8299,14 @@ public interface TransformationLanguagePackage extends EPackage
      * @generated
      */
     EClass LOCAL = eINSTANCE.getLocal();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOCAL__NAME = eINSTANCE.getLocal_Name();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.RefImpl <em>Ref</em>}' class.
@@ -6909,14 +8545,6 @@ public interface TransformationLanguagePackage extends EPackage
     EClass QUALIFIED_NAME_OR_WILDCARD = eINSTANCE.getQualifiedNameOrWildcard();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute QUALIFIED_NAME_OR_WILDCARD__NAME = eINSTANCE.getQualifiedNameOrWildcard_Name();
-
-    /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.QualifiedNameWildcardImpl <em>Qualified Name Wildcard</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6925,6 +8553,14 @@ public interface TransformationLanguagePackage extends EPackage
      * @generated
      */
     EClass QUALIFIED_NAME_WILDCARD = eINSTANCE.getQualifiedNameWildcard();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUALIFIED_NAME_WILDCARD__NAME = eINSTANCE.getQualifiedNameWildcard_Name();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.NullConstantImpl <em>Null Constant</em>}' class.
@@ -7021,6 +8657,602 @@ public interface TransformationLanguagePackage extends EPackage
      * @generated
      */
     EClass QUALIFIED_NAME = eINSTANCE.getQualifiedName();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUALIFIED_NAME__NAME = eINSTANCE.getQualifiedName_Name();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardImpl <em>Wildcard</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcard()
+     * @generated
+     */
+    EClass WILDCARD = eINSTANCE.getWildcard();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD__EXPRESSION = eINSTANCE.getWildcard_Expression();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNameImpl <em>Wildcard Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNameImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardName()
+     * @generated
+     */
+    EClass WILDCARD_NAME = eINSTANCE.getWildcardName();
+
+    /**
+     * The meta object literal for the '<em><b>WName</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_NAME__WNAME = eINSTANCE.getWildcardName_WName();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardExpressionImpl <em>Wildcard Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardExpression()
+     * @generated
+     */
+    EClass WILDCARD_EXPRESSION = eINSTANCE.getWildcardExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_EXPRESSION__EXPRESSION = eINSTANCE.getWildcardExpression_Expression();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardConditionalOrExpressionImpl <em>Wildcard Conditional Or Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardConditionalOrExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardConditionalOrExpression()
+     * @generated
+     */
+    EClass WILDCARD_CONDITIONAL_OR_EXPRESSION = eINSTANCE.getWildcardConditionalOrExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Operands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_CONDITIONAL_OR_EXPRESSION__OPERANDS = eINSTANCE.getWildcardConditionalOrExpression_Operands();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardConditionalAndExpressionImpl <em>Wildcard Conditional And Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardConditionalAndExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardConditionalAndExpression()
+     * @generated
+     */
+    EClass WILDCARD_CONDITIONAL_AND_EXPRESSION = eINSTANCE.getWildcardConditionalAndExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Operands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_CONDITIONAL_AND_EXPRESSION__OPERANDS = eINSTANCE.getWildcardConditionalAndExpression_Operands();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardEqualityExpressionImpl <em>Wildcard Equality Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardEqualityExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardEqualityExpression()
+     * @generated
+     */
+    EClass WILDCARD_EQUALITY_EXPRESSION = eINSTANCE.getWildcardEqualityExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Operands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_EQUALITY_EXPRESSION__OPERANDS = eINSTANCE.getWildcardEqualityExpression_Operands();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_EQUALITY_EXPRESSION__OPERATOR = eINSTANCE.getWildcardEqualityExpression_Operator();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardInstanceOfExpressionImpl <em>Wildcard Instance Of Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardInstanceOfExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardInstanceOfExpression()
+     * @generated
+     */
+    EClass WILDCARD_INSTANCE_OF_EXPRESSION = eINSTANCE.getWildcardInstanceOfExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_INSTANCE_OF_EXPRESSION__OPERAND = eINSTANCE.getWildcardInstanceOfExpression_Operand();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_INSTANCE_OF_EXPRESSION__TYPE = eINSTANCE.getWildcardInstanceOfExpression_Type();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardRelationalExpressionImpl <em>Wildcard Relational Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardRelationalExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardRelationalExpression()
+     * @generated
+     */
+    EClass WILDCARD_RELATIONAL_EXPRESSION = eINSTANCE.getWildcardRelationalExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Operands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_RELATIONAL_EXPRESSION__OPERANDS = eINSTANCE.getWildcardRelationalExpression_Operands();
+
+    /**
+     * The meta object literal for the '<em><b>Operators</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_RELATIONAL_EXPRESSION__OPERATORS = eINSTANCE.getWildcardRelationalExpression_Operators();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardAdditiveExpressionImpl <em>Wildcard Additive Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardAdditiveExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardAdditiveExpression()
+     * @generated
+     */
+    EClass WILDCARD_ADDITIVE_EXPRESSION = eINSTANCE.getWildcardAdditiveExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Operands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_ADDITIVE_EXPRESSION__OPERANDS = eINSTANCE.getWildcardAdditiveExpression_Operands();
+
+    /**
+     * The meta object literal for the '<em><b>Operators</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_ADDITIVE_EXPRESSION__OPERATORS = eINSTANCE.getWildcardAdditiveExpression_Operators();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardMultiplicativeExpressionImpl <em>Wildcard Multiplicative Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardMultiplicativeExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardMultiplicativeExpression()
+     * @generated
+     */
+    EClass WILDCARD_MULTIPLICATIVE_EXPRESSION = eINSTANCE.getWildcardMultiplicativeExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Operands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_MULTIPLICATIVE_EXPRESSION__OPERANDS = eINSTANCE.getWildcardMultiplicativeExpression_Operands();
+
+    /**
+     * The meta object literal for the '<em><b>Operators</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_MULTIPLICATIVE_EXPRESSION__OPERATORS = eINSTANCE.getWildcardMultiplicativeExpression_Operators();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardUnaryExpressionImpl <em>Wildcard Unary Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardUnaryExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardUnaryExpression()
+     * @generated
+     */
+    EClass WILDCARD_UNARY_EXPRESSION = eINSTANCE.getWildcardUnaryExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_UNARY_EXPRESSION__OPERATOR = eINSTANCE.getWildcardUnaryExpression_Operator();
+
+    /**
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_UNARY_EXPRESSION__OPERAND = eINSTANCE.getWildcardUnaryExpression_Operand();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardUnaryExpressionNotPlusMinusImpl <em>Wildcard Unary Expression Not Plus Minus</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardUnaryExpressionNotPlusMinusImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardUnaryExpressionNotPlusMinus()
+     * @generated
+     */
+    EClass WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS = eINSTANCE.getWildcardUnaryExpressionNotPlusMinus();
+
+    /**
+     * The meta object literal for the '<em><b>Not</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS__NOT = eINSTANCE.getWildcardUnaryExpressionNotPlusMinus_Not();
+
+    /**
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS__OPERAND = eINSTANCE.getWildcardUnaryExpressionNotPlusMinus_Operand();
+
+    /**
+     * The meta object literal for the '<em><b>Dereferences</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS__DEREFERENCES = eINSTANCE.getWildcardUnaryExpressionNotPlusMinus_Dereferences();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardPrimaryImpl <em>Wildcard Primary</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardPrimaryImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardPrimary()
+     * @generated
+     */
+    EClass WILDCARD_PRIMARY = eINSTANCE.getWildcardPrimary();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardParExpressionImpl <em>Wildcard Par Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardParExpressionImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardParExpression()
+     * @generated
+     */
+    EClass WILDCARD_PAR_EXPRESSION = eINSTANCE.getWildcardParExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_PAR_EXPRESSION__EXPRESSION = eINSTANCE.getWildcardParExpression_Expression();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardClassLiteralImpl <em>Wildcard Class Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardClassLiteralImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardClassLiteral()
+     * @generated
+     */
+    EClass WILDCARD_CLASS_LITERAL = eINSTANCE.getWildcardClassLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Base Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_CLASS_LITERAL__BASE_TYPE = eINSTANCE.getWildcardClassLiteral_BaseType();
+
+    /**
+     * The meta object literal for the '<em><b>Dimension</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_CLASS_LITERAL__DIMENSION = eINSTANCE.getWildcardClassLiteral_Dimension();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardTypeImpl <em>Wildcard Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardTypeImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardType()
+     * @generated
+     */
+    EClass WILDCARD_TYPE = eINSTANCE.getWildcardType();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardPrimitiveTypeImpl <em>Wildcard Primitive Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardPrimitiveTypeImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardPrimitiveType()
+     * @generated
+     */
+    EClass WILDCARD_PRIMITIVE_TYPE = eINSTANCE.getWildcardPrimitiveType();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardLiteralImpl <em>Wildcard Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardLiteralImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardLiteral()
+     * @generated
+     */
+    EClass WILDCARD_LITERAL = eINSTANCE.getWildcardLiteral();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardBooleanImpl <em>Wildcard Boolean</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardBooleanImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardBoolean()
+     * @generated
+     */
+    EClass WILDCARD_BOOLEAN = eINSTANCE.getWildcardBoolean();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_BOOLEAN__VALUE = eINSTANCE.getWildcardBoolean_Value();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardIntImpl <em>Wildcard Int</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardIntImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardInt()
+     * @generated
+     */
+    EClass WILDCARD_INT = eINSTANCE.getWildcardInt();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_INT__VALUE = eINSTANCE.getWildcardInt_Value();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNullImpl <em>Wildcard Null</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNullImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardNull()
+     * @generated
+     */
+    EClass WILDCARD_NULL = eINSTANCE.getWildcardNull();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardStringImpl <em>Wildcard String</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardStringImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardString()
+     * @generated
+     */
+    EClass WILDCARD_STRING = eINSTANCE.getWildcardString();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_STRING__VALUE = eINSTANCE.getWildcardString_Value();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNewImpl <em>Wildcard New</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardNewImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardNew()
+     * @generated
+     */
+    EClass WILDCARD_NEW = eINSTANCE.getWildcardNew();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_NEW__NAME = eINSTANCE.getWildcardNew_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_NEW__PARAMETERS = eINSTANCE.getWildcardNew_Parameters();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardQNameImpl <em>Wildcard QName</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardQNameImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardQName()
+     * @generated
+     */
+    EClass WILDCARD_QNAME = eINSTANCE.getWildcardQName();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_QNAME__NAME = eINSTANCE.getWildcardQName_Name();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardDereferenceImpl <em>Wildcard Dereference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardDereferenceImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardDereference()
+     * @generated
+     */
+    EClass WILDCARD_DEREFERENCE = eINSTANCE.getWildcardDereference();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WILDCARD_DEREFERENCE__NAME = eINSTANCE.getWildcardDereference_Name();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardCallImpl <em>Wildcard Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardCallImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardCall()
+     * @generated
+     */
+    EClass WILDCARD_CALL = eINSTANCE.getWildcardCall();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WILDCARD_CALL__PARAMETERS = eINSTANCE.getWildcardCall_Parameters();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardFieldImpl <em>Wildcard Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardFieldImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardField()
+     * @generated
+     */
+    EClass WILDCARD_FIELD = eINSTANCE.getWildcardField();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardCharImpl <em>Wildcard Char</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardCharImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardChar()
+     * @generated
+     */
+    EClass WILDCARD_CHAR = eINSTANCE.getWildcardChar();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardByteImpl <em>Wildcard Byte</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardByteImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardByte()
+     * @generated
+     */
+    EClass WILDCARD_BYTE = eINSTANCE.getWildcardByte();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardShortImpl <em>Wildcard Short</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardShortImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardShort()
+     * @generated
+     */
+    EClass WILDCARD_SHORT = eINSTANCE.getWildcardShort();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardLongImpl <em>Wildcard Long</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardLongImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardLong()
+     * @generated
+     */
+    EClass WILDCARD_LONG = eINSTANCE.getWildcardLong();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardFloatImpl <em>Wildcard Float</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardFloatImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardFloat()
+     * @generated
+     */
+    EClass WILDCARD_FLOAT = eINSTANCE.getWildcardFloat();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardDoubleImpl <em>Wildcard Double</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardDoubleImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardDouble()
+     * @generated
+     */
+    EClass WILDCARD_DOUBLE = eINSTANCE.getWildcardDouble();
+
+    /**
+     * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardVoidImpl <em>Wildcard Void</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.WildcardVoidImpl
+     * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.impl.TransformationLanguagePackageImpl#getWildcardVoid()
+     * @generated
+     */
+    EClass WILDCARD_VOID = eINSTANCE.getWildcardVoid();
 
     /**
      * The meta object literal for the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility <em>Visibility</em>}' enum.

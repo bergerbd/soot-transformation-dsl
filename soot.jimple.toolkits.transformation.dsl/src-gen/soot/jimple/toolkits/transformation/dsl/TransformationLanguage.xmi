@@ -20,6 +20,13 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="&#xab;end&#xbb;"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="&#xab;where&#xbb;"/>
+          <elements xsi:type="xtext:Assignment" feature="condition" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="&#xab;end&#xbb;"/>
+        </elements>
         <elements xsi:type="xtext:Keyword" value="&#xab;end&#xbb;"/>
       </alternatives>
     </rules>
@@ -135,7 +142,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.103"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
       </alternatives>
@@ -152,7 +159,7 @@
           <terminal xsi:type="xtext:Keyword" value="static"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.102"/>
@@ -235,12 +242,12 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.103"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="locals" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value=","/>
           <elements xsi:type="xtext:Assignment" feature="locals" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
@@ -283,7 +290,7 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.105"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.134"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=":"/>
       </alternatives>
@@ -345,7 +352,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="goto"/>
         <elements xsi:type="xtext:Assignment" feature="target" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.105"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.134"/>
         </elements>
       </alternatives>
     </rules>
@@ -368,7 +375,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//InvokeStmt"/>
       </type>
       <alternatives xsi:type="xtext:Assignment" feature="invokeExpr" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.63"/>
+        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.64"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="TableSwitchStmt">
@@ -543,7 +550,7 @@
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.38"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.60"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.61"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.63"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.64"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.75"/>
       </alternatives>
     </rules>
@@ -912,7 +919,7 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value=":"/>
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.103"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.63"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.102"/>
@@ -933,13 +940,22 @@
         <elements xsi:type="xtext:Keyword" value=">"/>
       </alternatives>
     </rules>
+    <rules xsi:type="xtext:ParserRule" name="SootType">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//SootType"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.121"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.103"/>
+      </alternatives>
+    </rules>
     <rules xsi:type="xtext:ParserRule" name="InvokeExpr">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//InvokeExpr"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.64"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.65"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.66"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="InstanceInvokeExpr">
@@ -947,9 +963,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//InstanceInvokeExpr"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.66"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.67"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.68"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="StaticInvokeExpr">
@@ -988,7 +1004,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="interfaceinvoke"/>
         <elements xsi:type="xtext:Assignment" feature="base" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="."/>
         <elements xsi:type="xtext:Assignment" feature="method" operator="=">
@@ -1016,7 +1032,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="specialinvoke"/>
         <elements xsi:type="xtext:Assignment" feature="base" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="."/>
         <elements xsi:type="xtext:Assignment" feature="method" operator="=">
@@ -1044,7 +1060,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="virtualinvoke"/>
         <elements xsi:type="xtext:Assignment" feature="base" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="."/>
         <elements xsi:type="xtext:Assignment" feature="method" operator="=">
@@ -1071,19 +1087,7 @@
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.78"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="Wildcard">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//Wildcard"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="&#xab;"/>
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="&#xbb;"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.105"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="NewArrayExpr">
@@ -1180,7 +1184,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//Local"/>
       </type>
       <alternatives xsi:type="xtext:Assignment" feature="name" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Ref">
@@ -1190,7 +1194,7 @@
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.84"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.80"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="IdentityRef">
@@ -1210,7 +1214,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="@"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=":"/>
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
@@ -1260,7 +1264,7 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="base" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="["/>
         <elements xsi:type="xtext:Assignment" feature="index" operator="=">
@@ -1300,7 +1304,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.103"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=">"/>
       </alternatives>
@@ -1311,7 +1315,7 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="base" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="."/>
         <elements xsi:type="xtext:Assignment" feature="fieldRef" operator="=">
@@ -1347,7 +1351,7 @@
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.103"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.93"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.104"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="QualifiedNameWildcard">
@@ -1357,7 +1361,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="&#xab;"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="&#xbb;"/>
       </alternatives>
@@ -1439,7 +1443,7 @@
       <type metamodel="/1/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
-      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="MethodName">
       <type metamodel="/1/@metamodelDeclarations.0">
@@ -1447,7 +1451,7 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" cardinality="?" value="&lt;"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
         <elements xsi:type="xtext:Keyword" cardinality="?" value=">"/>
       </alternatives>
     </rules>
@@ -1456,7 +1460,511 @@
         <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//QualifiedName"/>
       </type>
       <alternatives xsi:type="xtext:Assignment" feature="name" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.104"/>
+        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.133"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="Wildcard">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//Wildcard"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="&#xab;"/>
+        <elements xsi:type="xtext:Assignment" feature="expression" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="&#xbb;"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardName">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardName"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="&#xab;"/>
+        <elements xsi:type="xtext:Assignment" feature="wName" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="&#xbb;"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="expression" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.107"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardConditionalOrExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardConditionalOrExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.108"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value="||"/>
+          <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.108"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardConditionalAndExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardConditionalAndExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.109"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value="&amp;&amp;"/>
+          <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.109"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardEqualityExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardEqualityExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.110"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Assignment" feature="operator" operator="+=">
+              <terminal xsi:type="xtext:Keyword" value="=="/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="operator" operator="+=">
+              <terminal xsi:type="xtext:Keyword" value="!="/>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.110"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardInstanceOfExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardInstanceOfExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="operand" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.111"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="instanceof"/>
+          <elements xsi:type="xtext:Assignment" feature="type" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.128"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardRelationalExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardRelationalExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.113"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Assignment" feature="operators" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.112"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.113"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardRelationalOp">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="&lt;="/>
+        <elements xsi:type="xtext:Keyword" value=">="/>
+        <elements xsi:type="xtext:Keyword" value="&lt;"/>
+        <elements xsi:type="xtext:Keyword" value=">"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardAdditiveExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardAdditiveExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.114"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Assignment" feature="operators" operator="+=">
+              <terminal xsi:type="xtext:Keyword" value="+"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="operators" operator="+=">
+              <terminal xsi:type="xtext:Keyword" value="-"/>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.114"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardMultiplicativeExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardMultiplicativeExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.115"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Assignment" feature="operators" operator="+=">
+              <terminal xsi:type="xtext:Keyword" value="*"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="operators" operator="+=">
+              <terminal xsi:type="xtext:Keyword" value="/"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="operators" operator="+=">
+              <terminal xsi:type="xtext:Keyword" value="%"/>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="operands" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.115"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardUnaryExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardUnaryExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
+            <terminal xsi:type="xtext:Keyword" value="+"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="operand" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.115"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Assignment" feature="operator" operator="=">
+            <terminal xsi:type="xtext:Keyword" value="-"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="operand" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.115"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="operand" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.116"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardUnaryExpressionNotPlusMinus">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardUnaryExpressionNotPlusMinus"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Assignment" feature="not" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="!"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="operand" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.115"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Assignment" feature="operand" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.117"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" cardinality="*" feature="dereferences" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.130"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardPrimary">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardPrimary"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.118"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.130"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.122"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.119"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.127"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.128"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardParExpression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardParExpression"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Assignment" feature="expression" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardClassLiteral">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardClassLiteral"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="baseType" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.120"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Assignment" feature="dimension" operator="+=">
+            <terminal xsi:type="xtext:Keyword" value="["/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="dimension" operator="+=">
+            <terminal xsi:type="xtext:Keyword" value="]"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:Keyword" value="class"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardType">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardType"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.121"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.128"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardPrimitiveType">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardPrimitiveType"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardBoolean"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="boolean"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardChar"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="char"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardByte"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="byte"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardShort"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="short"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardInt"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="int"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardLong"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="long"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardFloat"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="float"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardDouble"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="double"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardVoid"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="void"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardLiteral">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardLiteral"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.123"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.124"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.125"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.126"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardBoolean">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardBoolean"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Keyword" value="true"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Keyword" value="false"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardInt">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardInt"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardNull">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardNull"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardNull"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="null"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardString">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardString"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardNew">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardNew"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="new"/>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.128"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="parameters" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          </elements>
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:Keyword" value=","/>
+            <elements xsi:type="xtext:Assignment" feature="parameters" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardQName">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardQName"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="name" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.129"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardQNameTerminal">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value="::"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardDereference">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardDereference"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.131"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.132"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardCall">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardCall"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="parameters" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          </elements>
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:Keyword" value=","/>
+            <elements xsi:type="xtext:Assignment" feature="parameters" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="WildcardField">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage#//WildcardField"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
+        </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="QName">
@@ -1464,10 +1972,10 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value="."/>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.106"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
         </elements>
       </alternatives>
     </rules>

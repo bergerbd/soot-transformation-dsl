@@ -581,6 +581,15 @@ public interface TransformationLanguageFactory extends EFactory
   SootMethodRef createSootMethodRef();
 
   /**
+   * Returns a new object of class '<em>Soot Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Soot Type</em>'.
+   * @generated
+   */
+  SootType createSootType();
+
+  /**
    * Returns a new object of class '<em>Invoke Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -642,15 +651,6 @@ public interface TransformationLanguageFactory extends EFactory
    * @generated
    */
   LocalOrWildcard createLocalOrWildcard();
-
-  /**
-   * Returns a new object of class '<em>Wildcard</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Wildcard</em>'.
-   * @generated
-   */
-  Wildcard createWildcard();
 
   /**
    * Returns a new object of class '<em>New Array Expr</em>'.
@@ -930,6 +930,312 @@ public interface TransformationLanguageFactory extends EFactory
    * @generated
    */
   QualifiedName createQualifiedName();
+
+  /**
+   * Returns a new object of class '<em>Wildcard</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard</em>'.
+   * @generated
+   */
+  Wildcard createWildcard();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Name</em>'.
+   * @generated
+   */
+  WildcardName createWildcardName();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Expression</em>'.
+   * @generated
+   */
+  WildcardExpression createWildcardExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Conditional Or Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Conditional Or Expression</em>'.
+   * @generated
+   */
+  WildcardConditionalOrExpression createWildcardConditionalOrExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Conditional And Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Conditional And Expression</em>'.
+   * @generated
+   */
+  WildcardConditionalAndExpression createWildcardConditionalAndExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Equality Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Equality Expression</em>'.
+   * @generated
+   */
+  WildcardEqualityExpression createWildcardEqualityExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Instance Of Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Instance Of Expression</em>'.
+   * @generated
+   */
+  WildcardInstanceOfExpression createWildcardInstanceOfExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Relational Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Relational Expression</em>'.
+   * @generated
+   */
+  WildcardRelationalExpression createWildcardRelationalExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Additive Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Additive Expression</em>'.
+   * @generated
+   */
+  WildcardAdditiveExpression createWildcardAdditiveExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Multiplicative Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Multiplicative Expression</em>'.
+   * @generated
+   */
+  WildcardMultiplicativeExpression createWildcardMultiplicativeExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Unary Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Unary Expression</em>'.
+   * @generated
+   */
+  WildcardUnaryExpression createWildcardUnaryExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Unary Expression Not Plus Minus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Unary Expression Not Plus Minus</em>'.
+   * @generated
+   */
+  WildcardUnaryExpressionNotPlusMinus createWildcardUnaryExpressionNotPlusMinus();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Primary</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Primary</em>'.
+   * @generated
+   */
+  WildcardPrimary createWildcardPrimary();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Par Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Par Expression</em>'.
+   * @generated
+   */
+  WildcardParExpression createWildcardParExpression();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Class Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Class Literal</em>'.
+   * @generated
+   */
+  WildcardClassLiteral createWildcardClassLiteral();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Type</em>'.
+   * @generated
+   */
+  WildcardType createWildcardType();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Primitive Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Primitive Type</em>'.
+   * @generated
+   */
+  WildcardPrimitiveType createWildcardPrimitiveType();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Literal</em>'.
+   * @generated
+   */
+  WildcardLiteral createWildcardLiteral();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Boolean</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Boolean</em>'.
+   * @generated
+   */
+  WildcardBoolean createWildcardBoolean();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Int</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Int</em>'.
+   * @generated
+   */
+  WildcardInt createWildcardInt();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Null</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Null</em>'.
+   * @generated
+   */
+  WildcardNull createWildcardNull();
+
+  /**
+   * Returns a new object of class '<em>Wildcard String</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard String</em>'.
+   * @generated
+   */
+  WildcardString createWildcardString();
+
+  /**
+   * Returns a new object of class '<em>Wildcard New</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard New</em>'.
+   * @generated
+   */
+  WildcardNew createWildcardNew();
+
+  /**
+   * Returns a new object of class '<em>Wildcard QName</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard QName</em>'.
+   * @generated
+   */
+  WildcardQName createWildcardQName();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Dereference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Dereference</em>'.
+   * @generated
+   */
+  WildcardDereference createWildcardDereference();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Call</em>'.
+   * @generated
+   */
+  WildcardCall createWildcardCall();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Field</em>'.
+   * @generated
+   */
+  WildcardField createWildcardField();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Char</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Char</em>'.
+   * @generated
+   */
+  WildcardChar createWildcardChar();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Byte</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Byte</em>'.
+   * @generated
+   */
+  WildcardByte createWildcardByte();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Short</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Short</em>'.
+   * @generated
+   */
+  WildcardShort createWildcardShort();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Long</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Long</em>'.
+   * @generated
+   */
+  WildcardLong createWildcardLong();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Float</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Float</em>'.
+   * @generated
+   */
+  WildcardFloat createWildcardFloat();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Double</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Double</em>'.
+   * @generated
+   */
+  WildcardDouble createWildcardDouble();
+
+  /**
+   * Returns a new object of class '<em>Wildcard Void</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Wildcard Void</em>'.
+   * @generated
+   */
+  WildcardVoid createWildcardVoid();
 
   /**
    * Returns the package supported by this factory.

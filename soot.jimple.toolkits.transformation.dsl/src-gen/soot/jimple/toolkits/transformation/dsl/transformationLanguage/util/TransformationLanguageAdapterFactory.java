@@ -385,6 +385,11 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
         return createSootMethodRefAdapter();
       }
       @Override
+      public Adapter caseSootType(SootType object)
+      {
+        return createSootTypeAdapter();
+      }
+      @Override
       public Adapter caseInvokeExpr(InvokeExpr object)
       {
         return createInvokeExprAdapter();
@@ -418,11 +423,6 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseLocalOrWildcard(LocalOrWildcard object)
       {
         return createLocalOrWildcardAdapter();
-      }
-      @Override
-      public Adapter caseWildcard(Wildcard object)
-      {
-        return createWildcardAdapter();
       }
       @Override
       public Adapter caseNewArrayExpr(NewArrayExpr object)
@@ -578,6 +578,176 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseQualifiedName(QualifiedName object)
       {
         return createQualifiedNameAdapter();
+      }
+      @Override
+      public Adapter caseWildcard(Wildcard object)
+      {
+        return createWildcardAdapter();
+      }
+      @Override
+      public Adapter caseWildcardName(WildcardName object)
+      {
+        return createWildcardNameAdapter();
+      }
+      @Override
+      public Adapter caseWildcardExpression(WildcardExpression object)
+      {
+        return createWildcardExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardConditionalOrExpression(WildcardConditionalOrExpression object)
+      {
+        return createWildcardConditionalOrExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardConditionalAndExpression(WildcardConditionalAndExpression object)
+      {
+        return createWildcardConditionalAndExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardEqualityExpression(WildcardEqualityExpression object)
+      {
+        return createWildcardEqualityExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardInstanceOfExpression(WildcardInstanceOfExpression object)
+      {
+        return createWildcardInstanceOfExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardRelationalExpression(WildcardRelationalExpression object)
+      {
+        return createWildcardRelationalExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardAdditiveExpression(WildcardAdditiveExpression object)
+      {
+        return createWildcardAdditiveExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardMultiplicativeExpression(WildcardMultiplicativeExpression object)
+      {
+        return createWildcardMultiplicativeExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardUnaryExpression(WildcardUnaryExpression object)
+      {
+        return createWildcardUnaryExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardUnaryExpressionNotPlusMinus(WildcardUnaryExpressionNotPlusMinus object)
+      {
+        return createWildcardUnaryExpressionNotPlusMinusAdapter();
+      }
+      @Override
+      public Adapter caseWildcardPrimary(WildcardPrimary object)
+      {
+        return createWildcardPrimaryAdapter();
+      }
+      @Override
+      public Adapter caseWildcardParExpression(WildcardParExpression object)
+      {
+        return createWildcardParExpressionAdapter();
+      }
+      @Override
+      public Adapter caseWildcardClassLiteral(WildcardClassLiteral object)
+      {
+        return createWildcardClassLiteralAdapter();
+      }
+      @Override
+      public Adapter caseWildcardType(WildcardType object)
+      {
+        return createWildcardTypeAdapter();
+      }
+      @Override
+      public Adapter caseWildcardPrimitiveType(WildcardPrimitiveType object)
+      {
+        return createWildcardPrimitiveTypeAdapter();
+      }
+      @Override
+      public Adapter caseWildcardLiteral(WildcardLiteral object)
+      {
+        return createWildcardLiteralAdapter();
+      }
+      @Override
+      public Adapter caseWildcardBoolean(WildcardBoolean object)
+      {
+        return createWildcardBooleanAdapter();
+      }
+      @Override
+      public Adapter caseWildcardInt(WildcardInt object)
+      {
+        return createWildcardIntAdapter();
+      }
+      @Override
+      public Adapter caseWildcardNull(WildcardNull object)
+      {
+        return createWildcardNullAdapter();
+      }
+      @Override
+      public Adapter caseWildcardString(WildcardString object)
+      {
+        return createWildcardStringAdapter();
+      }
+      @Override
+      public Adapter caseWildcardNew(WildcardNew object)
+      {
+        return createWildcardNewAdapter();
+      }
+      @Override
+      public Adapter caseWildcardQName(WildcardQName object)
+      {
+        return createWildcardQNameAdapter();
+      }
+      @Override
+      public Adapter caseWildcardDereference(WildcardDereference object)
+      {
+        return createWildcardDereferenceAdapter();
+      }
+      @Override
+      public Adapter caseWildcardCall(WildcardCall object)
+      {
+        return createWildcardCallAdapter();
+      }
+      @Override
+      public Adapter caseWildcardField(WildcardField object)
+      {
+        return createWildcardFieldAdapter();
+      }
+      @Override
+      public Adapter caseWildcardChar(WildcardChar object)
+      {
+        return createWildcardCharAdapter();
+      }
+      @Override
+      public Adapter caseWildcardByte(WildcardByte object)
+      {
+        return createWildcardByteAdapter();
+      }
+      @Override
+      public Adapter caseWildcardShort(WildcardShort object)
+      {
+        return createWildcardShortAdapter();
+      }
+      @Override
+      public Adapter caseWildcardLong(WildcardLong object)
+      {
+        return createWildcardLongAdapter();
+      }
+      @Override
+      public Adapter caseWildcardFloat(WildcardFloat object)
+      {
+        return createWildcardFloatAdapter();
+      }
+      @Override
+      public Adapter caseWildcardDouble(WildcardDouble object)
+      {
+        return createWildcardDoubleAdapter();
+      }
+      @Override
+      public Adapter caseWildcardVoid(WildcardVoid object)
+      {
+        return createWildcardVoidAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -1532,6 +1702,21 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootType <em>Soot Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootType
+   * @generated
+   */
+  public Adapter createSootTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.InvokeExpr <em>Invoke Expr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1632,21 +1817,6 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLocalOrWildcardAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard <em>Wildcard</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard
-   * @generated
-   */
-  public Adapter createWildcardAdapter()
   {
     return null;
   }
@@ -2112,6 +2282,516 @@ public class TransformationLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createQualifiedNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard <em>Wildcard</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard
+   * @generated
+   */
+  public Adapter createWildcardAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardName <em>Wildcard Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardName
+   * @generated
+   */
+  public Adapter createWildcardNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardExpression <em>Wildcard Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardExpression
+   * @generated
+   */
+  public Adapter createWildcardExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalOrExpression <em>Wildcard Conditional Or Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalOrExpression
+   * @generated
+   */
+  public Adapter createWildcardConditionalOrExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalAndExpression <em>Wildcard Conditional And Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalAndExpression
+   * @generated
+   */
+  public Adapter createWildcardConditionalAndExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression <em>Wildcard Equality Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression
+   * @generated
+   */
+  public Adapter createWildcardEqualityExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression <em>Wildcard Instance Of Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression
+   * @generated
+   */
+  public Adapter createWildcardInstanceOfExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression <em>Wildcard Relational Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression
+   * @generated
+   */
+  public Adapter createWildcardRelationalExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression <em>Wildcard Additive Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression
+   * @generated
+   */
+  public Adapter createWildcardAdditiveExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression <em>Wildcard Multiplicative Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression
+   * @generated
+   */
+  public Adapter createWildcardMultiplicativeExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression <em>Wildcard Unary Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression
+   * @generated
+   */
+  public Adapter createWildcardUnaryExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus <em>Wildcard Unary Expression Not Plus Minus</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus
+   * @generated
+   */
+  public Adapter createWildcardUnaryExpressionNotPlusMinusAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimary <em>Wildcard Primary</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimary
+   * @generated
+   */
+  public Adapter createWildcardPrimaryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardParExpression <em>Wildcard Par Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardParExpression
+   * @generated
+   */
+  public Adapter createWildcardParExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral <em>Wildcard Class Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral
+   * @generated
+   */
+  public Adapter createWildcardClassLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardType <em>Wildcard Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardType
+   * @generated
+   */
+  public Adapter createWildcardTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimitiveType <em>Wildcard Primitive Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimitiveType
+   * @generated
+   */
+  public Adapter createWildcardPrimitiveTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLiteral <em>Wildcard Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLiteral
+   * @generated
+   */
+  public Adapter createWildcardLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardBoolean <em>Wildcard Boolean</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardBoolean
+   * @generated
+   */
+  public Adapter createWildcardBooleanAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInt <em>Wildcard Int</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInt
+   * @generated
+   */
+  public Adapter createWildcardIntAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNull <em>Wildcard Null</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNull
+   * @generated
+   */
+  public Adapter createWildcardNullAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardString <em>Wildcard String</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardString
+   * @generated
+   */
+  public Adapter createWildcardStringAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew <em>Wildcard New</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew
+   * @generated
+   */
+  public Adapter createWildcardNewAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardQName <em>Wildcard QName</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardQName
+   * @generated
+   */
+  public Adapter createWildcardQNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDereference <em>Wildcard Dereference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDereference
+   * @generated
+   */
+  public Adapter createWildcardDereferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardCall <em>Wildcard Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardCall
+   * @generated
+   */
+  public Adapter createWildcardCallAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardField <em>Wildcard Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardField
+   * @generated
+   */
+  public Adapter createWildcardFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardChar <em>Wildcard Char</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardChar
+   * @generated
+   */
+  public Adapter createWildcardCharAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardByte <em>Wildcard Byte</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardByte
+   * @generated
+   */
+  public Adapter createWildcardByteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardShort <em>Wildcard Short</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardShort
+   * @generated
+   */
+  public Adapter createWildcardShortAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLong <em>Wildcard Long</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLong
+   * @generated
+   */
+  public Adapter createWildcardLongAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardFloat <em>Wildcard Float</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardFloat
+   * @generated
+   */
+  public Adapter createWildcardFloatAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDouble <em>Wildcard Double</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDouble
+   * @generated
+   */
+  public Adapter createWildcardDoubleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardVoid <em>Wildcard Void</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardVoid
+   * @generated
+   */
+  public Adapter createWildcardVoidAdapter()
   {
     return null;
   }

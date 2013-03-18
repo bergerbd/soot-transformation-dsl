@@ -92,6 +92,7 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.ShlExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.ShrExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootFieldRef;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootType;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.SpecialInvokeExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Statement;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.StatementSequence;
@@ -113,6 +114,39 @@ import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Value;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.VirtualInvokeExpr;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Visibility;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.Wildcard;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardAdditiveExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardBoolean;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardByte;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardCall;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardChar;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardClassLiteral;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalAndExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardConditionalOrExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDereference;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardDouble;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardEqualityExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardField;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardFloat;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInstanceOfExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardInt;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLiteral;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardLong;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardMultiplicativeExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardName;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNew;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardNull;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardParExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimary;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardPrimitiveType;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardQName;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardRelationalExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardShort;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardString;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardType;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpression;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardUnaryExpressionNotPlusMinus;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardVoid;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.XorExpr;
 
 /**
@@ -562,6 +596,13 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass sootTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass invokeExprEClass = null;
 
   /**
@@ -605,13 +646,6 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * @generated
    */
   private EClass localOrWildcardEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass wildcardEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -835,6 +869,244 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass wildcardEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardConditionalOrExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardConditionalAndExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardEqualityExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardInstanceOfExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardRelationalExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardAdditiveExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardMultiplicativeExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardUnaryExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardUnaryExpressionNotPlusMinusEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardPrimaryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardParExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardClassLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardPrimitiveTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardBooleanEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardIntEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardNullEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardStringEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardNewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardQNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardDereferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardCallEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardCharEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardByteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardShortEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardLongEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardFloatEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardDoubleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wildcardVoidEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EEnum visibilityEEnum = null;
 
   /**
@@ -928,6 +1200,16 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
   public EReference getTransformation_Replacement()
   {
     return (EReference)transformationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTransformation_Condition()
+  {
+    return (EReference)transformationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2125,6 +2407,16 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getSootType()
+  {
+    return sootTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getInvokeExpr()
   {
     return invokeExprEClass;
@@ -2218,26 +2510,6 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
   public EClass getLocalOrWildcard()
   {
     return localOrWildcardEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getLocalOrWildcard_Name()
-  {
-    return (EAttribute)localOrWildcardEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getWildcard()
-  {
-    return wildcardEClass;
   }
 
   /**
@@ -2368,6 +2640,16 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
   public EClass getLocal()
   {
     return localEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLocal_Name()
+  {
+    return (EAttribute)localEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2635,9 +2917,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQualifiedNameOrWildcard_Name()
+  public EClass getQualifiedNameWildcard()
   {
-    return (EAttribute)qualifiedNameOrWildcardEClass.getEStructuralFeatures().get(0);
+    return qualifiedNameWildcardEClass;
   }
 
   /**
@@ -2645,9 +2927,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getQualifiedNameWildcard()
+  public EAttribute getQualifiedNameWildcard_Name()
   {
-    return qualifiedNameWildcardEClass;
+    return (EAttribute)qualifiedNameWildcardEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2755,6 +3037,666 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getQualifiedName_Name()
+  {
+    return (EAttribute)qualifiedNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcard()
+  {
+    return wildcardEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcard_Expression()
+  {
+    return (EReference)wildcardEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardName()
+  {
+    return wildcardNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardName_WName()
+  {
+    return (EAttribute)wildcardNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardExpression()
+  {
+    return wildcardExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardExpression_Expression()
+  {
+    return (EReference)wildcardExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardConditionalOrExpression()
+  {
+    return wildcardConditionalOrExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardConditionalOrExpression_Operands()
+  {
+    return (EReference)wildcardConditionalOrExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardConditionalAndExpression()
+  {
+    return wildcardConditionalAndExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardConditionalAndExpression_Operands()
+  {
+    return (EReference)wildcardConditionalAndExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardEqualityExpression()
+  {
+    return wildcardEqualityExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardEqualityExpression_Operands()
+  {
+    return (EReference)wildcardEqualityExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardEqualityExpression_Operator()
+  {
+    return (EAttribute)wildcardEqualityExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardInstanceOfExpression()
+  {
+    return wildcardInstanceOfExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardInstanceOfExpression_Operand()
+  {
+    return (EReference)wildcardInstanceOfExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardInstanceOfExpression_Type()
+  {
+    return (EReference)wildcardInstanceOfExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardRelationalExpression()
+  {
+    return wildcardRelationalExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardRelationalExpression_Operands()
+  {
+    return (EReference)wildcardRelationalExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardRelationalExpression_Operators()
+  {
+    return (EAttribute)wildcardRelationalExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardAdditiveExpression()
+  {
+    return wildcardAdditiveExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardAdditiveExpression_Operands()
+  {
+    return (EReference)wildcardAdditiveExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardAdditiveExpression_Operators()
+  {
+    return (EAttribute)wildcardAdditiveExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardMultiplicativeExpression()
+  {
+    return wildcardMultiplicativeExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardMultiplicativeExpression_Operands()
+  {
+    return (EReference)wildcardMultiplicativeExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardMultiplicativeExpression_Operators()
+  {
+    return (EAttribute)wildcardMultiplicativeExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardUnaryExpression()
+  {
+    return wildcardUnaryExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardUnaryExpression_Operator()
+  {
+    return (EAttribute)wildcardUnaryExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardUnaryExpression_Operand()
+  {
+    return (EReference)wildcardUnaryExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardUnaryExpressionNotPlusMinus()
+  {
+    return wildcardUnaryExpressionNotPlusMinusEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardUnaryExpressionNotPlusMinus_Not()
+  {
+    return (EAttribute)wildcardUnaryExpressionNotPlusMinusEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardUnaryExpressionNotPlusMinus_Operand()
+  {
+    return (EReference)wildcardUnaryExpressionNotPlusMinusEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardUnaryExpressionNotPlusMinus_Dereferences()
+  {
+    return (EReference)wildcardUnaryExpressionNotPlusMinusEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardPrimary()
+  {
+    return wildcardPrimaryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardParExpression()
+  {
+    return wildcardParExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardParExpression_Expression()
+  {
+    return (EReference)wildcardParExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardClassLiteral()
+  {
+    return wildcardClassLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardClassLiteral_BaseType()
+  {
+    return (EReference)wildcardClassLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardClassLiteral_Dimension()
+  {
+    return (EAttribute)wildcardClassLiteralEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardType()
+  {
+    return wildcardTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardPrimitiveType()
+  {
+    return wildcardPrimitiveTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardLiteral()
+  {
+    return wildcardLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardBoolean()
+  {
+    return wildcardBooleanEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardBoolean_Value()
+  {
+    return (EAttribute)wildcardBooleanEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardInt()
+  {
+    return wildcardIntEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardInt_Value()
+  {
+    return (EAttribute)wildcardIntEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardNull()
+  {
+    return wildcardNullEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardString()
+  {
+    return wildcardStringEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardString_Value()
+  {
+    return (EAttribute)wildcardStringEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardNew()
+  {
+    return wildcardNewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardNew_Name()
+  {
+    return (EReference)wildcardNewEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardNew_Parameters()
+  {
+    return (EReference)wildcardNewEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardQName()
+  {
+    return wildcardQNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardQName_Name()
+  {
+    return (EAttribute)wildcardQNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardDereference()
+  {
+    return wildcardDereferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWildcardDereference_Name()
+  {
+    return (EAttribute)wildcardDereferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardCall()
+  {
+    return wildcardCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWildcardCall_Parameters()
+  {
+    return (EReference)wildcardCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardField()
+  {
+    return wildcardFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardChar()
+  {
+    return wildcardCharEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardByte()
+  {
+    return wildcardByteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardShort()
+  {
+    return wildcardShortEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardLong()
+  {
+    return wildcardLongEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardFloat()
+  {
+    return wildcardFloatEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardDouble()
+  {
+    return wildcardDoubleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWildcardVoid()
+  {
+    return wildcardVoidEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getVisibility()
   {
     return visibilityEEnum;
@@ -2793,6 +3735,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     transformationEClass = createEClass(TRANSFORMATION);
     createEReference(transformationEClass, TRANSFORMATION__PATTERN);
     createEReference(transformationEClass, TRANSFORMATION__REPLACEMENT);
+    createEReference(transformationEClass, TRANSFORMATION__CONDITION);
 
     patternEClass = createEClass(PATTERN);
 
@@ -2974,6 +3917,8 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     createEAttribute(sootMethodRefEClass, SOOT_METHOD_REF__NAME);
     createEReference(sootMethodRefEClass, SOOT_METHOD_REF__PARAMETERS);
 
+    sootTypeEClass = createEClass(SOOT_TYPE);
+
     invokeExprEClass = createEClass(INVOKE_EXPR);
     createEReference(invokeExprEClass, INVOKE_EXPR__METHOD);
     createEReference(invokeExprEClass, INVOKE_EXPR__PARAMETERS);
@@ -2990,9 +3935,6 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     virtualInvokeExprEClass = createEClass(VIRTUAL_INVOKE_EXPR);
 
     localOrWildcardEClass = createEClass(LOCAL_OR_WILDCARD);
-    createEAttribute(localOrWildcardEClass, LOCAL_OR_WILDCARD__NAME);
-
-    wildcardEClass = createEClass(WILDCARD);
 
     newArrayExprEClass = createEClass(NEW_ARRAY_EXPR);
     createEReference(newArrayExprEClass, NEW_ARRAY_EXPR__SIZE);
@@ -3014,6 +3956,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     negExprEClass = createEClass(NEG_EXPR);
 
     localEClass = createEClass(LOCAL);
+    createEAttribute(localEClass, LOCAL__NAME);
 
     refEClass = createEClass(REF);
 
@@ -3054,9 +3997,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     createEReference(classConstantEClass, CLASS_CONSTANT__NAME);
 
     qualifiedNameOrWildcardEClass = createEClass(QUALIFIED_NAME_OR_WILDCARD);
-    createEAttribute(qualifiedNameOrWildcardEClass, QUALIFIED_NAME_OR_WILDCARD__NAME);
 
     qualifiedNameWildcardEClass = createEClass(QUALIFIED_NAME_WILDCARD);
+    createEAttribute(qualifiedNameWildcardEClass, QUALIFIED_NAME_WILDCARD__NAME);
 
     nullConstantEClass = createEClass(NULL_CONSTANT);
 
@@ -3075,6 +4018,106 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     createEAttribute(stringConstantEClass, STRING_CONSTANT__VALUE);
 
     qualifiedNameEClass = createEClass(QUALIFIED_NAME);
+    createEAttribute(qualifiedNameEClass, QUALIFIED_NAME__NAME);
+
+    wildcardEClass = createEClass(WILDCARD);
+    createEReference(wildcardEClass, WILDCARD__EXPRESSION);
+
+    wildcardNameEClass = createEClass(WILDCARD_NAME);
+    createEAttribute(wildcardNameEClass, WILDCARD_NAME__WNAME);
+
+    wildcardExpressionEClass = createEClass(WILDCARD_EXPRESSION);
+    createEReference(wildcardExpressionEClass, WILDCARD_EXPRESSION__EXPRESSION);
+
+    wildcardConditionalOrExpressionEClass = createEClass(WILDCARD_CONDITIONAL_OR_EXPRESSION);
+    createEReference(wildcardConditionalOrExpressionEClass, WILDCARD_CONDITIONAL_OR_EXPRESSION__OPERANDS);
+
+    wildcardConditionalAndExpressionEClass = createEClass(WILDCARD_CONDITIONAL_AND_EXPRESSION);
+    createEReference(wildcardConditionalAndExpressionEClass, WILDCARD_CONDITIONAL_AND_EXPRESSION__OPERANDS);
+
+    wildcardEqualityExpressionEClass = createEClass(WILDCARD_EQUALITY_EXPRESSION);
+    createEReference(wildcardEqualityExpressionEClass, WILDCARD_EQUALITY_EXPRESSION__OPERANDS);
+    createEAttribute(wildcardEqualityExpressionEClass, WILDCARD_EQUALITY_EXPRESSION__OPERATOR);
+
+    wildcardInstanceOfExpressionEClass = createEClass(WILDCARD_INSTANCE_OF_EXPRESSION);
+    createEReference(wildcardInstanceOfExpressionEClass, WILDCARD_INSTANCE_OF_EXPRESSION__OPERAND);
+    createEReference(wildcardInstanceOfExpressionEClass, WILDCARD_INSTANCE_OF_EXPRESSION__TYPE);
+
+    wildcardRelationalExpressionEClass = createEClass(WILDCARD_RELATIONAL_EXPRESSION);
+    createEReference(wildcardRelationalExpressionEClass, WILDCARD_RELATIONAL_EXPRESSION__OPERANDS);
+    createEAttribute(wildcardRelationalExpressionEClass, WILDCARD_RELATIONAL_EXPRESSION__OPERATORS);
+
+    wildcardAdditiveExpressionEClass = createEClass(WILDCARD_ADDITIVE_EXPRESSION);
+    createEReference(wildcardAdditiveExpressionEClass, WILDCARD_ADDITIVE_EXPRESSION__OPERANDS);
+    createEAttribute(wildcardAdditiveExpressionEClass, WILDCARD_ADDITIVE_EXPRESSION__OPERATORS);
+
+    wildcardMultiplicativeExpressionEClass = createEClass(WILDCARD_MULTIPLICATIVE_EXPRESSION);
+    createEReference(wildcardMultiplicativeExpressionEClass, WILDCARD_MULTIPLICATIVE_EXPRESSION__OPERANDS);
+    createEAttribute(wildcardMultiplicativeExpressionEClass, WILDCARD_MULTIPLICATIVE_EXPRESSION__OPERATORS);
+
+    wildcardUnaryExpressionEClass = createEClass(WILDCARD_UNARY_EXPRESSION);
+    createEAttribute(wildcardUnaryExpressionEClass, WILDCARD_UNARY_EXPRESSION__OPERATOR);
+    createEReference(wildcardUnaryExpressionEClass, WILDCARD_UNARY_EXPRESSION__OPERAND);
+
+    wildcardUnaryExpressionNotPlusMinusEClass = createEClass(WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS);
+    createEAttribute(wildcardUnaryExpressionNotPlusMinusEClass, WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS__NOT);
+    createEReference(wildcardUnaryExpressionNotPlusMinusEClass, WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS__OPERAND);
+    createEReference(wildcardUnaryExpressionNotPlusMinusEClass, WILDCARD_UNARY_EXPRESSION_NOT_PLUS_MINUS__DEREFERENCES);
+
+    wildcardPrimaryEClass = createEClass(WILDCARD_PRIMARY);
+
+    wildcardParExpressionEClass = createEClass(WILDCARD_PAR_EXPRESSION);
+    createEReference(wildcardParExpressionEClass, WILDCARD_PAR_EXPRESSION__EXPRESSION);
+
+    wildcardClassLiteralEClass = createEClass(WILDCARD_CLASS_LITERAL);
+    createEReference(wildcardClassLiteralEClass, WILDCARD_CLASS_LITERAL__BASE_TYPE);
+    createEAttribute(wildcardClassLiteralEClass, WILDCARD_CLASS_LITERAL__DIMENSION);
+
+    wildcardTypeEClass = createEClass(WILDCARD_TYPE);
+
+    wildcardPrimitiveTypeEClass = createEClass(WILDCARD_PRIMITIVE_TYPE);
+
+    wildcardLiteralEClass = createEClass(WILDCARD_LITERAL);
+
+    wildcardBooleanEClass = createEClass(WILDCARD_BOOLEAN);
+    createEAttribute(wildcardBooleanEClass, WILDCARD_BOOLEAN__VALUE);
+
+    wildcardIntEClass = createEClass(WILDCARD_INT);
+    createEAttribute(wildcardIntEClass, WILDCARD_INT__VALUE);
+
+    wildcardNullEClass = createEClass(WILDCARD_NULL);
+
+    wildcardStringEClass = createEClass(WILDCARD_STRING);
+    createEAttribute(wildcardStringEClass, WILDCARD_STRING__VALUE);
+
+    wildcardNewEClass = createEClass(WILDCARD_NEW);
+    createEReference(wildcardNewEClass, WILDCARD_NEW__NAME);
+    createEReference(wildcardNewEClass, WILDCARD_NEW__PARAMETERS);
+
+    wildcardQNameEClass = createEClass(WILDCARD_QNAME);
+    createEAttribute(wildcardQNameEClass, WILDCARD_QNAME__NAME);
+
+    wildcardDereferenceEClass = createEClass(WILDCARD_DEREFERENCE);
+    createEAttribute(wildcardDereferenceEClass, WILDCARD_DEREFERENCE__NAME);
+
+    wildcardCallEClass = createEClass(WILDCARD_CALL);
+    createEReference(wildcardCallEClass, WILDCARD_CALL__PARAMETERS);
+
+    wildcardFieldEClass = createEClass(WILDCARD_FIELD);
+
+    wildcardCharEClass = createEClass(WILDCARD_CHAR);
+
+    wildcardByteEClass = createEClass(WILDCARD_BYTE);
+
+    wildcardShortEClass = createEClass(WILDCARD_SHORT);
+
+    wildcardLongEClass = createEClass(WILDCARD_LONG);
+
+    wildcardFloatEClass = createEClass(WILDCARD_FLOAT);
+
+    wildcardDoubleEClass = createEClass(WILDCARD_DOUBLE);
+
+    wildcardVoidEClass = createEClass(WILDCARD_VOID);
 
     // Create enums
     visibilityEEnum = createEEnum(VISIBILITY);
@@ -3164,7 +4207,6 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     specialInvokeExprEClass.getESuperTypes().add(this.getInstanceInvokeExpr());
     virtualInvokeExprEClass.getESuperTypes().add(this.getInstanceInvokeExpr());
     localOrWildcardEClass.getESuperTypes().add(this.getRef());
-    wildcardEClass.getESuperTypes().add(this.getLocalOrWildcard());
     newArrayExprEClass.getESuperTypes().add(this.getAnyNewExpr());
     newExprEClass.getESuperTypes().add(this.getAnyNewExpr());
     newMultiArrayExprEClass.getESuperTypes().add(this.getAnyNewExpr());
@@ -3184,7 +4226,6 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     instanceFieldRefEClass.getESuperTypes().add(this.getFieldRef());
     constantEClass.getESuperTypes().add(this.getNonExpr());
     classConstantEClass.getESuperTypes().add(this.getConstant());
-    qualifiedNameWildcardEClass.getESuperTypes().add(this.getQualifiedNameOrWildcard());
     nullConstantEClass.getESuperTypes().add(this.getConstant());
     numericConstantEClass.getESuperTypes().add(this.getConstant());
     intConstantEClass.getESuperTypes().add(this.getNumericConstant());
@@ -3192,12 +4233,40 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     doubleConstantEClass.getESuperTypes().add(this.getNumericConstant());
     floatConstantEClass.getESuperTypes().add(this.getNumericConstant());
     stringConstantEClass.getESuperTypes().add(this.getConstant());
+    qualifiedNameEClass.getESuperTypes().add(this.getSootType());
     qualifiedNameEClass.getESuperTypes().add(this.getQualifiedNameOrWildcard());
+    wildcardEClass.getESuperTypes().add(this.getQualifiedNameOrWildcard());
+    wildcardNameEClass.getESuperTypes().add(this.getLocalOrWildcard());
+    wildcardParExpressionEClass.getESuperTypes().add(this.getWildcardPrimary());
+    wildcardClassLiteralEClass.getESuperTypes().add(this.getWildcardPrimary());
+    wildcardPrimitiveTypeEClass.getESuperTypes().add(this.getSootType());
+    wildcardPrimitiveTypeEClass.getESuperTypes().add(this.getWildcardType());
+    wildcardLiteralEClass.getESuperTypes().add(this.getWildcardPrimary());
+    wildcardBooleanEClass.getESuperTypes().add(this.getWildcardPrimitiveType());
+    wildcardBooleanEClass.getESuperTypes().add(this.getWildcardLiteral());
+    wildcardIntEClass.getESuperTypes().add(this.getWildcardPrimitiveType());
+    wildcardIntEClass.getESuperTypes().add(this.getWildcardLiteral());
+    wildcardNullEClass.getESuperTypes().add(this.getWildcardLiteral());
+    wildcardStringEClass.getESuperTypes().add(this.getWildcardLiteral());
+    wildcardNewEClass.getESuperTypes().add(this.getWildcardPrimary());
+    wildcardQNameEClass.getESuperTypes().add(this.getWildcardPrimary());
+    wildcardQNameEClass.getESuperTypes().add(this.getWildcardType());
+    wildcardDereferenceEClass.getESuperTypes().add(this.getWildcardPrimary());
+    wildcardCallEClass.getESuperTypes().add(this.getWildcardDereference());
+    wildcardFieldEClass.getESuperTypes().add(this.getWildcardDereference());
+    wildcardCharEClass.getESuperTypes().add(this.getWildcardPrimitiveType());
+    wildcardByteEClass.getESuperTypes().add(this.getWildcardPrimitiveType());
+    wildcardShortEClass.getESuperTypes().add(this.getWildcardPrimitiveType());
+    wildcardLongEClass.getESuperTypes().add(this.getWildcardPrimitiveType());
+    wildcardFloatEClass.getESuperTypes().add(this.getWildcardPrimitiveType());
+    wildcardDoubleEClass.getESuperTypes().add(this.getWildcardPrimitiveType());
+    wildcardVoidEClass.getESuperTypes().add(this.getWildcardPrimitiveType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(transformationEClass, Transformation.class, "Transformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTransformation_Pattern(), this.getPattern(), null, "pattern", null, 0, 1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTransformation_Replacement(), this.getReplacement(), null, "replacement", null, 0, 1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransformation_Condition(), this.getWildcardExpression(), null, "condition", null, 0, 1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(patternEClass, Pattern.class, "Pattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3375,9 +4444,11 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
 
     initEClass(sootMethodRefEClass, SootMethodRef.class, "SootMethodRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSootMethodRef_Class(), this.getQualifiedName(), null, "class", null, 0, 1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSootMethodRef_Type(), this.getQualifiedName(), null, "type", null, 0, 1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSootMethodRef_Type(), this.getSootType(), null, "type", null, 0, 1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSootMethodRef_Name(), ecorePackage.getEString(), "name", null, 0, 1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSootMethodRef_Parameters(), this.getQualifiedName(), null, "parameters", null, 0, -1, SootMethodRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sootTypeEClass, SootType.class, "SootType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(invokeExprEClass, InvokeExpr.class, "InvokeExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInvokeExpr_Method(), this.getSootMethodRef(), null, "method", null, 0, 1, InvokeExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3395,9 +4466,6 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEClass(virtualInvokeExprEClass, VirtualInvokeExpr.class, "VirtualInvokeExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(localOrWildcardEClass, LocalOrWildcard.class, "LocalOrWildcard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLocalOrWildcard_Name(), ecorePackage.getEString(), "name", null, 0, 1, LocalOrWildcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(wildcardEClass, Wildcard.class, "Wildcard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(newArrayExprEClass, NewArrayExpr.class, "NewArrayExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNewArrayExpr_Size(), this.getDimension(), null, "size", null, 0, 1, NewArrayExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3419,6 +4487,7 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEClass(negExprEClass, NegExpr.class, "NegExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(localEClass, Local.class, "Local", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLocal_Name(), ecorePackage.getEString(), "name", null, 0, 1, Local.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(refEClass, Ref.class, "Ref", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3459,9 +4528,9 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEReference(getClassConstant_Name(), this.getQualifiedNameOrWildcard(), null, "name", null, 0, 1, ClassConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(qualifiedNameOrWildcardEClass, QualifiedNameOrWildcard.class, "QualifiedNameOrWildcard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getQualifiedNameOrWildcard_Name(), ecorePackage.getEString(), "name", null, 0, 1, QualifiedNameOrWildcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(qualifiedNameWildcardEClass, QualifiedNameWildcard.class, "QualifiedNameWildcard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQualifiedNameWildcard_Name(), ecorePackage.getEString(), "name", null, 0, 1, QualifiedNameWildcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nullConstantEClass, NullConstant.class, "NullConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3480,6 +4549,106 @@ public class TransformationLanguagePackageImpl extends EPackageImpl implements T
     initEAttribute(getStringConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(qualifiedNameEClass, QualifiedName.class, "QualifiedName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQualifiedName_Name(), ecorePackage.getEString(), "name", null, 0, 1, QualifiedName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardEClass, Wildcard.class, "Wildcard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcard_Expression(), this.getWildcardExpression(), null, "expression", null, 0, 1, Wildcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardNameEClass, WildcardName.class, "WildcardName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWildcardName_WName(), ecorePackage.getEString(), "wName", null, 0, 1, WildcardName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardExpressionEClass, WildcardExpression.class, "WildcardExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardExpression_Expression(), this.getWildcardConditionalOrExpression(), null, "expression", null, 0, 1, WildcardExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardConditionalOrExpressionEClass, WildcardConditionalOrExpression.class, "WildcardConditionalOrExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardConditionalOrExpression_Operands(), this.getWildcardConditionalAndExpression(), null, "operands", null, 0, -1, WildcardConditionalOrExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardConditionalAndExpressionEClass, WildcardConditionalAndExpression.class, "WildcardConditionalAndExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardConditionalAndExpression_Operands(), this.getWildcardEqualityExpression(), null, "operands", null, 0, -1, WildcardConditionalAndExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardEqualityExpressionEClass, WildcardEqualityExpression.class, "WildcardEqualityExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardEqualityExpression_Operands(), this.getWildcardInstanceOfExpression(), null, "operands", null, 0, -1, WildcardEqualityExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWildcardEqualityExpression_Operator(), ecorePackage.getEString(), "operator", null, 0, -1, WildcardEqualityExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardInstanceOfExpressionEClass, WildcardInstanceOfExpression.class, "WildcardInstanceOfExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardInstanceOfExpression_Operand(), this.getWildcardRelationalExpression(), null, "operand", null, 0, 1, WildcardInstanceOfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWildcardInstanceOfExpression_Type(), this.getWildcardQName(), null, "type", null, 0, 1, WildcardInstanceOfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardRelationalExpressionEClass, WildcardRelationalExpression.class, "WildcardRelationalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardRelationalExpression_Operands(), this.getWildcardAdditiveExpression(), null, "operands", null, 0, -1, WildcardRelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWildcardRelationalExpression_Operators(), ecorePackage.getEString(), "operators", null, 0, -1, WildcardRelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardAdditiveExpressionEClass, WildcardAdditiveExpression.class, "WildcardAdditiveExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardAdditiveExpression_Operands(), this.getWildcardMultiplicativeExpression(), null, "operands", null, 0, -1, WildcardAdditiveExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWildcardAdditiveExpression_Operators(), ecorePackage.getEString(), "operators", null, 0, -1, WildcardAdditiveExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardMultiplicativeExpressionEClass, WildcardMultiplicativeExpression.class, "WildcardMultiplicativeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardMultiplicativeExpression_Operands(), this.getWildcardUnaryExpression(), null, "operands", null, 0, -1, WildcardMultiplicativeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWildcardMultiplicativeExpression_Operators(), ecorePackage.getEString(), "operators", null, 0, -1, WildcardMultiplicativeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardUnaryExpressionEClass, WildcardUnaryExpression.class, "WildcardUnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWildcardUnaryExpression_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, WildcardUnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWildcardUnaryExpression_Operand(), ecorePackage.getEObject(), null, "operand", null, 0, 1, WildcardUnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardUnaryExpressionNotPlusMinusEClass, WildcardUnaryExpressionNotPlusMinus.class, "WildcardUnaryExpressionNotPlusMinus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWildcardUnaryExpressionNotPlusMinus_Not(), ecorePackage.getEBoolean(), "not", null, 0, 1, WildcardUnaryExpressionNotPlusMinus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWildcardUnaryExpressionNotPlusMinus_Operand(), ecorePackage.getEObject(), null, "operand", null, 0, 1, WildcardUnaryExpressionNotPlusMinus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWildcardUnaryExpressionNotPlusMinus_Dereferences(), this.getWildcardDereference(), null, "dereferences", null, 0, -1, WildcardUnaryExpressionNotPlusMinus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardPrimaryEClass, WildcardPrimary.class, "WildcardPrimary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardParExpressionEClass, WildcardParExpression.class, "WildcardParExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardParExpression_Expression(), this.getWildcardExpression(), null, "expression", null, 0, 1, WildcardParExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardClassLiteralEClass, WildcardClassLiteral.class, "WildcardClassLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardClassLiteral_BaseType(), this.getWildcardType(), null, "baseType", null, 0, 1, WildcardClassLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWildcardClassLiteral_Dimension(), ecorePackage.getEString(), "dimension", null, 0, -1, WildcardClassLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardTypeEClass, WildcardType.class, "WildcardType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardPrimitiveTypeEClass, WildcardPrimitiveType.class, "WildcardPrimitiveType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardLiteralEClass, WildcardLiteral.class, "WildcardLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardBooleanEClass, WildcardBoolean.class, "WildcardBoolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWildcardBoolean_Value(), ecorePackage.getEString(), "value", null, 0, 1, WildcardBoolean.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardIntEClass, WildcardInt.class, "WildcardInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWildcardInt_Value(), ecorePackage.getEInt(), "value", null, 0, 1, WildcardInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardNullEClass, WildcardNull.class, "WildcardNull", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardStringEClass, WildcardString.class, "WildcardString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWildcardString_Value(), ecorePackage.getEString(), "value", null, 0, 1, WildcardString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardNewEClass, WildcardNew.class, "WildcardNew", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardNew_Name(), this.getWildcardQName(), null, "name", null, 0, 1, WildcardNew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWildcardNew_Parameters(), this.getWildcardExpression(), null, "parameters", null, 0, -1, WildcardNew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardQNameEClass, WildcardQName.class, "WildcardQName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWildcardQName_Name(), ecorePackage.getEString(), "name", null, 0, 1, WildcardQName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardDereferenceEClass, WildcardDereference.class, "WildcardDereference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWildcardDereference_Name(), ecorePackage.getEString(), "name", null, 0, 1, WildcardDereference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardCallEClass, WildcardCall.class, "WildcardCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWildcardCall_Parameters(), this.getWildcardExpression(), null, "parameters", null, 0, -1, WildcardCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wildcardFieldEClass, WildcardField.class, "WildcardField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardCharEClass, WildcardChar.class, "WildcardChar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardByteEClass, WildcardByte.class, "WildcardByte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardShortEClass, WildcardShort.class, "WildcardShort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardLongEClass, WildcardLong.class, "WildcardLong", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardFloatEClass, WildcardFloat.class, "WildcardFloat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardDoubleEClass, WildcardDouble.class, "WildcardDouble", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(wildcardVoidEClass, WildcardVoid.class, "WildcardVoid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Initialize enums and add enum literals
     initEEnum(visibilityEEnum, Visibility.class, "Visibility");

@@ -2,7 +2,7 @@ grammar soot.jimple.toolkits.transformation.dsl.TransformationLanguage with org.
 
 generate transformationLanguage "http://www.informatik.uni-bremen.de/st/soot/TransformationLanguage"
 
-Transformation:
+Transformation:	
 	'«transformation»'
 	  '«replace»'
 	    pattern=Pattern
@@ -10,6 +10,9 @@ Transformation:
 	  '«by»'
 	    replacement=Replacement
 	  '«end»'
+	  ('«where»'
+	    condition = WildcardExpression
+	  '«end»')?
 	'«end»';
 	
 Pattern : SequencePattern | MethodPattern | TypePattern;
@@ -184,7 +187,9 @@ InstanceOfExpr :
 	
 
 SootMethodRef : 
-	'<' class = QualifiedName ':' type = QualifiedName name = MethodName '(' (parameters += QualifiedName (',' parameters += QualifiedName)*)?')''>';
+	'<' class = QualifiedName ':' type = SootType name = MethodName '(' (parameters += QualifiedName (',' parameters += QualifiedName)*)?')''>';
+
+SootType :  WildcardPrimitiveType | QualifiedName;
 
 InvokeExpr :
 	InstanceInvokeExpr | StaticInvokeExpr;
@@ -208,10 +213,7 @@ VirtualInvokeExpr : 'virtualinvoke'
 	method=SootMethodRef '(' (parameters += NonExpr (',' parameters += NonExpr)*)? ')';
 
 LocalOrWildcard :
-	Local | Wildcard;
-
-Wildcard :
-	'«' name = ID '»';
+	Local | WildcardName;
 
 NewArrayExpr :
     'newarray' '(' type = QualifiedName ')' size=Dimension;
@@ -277,7 +279,7 @@ ClassConstant :
 	'class' name = QualifiedNameOrWildcard; 
 	
 QualifiedNameOrWildcard :
-	QualifiedName | QualifiedNameWildcard;
+	QualifiedName | Wildcard; //QualifiedNameWildcard;
 
 QualifiedNameWildcard :
 	'«' name = ID '»';
@@ -311,6 +313,150 @@ MethodName :
 
 QualifiedName :
 	name = QName;
+
+Wildcard :
+	'«' expression = WildcardExpression '»';
+
+WildcardName :
+	'«' wName = ID '»';
+
+WildcardExpression :
+	expression = WildcardConditionalOrExpression;
+
+WildcardConditionalOrExpression :
+	operands += WildcardConditionalAndExpression ('||' operands += WildcardConditionalAndExpression)*;
+	
+WildcardConditionalAndExpression:
+	operands += WildcardEqualityExpression ('&&' operands += WildcardEqualityExpression)*;
+
+WildcardEqualityExpression 
+    : operands += WildcardInstanceOfExpression
+        (   
+            (   operator += '==' | operator += '!=' )
+            operands += WildcardInstanceOfExpression
+        )*
+    ;
+
+WildcardInstanceOfExpression 
+    :   operand = WildcardRelationalExpression
+        ('instanceof' type = WildcardQName)?
+    ;
+
+WildcardRelationalExpression 
+    :   operands += WildcardAdditiveExpression
+        (operators += WildcardRelationalOp operands += WildcardAdditiveExpression
+        )*
+    ;
+
+WildcardRelationalOp 
+    :    '<='
+    |    '>='
+    |   '<'
+    |   '>'
+    ;
+
+
+
+WildcardAdditiveExpression 
+    :   operands += WildcardMultiplicativeExpression
+        (   
+            (  operators += '+' | operators += '-' )
+            operands += WildcardMultiplicativeExpression
+         )*
+    ;
+
+WildcardMultiplicativeExpression 
+    :
+        operands += WildcardUnaryExpression
+        (   
+            (  operators += '*'
+            |  operators += '/'
+            |  operators +=  '%'
+            )
+            operands += WildcardUnaryExpression
+        )*
+    ;
+
+WildcardUnaryExpression 
+    :   operator = '+'  operand = WildcardUnaryExpression
+    |   operator = '-' operand = WildcardUnaryExpression
+    |   operand = WildcardUnaryExpressionNotPlusMinus
+    ;
+
+WildcardUnaryExpressionNotPlusMinus 
+    :   not ?= '!' operand = WildcardUnaryExpression
+    |   operand = WildcardPrimary (dereferences += WildcardDereference)*
+        //(selectors += WildcardSelector )*
+    ;
+
+WildcardPrimary
+    :   WildcardParExpression  
+    |   WildcardDereference          
+    |   WildcardLiteral
+    |   WildcardClassLiteral
+    |   WildcardNew
+    |   WildcardQName 
+    ;
+
+WildcardParExpression 
+    :   '(' expression = WildcardExpression ')'
+    ;
+
+WildcardClassLiteral
+	: baseType = WildcardType
+      (dimension += '[' dimension += ']')*
+        '.' 'class';
+
+WildcardType :
+	WildcardPrimitiveType | WildcardQName;
+
+WildcardPrimitiveType 
+	:   {WildcardBoolean} 'boolean'
+    |   {WildcardChar} 'char'
+    |   {WildcardByte} 'byte'
+    |   {WildcardShort} 'short'
+    |   {WildcardInt} 'int'
+    |   {WildcardLong} 'long'
+    |   {WildcardFloat} 'float'
+    |   {WildcardDouble} 'double'
+    |   {WildcardVoid} 'void'
+    ;
+    
+//WildcardValue :
+//	WildcardLiteral | WildcardNew | WildcardQName ;
+
+WildcardLiteral :
+	WildcardBoolean | WildcardInt | WildcardNull | WildcardString;
+
+WildcardBoolean:
+	value = 'true' | value = 'false';
+
+WildcardInt :
+	value = INT;
+
+WildcardNull:
+	{WildcardNull} 'null';			
+
+WildcardString :
+	value = STRING;
+	
+WildcardNew :
+	'new' name = WildcardQName '(' (parameters += WildcardExpression (',' parameters += WildcardExpression)*)? ')';
+
+WildcardQName :
+	name = WildcardQNameTerminal;
+
+WildcardQNameTerminal :
+	ID ('::' ID)*;
+	
+WildcardDereference :
+	WildcardCall | WildcardField;
+	
+WildcardCall :
+	'.' name = ID '(' (parameters += WildcardExpression (',' parameters += WildcardExpression)*)? ')';
+	
+WildcardField:
+	'.' name = ID;
 
 QName :
 	ID ('.' ID)*;

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.QualifiedName;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootType;
 import soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage;
 
 /**
@@ -58,7 +59,7 @@ public class SootMethodRefImpl extends MinimalEObjectImpl.Container implements S
    * @generated
    * @ordered
    */
-  protected QualifiedName type;
+  protected SootType type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -164,7 +165,7 @@ public class SootMethodRefImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public QualifiedName getType()
+  public SootType getType()
   {
     return type;
   }
@@ -174,9 +175,9 @@ public class SootMethodRefImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(QualifiedName newType, NotificationChain msgs)
+  public NotificationChain basicSetType(SootType newType, NotificationChain msgs)
   {
-    QualifiedName oldType = type;
+    SootType oldType = type;
     type = newType;
     if (eNotificationRequired())
     {
@@ -191,7 +192,7 @@ public class SootMethodRefImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(QualifiedName newType)
+  public void setType(SootType newType)
   {
     if (newType != type)
     {
@@ -301,7 +302,7 @@ public class SootMethodRefImpl extends MinimalEObjectImpl.Container implements S
         setClass((QualifiedName)newValue);
         return;
       case TransformationLanguagePackage.SOOT_METHOD_REF__TYPE:
-        setType((QualifiedName)newValue);
+        setType((SootType)newValue);
         return;
       case TransformationLanguagePackage.SOOT_METHOD_REF__NAME:
         setName((String)newValue);
@@ -328,7 +329,7 @@ public class SootMethodRefImpl extends MinimalEObjectImpl.Container implements S
         setClass((QualifiedName)null);
         return;
       case TransformationLanguagePackage.SOOT_METHOD_REF__TYPE:
-        setType((QualifiedName)null);
+        setType((SootType)null);
         return;
       case TransformationLanguagePackage.SOOT_METHOD_REF__NAME:
         setName(NAME_EDEFAULT);

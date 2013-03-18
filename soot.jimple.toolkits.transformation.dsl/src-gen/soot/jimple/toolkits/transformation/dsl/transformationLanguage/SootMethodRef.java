@@ -62,12 +62,12 @@ public interface SootMethodRef extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(QualifiedName)
+   * @see #setType(SootType)
    * @see soot.jimple.toolkits.transformation.dsl.transformationLanguage.TransformationLanguagePackage#getSootMethodRef_Type()
    * @model containment="true"
    * @generated
    */
-  QualifiedName getType();
+  SootType getType();
 
   /**
    * Sets the value of the '{@link soot.jimple.toolkits.transformation.dsl.transformationLanguage.SootMethodRef#getType <em>Type</em>}' containment reference.
@@ -77,7 +77,7 @@ public interface SootMethodRef extends EObject
    * @see #getType()
    * @generated
    */
-  void setType(QualifiedName value);
+  void setType(SootType value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

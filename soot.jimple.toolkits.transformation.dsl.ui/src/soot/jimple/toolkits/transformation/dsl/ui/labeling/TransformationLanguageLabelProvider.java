@@ -5,6 +5,9 @@ package soot.jimple.toolkits.transformation.dsl.ui.labeling;
 
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider; 
+
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.VirtualInvokeExpr;
+import soot.jimple.toolkits.transformation.dsl.transformationLanguage.WildcardName;
  
 import com.google.inject.Inject;
 
@@ -18,6 +21,24 @@ public class TransformationLanguageLabelProvider extends DefaultEObjectLabelProv
 	@Inject
 	public TransformationLanguageLabelProvider(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
+	}
+
+	public Object text(final VirtualInvokeExpr vInvoke) {
+		return "VirtualInvoke";
+	}
+	
+	public Object text(final WildcardName wName) {
+		return "Wildcard " +wName.getWName();
+	}
+	
+	public Object text(final Object object) {
+		String name = object.getClass().getSimpleName();
+		
+		if(name.endsWith("Impl")) {
+			return name.substring(0, name.length() - 4);
+		}
+		
+		return name;
 	}
 
 /*
